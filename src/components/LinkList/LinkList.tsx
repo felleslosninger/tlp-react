@@ -8,12 +8,12 @@ interface LinkListProps {
   state: 'normal' | 'inverted';
 
   //can have normal title, a link title or no title
-  title?: 'normalTitle' | 'linkTitle' | 'none';
+  title?: 'normalTitle' | 'linkTitle';
 
   //Links
   links: [{ title: string; url: string }];
 
-  headingLevel: 'h1' | 'h2' | 'h3';
+  headingLevel: 'h1' | 'h2' | 'h3' | 'h4';
 }
 
 const LinkList = ({
