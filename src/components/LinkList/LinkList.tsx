@@ -29,15 +29,15 @@ const LinkList = ({
         <h3 className={classes.heading}>
           <a
             className={cn(classes[title])}
-            href='#'
+            href='https://www.digidir.no'
           >
             Link title
           </a>
         </h3>
       ) : null}
       <ul className={cn(classes.linkList, classes[state])}>
-        {links.map((link) => (
-          <li>
+        {links.map((link, index) => (
+          <li key={index + link.title}>
             <a href={link.url}>{link.title}</a>
           </li>
         ))}
