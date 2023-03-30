@@ -6,7 +6,7 @@ export default {
   tags: ['autodocs'],
   argTypes: {
     state: { control: 'inline-radio' },
-    title: { control: 'inline-radio' },
+    title: { control: 'text' },
   },
   parameters: {
     layout: 'fullscreen',
@@ -16,6 +16,13 @@ export default {
 export const Primary = {
   args: {
     state: 'normal',
-    title: 'linkTitle',
+    title: 'Tittel',
+  },
+};
+
+export const Inverted = {
+  args: {
+    state: 'inverted',
+    title: 'Inverted list',
   },
 };
