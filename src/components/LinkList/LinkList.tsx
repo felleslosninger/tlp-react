@@ -1,38 +1,57 @@
-import React, { createElement, useEffect, useState } from 'react';
+import React, { createElement, useEffect, useState, Children } from 'react';
 import cn from 'classnames';
 
 import classes from './LinkList.module.css';
 
+export interface LinkProps {
+  inverted?: false;
+
+  text: string;
+
+  url: string;
+}
+
+export const Link = ({ inverted, text, url }: LinkProps) => {
+  return (
+    <a
+      className={cn(classes.link, inverted ? classes.inverted : classes.normal)}
+      href={url}
+    >
+      {text}
+    </a>
+  );
+};
+
 interface LinkListProps {
   //Must be normal or inverted
-  state: 'normal' | 'inverted';
+  state?: 'normal' | 'inverted';
+
+  inverted?: boolean;
 
   //can have normal title, a link title or no title
-  titleType: 'regularTitle' | 'linkTitle';
-
-  //Link objects
-  links: { title: string; url: string }[];
+  titleType?: 'regularTitle' | 'linkTitle';
 
   //Different heading levels
-  headingLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
   //Title object, in case of titleUrl
   title?: string;
 
-  //Optional title url, if title is a link
+  /**  Optional title url, if title is a link */
   titleUrl?: string;
+
+  /** Children in ul, must be instace of <Link/> component */
+  children?: React.ReactNode;
 }
 
 const LinkList = ({
   state = 'normal',
   titleType = 'regularTitle',
-  links = [
-    { title: 'test', url: '#' },
-    { title: 'test', url: '#' },
-  ],
+  // links,
   headingLevel = 'h3',
   title,
   titleUrl,
+  children,
 }: LinkListProps) => {
   const [heading, setHeading] = useState<React.ReactNode | null>(null);
   useEffect(() => {
@@ -74,15 +93,8 @@ const LinkList = ({
     <>
       {heading}
       <ul className={cn(classes.linkList)}>
-        {links.map((link, index) => (
-          <li key={index + link.title}>
-            <a
-              href={link.url}
-              className={cn(classes.link, classes[state])}
-            >
-              {link.title}
-            </a>
-          </li>
+        {Children.map(children, (child) => (
+          <li>{child}</li>
         ))}
       </ul>
     </>
