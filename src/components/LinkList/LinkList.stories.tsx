@@ -9,14 +9,30 @@ export default {
     title: { control: 'text' },
   },
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
+    backgrounds: {
+      default: 'Light',
+      values: [
+        {
+          name: 'Dark',
+          value: '#1E2B3C',
+        },
+        {
+          name: 'Light',
+          value: '#00000',
+        },
+      ],
+    },
   },
 };
 
-export const Primary = {
+export const Normal = {
   args: {
     state: 'normal',
     title: 'Tittel',
+  },
+  parameters: {
+    layout: 'centered',
   },
 };
 
@@ -24,5 +40,10 @@ export const Inverted = {
   args: {
     state: 'inverted',
     title: 'Inverted list',
+  },
+  parameters: {
+    backgrounds: {
+      default: 'Dark',
+    },
   },
 };
