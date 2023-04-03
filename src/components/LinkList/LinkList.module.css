@@ -1,7 +1,26 @@
 :root {
   --color-blue: rgba(0 98 186 / 1);
-  --color-neutral: rgba(30 43 60 / 1);
-  --link-heading-size: 18px;
+  --color-neutral-white: rgba(255 255 255 / 1);
+  --color-neutral-grey: rgba(30 43 60 / 1);
+  --heading-font-size: 18px;
+}
+
+.heading {
+  font-size: var(--link-heading-size);
+  font-weight: 500;
+  line-height: 130%;
+  margin: 0;
+}
+
+.linkTitle {
+  color: var(--color-blue);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-blue);
+}
+
+.regularTitle {
+  font-size: var(--heading-font-size);
+  color: var(--color-neutral-grey);
 }
 
 .linkList {
@@ -17,18 +36,20 @@
   flex-grow: 0;
 }
 
-.linkTitle {
-  font-size: var(--link-heading-size);
-  color: var(--color-blue);
+.link {
   text-decoration: none;
-  border-bottom: 1px solid var(--color-blue);
-  font-weight: 500;
-  line-height: 130%;
 }
 
-.normalTitle {
-  font-size: var(--link-heading-size);
-  color: var(--color-neutral);
-  font-weight: 500;
-  line-height: 130%;
+.normal {
+  color: var(--color-blue);
+  border-bottom: 1px solid var(--color-blue);
+}
+
+.inverted {
+  color: var(--color-neutral-white);
+  border-bottom: 1px solid var(--color-neutral-white);
+}
+
+.invertedTitle {
+  color: var(--color-neutral-white);
 }

@@ -8,7 +8,7 @@ interface LinkListProps {
   state: 'normal' | 'inverted';
 
   //can have normal title, a link title or no title
-  titleType?: 'normalTitle' | 'linkTitle';
+  titleType: 'regularTitle' | 'linkTitle';
 
   //Link objects
   links: { title: string; url: string }[];
@@ -25,26 +25,42 @@ interface LinkListProps {
 
 const LinkList = ({
   state = 'normal',
-  titleType = 'normalTitle',
-  links = [{ title: 'test', url: '#' }],
+  titleType = 'regularTitle',
+  links = [
+    { title: 'test', url: '#' },
+    { title: 'test', url: '#' },
+  ],
   headingLevel = 'h3',
   title,
   titleUrl,
 }: LinkListProps) => {
   const [heading, setHeading] = useState<React.ReactNode | null>(null);
   useEffect(() => {
-    if (titleType === 'normalTitle') {
+    if (titleType === 'regularTitle') {
       setHeading(
-        createElement(headingLevel, { className: classes.normalTitle }, title),
+        createElement(
+          headingLevel,
+          {
+            className: cn(
+              classes.heading,
+              classes.regularTitle,
+              state === 'inverted' ? classes.invertedTitle : null,
+            ),
+          },
+          title,
+        ),
       );
     } else if (titleType === 'linkTitle') {
       setHeading(
         createElement(
           headingLevel,
-          null,
+          { classname: cn(classes.heading) },
           createElement(
             'a',
-            { href: titleUrl, className: classes.linkTitle },
+            {
+              href: titleUrl,
+              className: cn(classes.linkTitle, classes[state]),
+            },
             title,
           ),
         ),
@@ -52,15 +68,20 @@ const LinkList = ({
     } else {
       setHeading(null);
     }
-  }, [headingLevel, setHeading, titleType, title, titleUrl]);
+  }, [headingLevel, setHeading, titleType, title, titleUrl, state]);
 
   return (
     <>
       {heading}
-      <ul className={cn(classes.linkList, classes[state])}>
+      <ul className={cn(classes.linkList)}>
         {links.map((link, index) => (
           <li key={index + link.title}>
-            <a href={link.url}>{link.title}</a>
+            <a
+              href={link.url}
+              className={cn(classes.link, classes[state])}
+            >
+              {link.title}
+            </a>
           </li>
         ))}
       </ul>
