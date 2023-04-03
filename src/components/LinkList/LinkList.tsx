@@ -54,7 +54,7 @@ const LinkList = ({
       setHeading(
         createElement(
           headingLevel,
-          { classname: cn(classes.heading) },
+          { className: cn(classes.heading) },
           createElement(
             'a',
             {
