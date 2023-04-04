@@ -5,7 +5,7 @@ export default {
   component: LinkList,
   tags: ['autodocs'],
   argTypes: {
-    state: { control: 'inline-radio' },
+    inverted: { control: 'boolean' },
     title: { control: 'text' },
   },
   parameters: {
@@ -28,7 +28,7 @@ export default {
 
 export const Normal = {
   args: {
-    state: 'normal',
+    inverted: false,
     title: 'Tittel',
   },
   parameters: {
@@ -38,7 +38,7 @@ export const Normal = {
 
 export const Inverted = {
   args: {
-    state: 'inverted',
+    inverted: true,
     title: 'Inverted list',
   },
   parameters: {
