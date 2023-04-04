@@ -23,18 +23,15 @@ export const Link = ({ inverted, text, url }: LinkProps) => {
 };
 
 interface LinkListProps {
-  //Must be normal or inverted
-  state?: 'normal' | 'inverted';
+  inverted: boolean;
 
-  inverted?: boolean;
+  /** If true, linkList heading becomes a link and requires a url value*/
+  linkTitle: boolean;
 
-  //can have normal title, a link title or no title
-  titleType?: 'regularTitle' | 'linkTitle';
+  /** Heading level for heading title, e.g 'h1' or 'h3'*/
+  headingLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-  //Different heading levels
-  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-
-  //Title object, in case of titleUrl
+  /** The LinkList heading title*/
   title?: string;
 
   /**  Optional title url, if title is a link */
@@ -45,17 +42,25 @@ interface LinkListProps {
 }
 
 const LinkList = ({
-  state = 'normal',
-  titleType = 'regularTitle',
-  // links,
+  inverted = false,
+  linkTitle = false,
   headingLevel = 'h3',
   title,
   titleUrl,
-  children,
+  children = [
+    <Link
+      text='test'
+      url='#'
+    ></Link>,
+    <Link
+      text='test'
+      url='#'
+    ></Link>,
+  ],
 }: LinkListProps) => {
   const [heading, setHeading] = useState<React.ReactNode | null>(null);
   useEffect(() => {
-    if (titleType === 'regularTitle') {
+    if (!linkTitle) {
       setHeading(
         createElement(
           headingLevel,
@@ -63,13 +68,13 @@ const LinkList = ({
             className: cn(
               classes.heading,
               classes.regularTitle,
-              state === 'inverted' ? classes.invertedTitle : null,
+              inverted ? classes.invertedTitle : null,
             ),
           },
           title,
         ),
       );
-    } else if (titleType === 'linkTitle') {
+    } else if (linkTitle) {
       setHeading(
         createElement(
           headingLevel,
@@ -78,7 +83,7 @@ const LinkList = ({
             'a',
             {
               href: titleUrl,
-              className: cn(classes.linkTitle, classes[state]),
+              className: cn(inverted ? classes.inverted : classes.linkTitle),
             },
             title,
           ),
@@ -87,15 +92,13 @@ const LinkList = ({
     } else {
       setHeading(null);
     }
-  }, [headingLevel, setHeading, titleType, title, titleUrl, state]);
+  }, [headingLevel, setHeading, linkTitle, title, titleUrl, inverted]);
 
   return (
     <>
       {heading}
       <ul className={cn(classes.linkList)}>
-        {Children.map(children, (child) => (
-          <li>{child}</li>
-        ))}
+        {Children && Children.map(children, (child) => <li>{child}</li>)}
       </ul>
     </>
   );
