@@ -1,4 +1,4 @@
-import React, { createElement, useEffect, useState, Children } from 'react';
+import React, { createElement, useEffect, useState } from 'react';
 import cn from 'classnames';
 
 import classes from './LinkList.module.css';
@@ -23,13 +23,13 @@ export const Link = ({ inverted, text, url }: LinkProps) => {
 };
 
 interface LinkListProps {
-  inverted: boolean;
+  inverted?: boolean;
 
   /** If true, linkList heading becomes a link and requires a url value*/
-  linkTitle: boolean;
+  linkTitle?: boolean;
 
   /** Heading level for heading title, e.g 'h1' or 'h3'*/
-  headingLevel: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
   /** The LinkList heading title*/
   title?: string;
@@ -47,7 +47,7 @@ const LinkList = ({
   headingLevel = 'h3',
   title,
   titleUrl,
-  children = [
+  children /* = [
     <Link
       text='test'
       url='#'
@@ -56,8 +56,23 @@ const LinkList = ({
       text='test'
       url='#'
     ></Link>,
-  ],
+    <a>hei</a>,
+    <Link
+      text='test'
+      url='#'
+    ></Link>,
+  ],*/,
 }: LinkListProps) => {
+  // Uses React.Children.map to map out and manipulate the child elements in the LinkList
+  const linkElements = React.Children.map(children, (child) => {
+    // Verifies if the child element is a valid React component and of type Link
+    if (React.isValidElement(child) && child.type === Link) {
+      // Clones the child element and spreads existing props and inverted prop to the cloned element
+      return <li>{React.cloneElement(child, { ...child.props, inverted })}</li>;
+    }
+    return null;
+  });
+
   const [heading, setHeading] = useState<React.ReactNode | null>(null);
   useEffect(() => {
     if (!linkTitle) {
@@ -97,9 +112,7 @@ const LinkList = ({
   return (
     <>
       {heading}
-      <ul className={cn(classes.linkList)}>
-        {Children && Children.map(children, (child) => <li>{child}</li>)}
-      </ul>
+      <ul className={cn(classes.linkList)}>{linkElements}</ul>
     </>
   );
 };
