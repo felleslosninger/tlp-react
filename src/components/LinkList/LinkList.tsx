@@ -67,7 +67,7 @@ const LinkList = ({
   const linkElements = React.Children.map(children, (child) => {
     // Verifies if the child element is a valid React component and of type Link
     if (React.isValidElement(child) && child.type === Link) {
-      // Clones the child element and spreads existing props and inverted prop to the cloned element
+      // Clones the child element, spreads existing child props and the inverted prop to the cloned element
       return <li>{React.cloneElement(child, { ...child.props, inverted })}</li>;
     }
     return null;
