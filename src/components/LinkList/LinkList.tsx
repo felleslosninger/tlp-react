@@ -1,8 +1,9 @@
 import React, { createElement, useEffect, useState } from 'react';
 import cn from 'classnames';
 
-import classes from './LinkList.module.css';
 import { isValidUrl } from '../../utils/StringHelper';
+
+import classes from './LinkList.module.css';
 
 export interface LinkProps {
   inverted?: false;
