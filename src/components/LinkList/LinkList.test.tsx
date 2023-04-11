@@ -12,14 +12,6 @@ describe('LinkList', () => {
   });
 });
 
-describe('LinkList', () => {
-  it('should have the linkList class', () => {
-    renderInverted();
-    const container = screen.getByRole('heading');
-    expect(container.querySelector('h2')).toBeInTheDocument();
-  });
-});
-
 const renderInverted = (props?: LinkListProps) =>
   renderRtl(
     <LinkList

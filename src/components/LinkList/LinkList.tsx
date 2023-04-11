@@ -2,6 +2,7 @@ import React, { createElement, useEffect, useState } from 'react';
 import cn from 'classnames';
 
 import classes from './LinkList.module.css';
+import { isValidUrl } from '../../utils/StringHelper';
 
 export interface LinkProps {
   inverted?: false;
@@ -84,24 +85,31 @@ const LinkList = ({
         ),
       );
     } else if (linkTitle) {
-      setHeading(
-        createElement(
-          headingLevel,
-          { className: cn(classes.heading) },
+      // If linkTitle without a valid titleUrl or titleUrl is undefines, throw errormessage to console
+      if (titleUrl === undefined || !isValidUrl(titleUrl)) {
+        throw Error('Enter a valid url in the titleUrl prop');
+      } else {
+        setHeading(
           createElement(
-            'a',
-            {
-              href: titleUrl,
-              className: cn(inverted ? classes.inverted : classes.linkTitle),
-            },
+            headingLevel,
+            { className: cn(classes.heading) },
             createElement(
-              'span',
-              { className: cn(inverted ? classes.invertedSpan : classes.span) },
-              title,
+              'a',
+              {
+                href: titleUrl,
+                className: cn(inverted ? classes.inverted : classes.linkTitle),
+              },
+              createElement(
+                'span',
+                {
+                  className: cn(inverted ? classes.invertedSpan : classes.span),
+                },
+                title,
+              ),
             ),
           ),
-        ),
-      );
+        );
+      }
     } else {
       setHeading(null);
     }
