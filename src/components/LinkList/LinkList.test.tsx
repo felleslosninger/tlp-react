@@ -6,19 +6,19 @@ import { LinkList, Link } from './LinkList';
 
 describe('LinkList', () => {
   it('should have the linkList class', () => {
-    renderInverted();
+    render();
     const list = screen.getByRole('list');
     expect(list.classList).toContain('linkList');
   });
 
   it('should render an inverted list if inverted prop is provided', () => {
-    renderInverted();
+    render();
     const list = screen.getByRole('link');
     expect(list.classList).toContain('invertedTestLinks');
   });
 });
 
-const renderInverted = (props?: LinkListProps) =>
+const render = (props?: LinkListProps) =>
   renderRtl(
     <LinkList
       inverted
@@ -26,6 +26,6 @@ const renderInverted = (props?: LinkListProps) =>
       headingLevel='h1'
       {...props}
     >
-      <Link url='https://www.vg.no/'>Deling av data</Link>
+      <Link url='https://www.example.no/'>Deling av data</Link>
     </LinkList>,
   );

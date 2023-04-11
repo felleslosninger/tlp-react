@@ -89,28 +89,28 @@ const LinkList = ({
       // If linkTitle without a valid titleUrl or titleUrl is undefines, throw errormessage to
       if (titleUrl === undefined || !isValidUrl(titleUrl)) {
         throw Error('Enter a valid url in the titleUrl prop');
-      } else {
-        setHeading(
+      } // else {
+      setHeading(
+        createElement(
+          headingLevel,
+          { className: cn(classes.heading) },
           createElement(
-            headingLevel,
-            { className: cn(classes.heading) },
+            'a',
+            {
+              href: titleUrl,
+              className: cn(inverted ? classes.inverted : classes.linkTitle),
+            },
             createElement(
-              'a',
+              'span',
               {
-                href: titleUrl,
-                className: cn(inverted ? classes.inverted : classes.linkTitle),
+                className: cn(inverted ? classes.invertedSpan : classes.span),
               },
-              createElement(
-                'span',
-                {
-                  className: cn(inverted ? classes.invertedSpan : classes.span),
-                },
-                title,
-              ),
+              title,
             ),
           ),
-        );
-      }
+        ),
+      );
+      //}
     } else {
       setHeading(null);
     }
