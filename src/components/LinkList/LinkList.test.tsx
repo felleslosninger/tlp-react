@@ -10,6 +10,12 @@ describe('LinkList', () => {
     const list = screen.getByRole('list');
     expect(list.classList).toContain('linkList');
   });
+
+  it('should render an inverted list if inverted prop is provided', () => {
+    renderInverted();
+    const list = screen.getByRole('link');
+    expect(list.classList).toContain('invertedTestLinks');
+  });
 });
 
 const renderInverted = (props?: LinkListProps) =>
@@ -18,9 +24,8 @@ const renderInverted = (props?: LinkListProps) =>
       inverted
       title='title'
       headingLevel='h1'
-      linkTitle
       {...props}
     >
-      <Link url='#'>Deling av data</Link>
+      <Link url='https://www.vg.no/'>Deling av data</Link>
     </LinkList>,
   );
