@@ -85,7 +85,7 @@ const LinkList = ({
         ),
       );
     } else if (linkTitle) {
-      // If linkTitle without a valid titleUrl or titleUrl is undefines, throw errormessage to console
+      // If linkTitle without a valid titleUrl or titleUrl is undefines, throw errormessage to
       if (titleUrl === undefined || !isValidUrl(titleUrl)) {
         throw Error('Enter a valid url in the titleUrl prop');
       } else {
