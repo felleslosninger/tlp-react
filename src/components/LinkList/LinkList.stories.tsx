@@ -34,26 +34,11 @@ export const Normal = {
     inverted: false,
     title: 'Tittel',
     children: [
-      <Link
-        text='Arkitekturprinsipper'
-        url='#'
-      ></Link>,
-      <Link
-        text='Deling av data'
-        url='#'
-      ></Link>,
-      <Link
-        text='Informasjonsforvaltning'
-        url='#'
-      ></Link>,
-      <Link
-        text='Design'
-        url='#'
-      ></Link>,
-      <Link
-        text='Interne applikasjoner'
-        url='#'
-      ></Link>,
+      <Link url='#'>Arkitekturprinsipper</Link>,
+      <Link url='#'>Deling av data</Link>,
+      <Link url='#'>Informasjonsforvaltning</Link>,
+      <Link url='#'>Design</Link>,
+      <Link url='#'>Interne applikasjoner</Link>,
     ],
   },
   parameters: {
@@ -64,26 +49,11 @@ export const Normal = {
 export const WithoutTitle = {
   args: {
     children: [
-      <Link
-        text='Arkitekturprinsipper'
-        url='#'
-      ></Link>,
-      <Link
-        text='Deling av data'
-        url='#'
-      ></Link>,
-      <Link
-        text='Informasjonsforvaltning'
-        url='#'
-      ></Link>,
-      <Link
-        text='Design'
-        url='#'
-      ></Link>,
-      <Link
-        text='Interne applikasjoner'
-        url='#'
-      ></Link>,
+      <Link url='#'>Arkitekturprinsipper</Link>,
+      <Link url='#'>Deling av data</Link>,
+      <Link url='#'>Informasjonsforvaltning</Link>,
+      <Link url='#'>Design</Link>,
+      <Link url='#'>Interne applikasjoner</Link>,
     ],
   },
   parameters: {
@@ -96,26 +66,11 @@ export const Inverted = {
     inverted: true,
     title: 'Inverted list',
     children: [
-      <Link
-        text='Arkitekturprinsipper'
-        url='#'
-      ></Link>,
-      <Link
-        text='Deling av data'
-        url='#'
-      ></Link>,
-      <Link
-        text='Informasjonsforvaltning'
-        url='#'
-      ></Link>,
-      <Link
-        text='Design'
-        url='#'
-      ></Link>,
-      <Link
-        text='Interne applikasjoner'
-        url='#'
-      ></Link>,
+      <Link url='#'>Arkitekturprinsipper</Link>,
+      <Link url='#'>Deling av data</Link>,
+      <Link url='#'>Informasjonsforvaltning</Link>,
+      <Link url='#'>Design</Link>,
+      <Link url='#'>Interne applikasjoner</Link>,
     ],
   },
   parameters: {

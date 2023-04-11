@@ -6,12 +6,12 @@ import classes from './LinkList.module.css';
 export interface LinkProps {
   inverted?: false;
 
-  text: string;
+  children: React.ReactNode;
 
   url: string;
 }
 
-export const Link = ({ inverted, text, url }: LinkProps) => {
+export const Link = ({ inverted, url, children }: LinkProps) => {
   return (
     <a
       className={cn(
@@ -20,7 +20,7 @@ export const Link = ({ inverted, text, url }: LinkProps) => {
       )}
       href={url}
     >
-      {text}
+      {children}
     </a>
   );
 };
