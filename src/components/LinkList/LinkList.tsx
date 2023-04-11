@@ -46,29 +46,19 @@ const LinkList = ({
   linkTitle = false,
   headingLevel = 'h3',
   title,
-  titleUrl = '#',
-  children = [
-    <Link
-      text='test'
-      url='#'
-    ></Link>,
-    <Link
-      text='test'
-      url='#'
-    ></Link>,
-    <a>hei</a>,
-    <Link
-      text='test'
-      url='#'
-    ></Link>,
-  ],
+  titleUrl,
+  children,
 }: LinkListProps) => {
   // Uses React.Children.map to map out and manipulate the child elements in the LinkList
-  const linkElements = React.Children.map(children, (child) => {
+  const linkElements = React.Children.map(children, (child, index) => {
     // Verifies if the child element is a valid React component and of type Link
     if (React.isValidElement(child) && child.type === Link) {
       // Clones the child element, spreads existing child props and the inverted prop to the cloned element
-      return <li>{React.cloneElement(child, { ...child.props, inverted })}</li>;
+      return (
+        <li key={child.props.text + index}>
+          {React.cloneElement(child, { ...child.props, inverted })}
+        </li>
+      );
     }
     return null;
   });

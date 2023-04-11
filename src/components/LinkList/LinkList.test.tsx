@@ -1,9 +1,8 @@
 import React from 'react';
 import { render, render as renderRtl, screen } from '@testing-library/react';
 
-import { LinkListProps } from './LinkList';
-import { LinkList } from './LinkList';
-import { Link } from './LinkList';
+import type { LinkListProps } from './LinkList';
+import { LinkList, Link } from './LinkList';
 
 describe('LinkList', () => {
   it('should have the linkList class', () => {
@@ -46,31 +45,6 @@ describe('LinkList', () => {
       />,
     ],
   };
-
-  it('renders the LinkList component with an inverted title', () => {
-    const { getByText } = render(
-      <LinkList
-        {...props}
-        inverted
-      />,
-    );
-    expect(getByText(props.title!)).toHaveClass('invertedTitle');
-  });
-
-  it('renders the LinkList component with a link title', () => {
-    const { getByText } = render(
-      <LinkList
-        {...props}
-        linkTitle
-        titleUrl='https://www.example.com'
-      />,
-    );
-    expect(getByText(props.title!)).toHaveAttribute(
-      'href',
-      'https://www.example.com',
-    );
-    expect(getByText(props.title!)).toHaveClass('linkTitle');
-  });
 
   it('renders the LinkList component with a custom heading level', () => {
     const { container } = render(

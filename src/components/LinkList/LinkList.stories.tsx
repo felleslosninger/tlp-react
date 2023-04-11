@@ -1,4 +1,7 @@
-import { LinkList } from './LinkList';
+/* eslint-disable react/jsx-key */
+import React from 'react';
+
+import { Link, LinkList } from './LinkList';
 
 export default {
   title: 'LinkList',
@@ -30,6 +33,13 @@ export const Normal = {
   args: {
     inverted: false,
     title: 'Tittel',
+    children: [
+      // eslint-disable-next-line react/jsx-key
+      <Link
+        text='TestLink'
+        url='#'
+      ></Link>,
+    ],
   },
   parameters: {
     layout: 'centered',
@@ -40,6 +50,20 @@ export const Inverted = {
   args: {
     inverted: true,
     title: 'Inverted list',
+    children: [
+      <Link
+        text='TestLink'
+        url='hei'
+      ></Link>,
+      <Link
+        text='TestLink'
+        url='hei'
+      ></Link>,
+      <Link
+        text='TestLink'
+        url='hei'
+      ></Link>,
+    ],
   },
   parameters: {
     backgrounds: {
