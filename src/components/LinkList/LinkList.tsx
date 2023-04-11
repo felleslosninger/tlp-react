@@ -14,7 +14,10 @@ export interface LinkProps {
 export const Link = ({ inverted, text, url }: LinkProps) => {
   return (
     <a
-      className={cn(classes.link, inverted ? classes.inverted : classes.normal)}
+      className={cn(
+        classes.link,
+        inverted ? classes.invertedTestLinks : classes.normal,
+      )}
       href={url}
     >
       {text}
@@ -23,6 +26,7 @@ export const Link = ({ inverted, text, url }: LinkProps) => {
 };
 
 interface LinkListProps {
+  /** If true, linkList becomes inverted*/
   inverted?: boolean;
 
   /** If true, linkList heading becomes a link and requires a url value*/
@@ -37,8 +41,8 @@ interface LinkListProps {
   /**  Optional title url, if title is a link */
   titleUrl?: string;
 
-  /** Children in ul, must be instace of <Link/> component */
-  children?: React.ReactNode;
+  /** Children in ul, must be instace of <Link/> component. Required to use the LinkList component */
+  children: React.ReactNode;
 }
 
 const LinkList = ({
@@ -90,7 +94,11 @@ const LinkList = ({
               href: titleUrl,
               className: cn(inverted ? classes.inverted : classes.linkTitle),
             },
-            createElement('span', { className: cn(classes.span) }, title),
+            createElement(
+              'span',
+              { className: cn(inverted ? classes.invertedSpan : classes.span) },
+              title,
+            ),
           ),
         ),
       );

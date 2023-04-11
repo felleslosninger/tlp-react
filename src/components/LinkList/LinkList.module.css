@@ -10,7 +10,7 @@
 }
 
 .heading {
-  font-size: var(--link-heading-size);
+  font-size: var(--heading-font-size);
   font-weight: 500;
   line-height: 130%;
   margin: 0;
@@ -32,6 +32,16 @@
 
 .span:hover {
   border-bottom: 1px solid var(--color-blue-link-hover);
+}
+
+.invertedSpan {
+  color: var(--color-neutral-white);
+  border-bottom: 1px solid var(--color-neutral-white);
+  font-size: var(--heading-font-size);
+}
+
+.invertedSpan:hover {
+  border-bottom: none;
 }
 
 .regularTitle {
@@ -74,9 +84,19 @@
 
 .inverted {
   color: var(--color-neutral-white);
-  border-bottom: 1px solid var(--color-neutral-white);
+  text-decoration: none;
 }
 
 .invertedTitle {
   color: var(--color-neutral-white);
+}
+
+.invertedTestLinks {
+  color: var(--color-neutral-white);
+  border-bottom: 1px solid var(--color-neutral-white);
+}
+
+.invertedTestLinks:hover {
+  color: var(--color-neutral-white);
+  border-bottom: none;
 }

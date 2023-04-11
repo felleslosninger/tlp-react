@@ -34,9 +34,54 @@ export const Normal = {
     inverted: false,
     title: 'Tittel',
     children: [
-      // eslint-disable-next-line react/jsx-key
       <Link
-        text='TestLink'
+        text='Arkitekturprinsipper'
+        url='#'
+      ></Link>,
+      <Link
+        text='Deling av data'
+        url='#'
+      ></Link>,
+      <Link
+        text='Informasjonsforvaltning'
+        url='#'
+      ></Link>,
+      <Link
+        text='Design'
+        url='#'
+      ></Link>,
+      <Link
+        text='Interne applikasjoner'
+        url='#'
+      ></Link>,
+    ],
+  },
+  parameters: {
+    layout: 'centered',
+  },
+};
+
+export const WithoutTitle = {
+  args: {
+    children: [
+      <Link
+        text='Arkitekturprinsipper'
+        url='#'
+      ></Link>,
+      <Link
+        text='Deling av data'
+        url='#'
+      ></Link>,
+      <Link
+        text='Informasjonsforvaltning'
+        url='#'
+      ></Link>,
+      <Link
+        text='Design'
+        url='#'
+      ></Link>,
+      <Link
+        text='Interne applikasjoner'
         url='#'
       ></Link>,
     ],
@@ -52,16 +97,24 @@ export const Inverted = {
     title: 'Inverted list',
     children: [
       <Link
-        text='TestLink'
-        url='hei'
+        text='Arkitekturprinsipper'
+        url='#'
       ></Link>,
       <Link
-        text='TestLink'
-        url='hei'
+        text='Deling av data'
+        url='#'
       ></Link>,
       <Link
-        text='TestLink'
-        url='hei'
+        text='Informasjonsforvaltning'
+        url='#'
+      ></Link>,
+      <Link
+        text='Design'
+        url='#'
+      ></Link>,
+      <Link
+        text='Interne applikasjoner'
+        url='#'
       ></Link>,
     ],
   },
