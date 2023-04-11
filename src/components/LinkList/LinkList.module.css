@@ -1,5 +1,9 @@
 :root {
-  --color-blue: rgba(0 98 186 / 1);
+  --color-blue-link: rgba(0 98 186 / 1);
+  --color-blue-link-hover: rgba(0 78 149 / 1);
+  --color-blue-link-focus: rgba(152 23 126 / 1);
+  --color-blue-link-pressed: rgba(0 49 93 / 1);
+  --color-purple-link-visited: rgba(122 18 101 / 1);
   --color-neutral-white: rgba(255 255 255 / 1);
   --color-neutral-grey: rgba(30 43 60 / 1);
   --heading-font-size: 18px;
@@ -13,10 +17,20 @@
 }
 
 .linkTitle {
-  color: var(--color-blue);
+  color: var(--color-blue-link);
   text-decoration: none;
-  border-bottom: 1px solid var(--color-blue);
   font-size: var(--heading-font-size);
+}
+
+.linkTitle:hover {
+  color: var(--color-blue-link-hover);
+}
+
+.span {
+  border-bottom: 1px solid var(--color-blue-link);
+}
+.span:hover {
+  border-bottom: 1px solid var(--color-blue-link-hover);
 }
 
 .regularTitle {
@@ -42,10 +56,18 @@
 .link {
   text-decoration: none;
 }
+.link:hover {
+  color: var(--color-blue-link-hover);
+}
+
+.link:focus {
+  border: 2px solid #98177e;
+  border-radius: 6px;
+}
 
 .normal {
-  color: var(--color-blue);
-  border-bottom: 1px solid var(--color-blue);
+  color: var(--color-blue-link);
+  border-bottom: 1px solid var(--color-blue-link);
 }
 
 .inverted {
