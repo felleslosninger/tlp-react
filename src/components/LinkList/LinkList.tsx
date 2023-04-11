@@ -46,8 +46,8 @@ const LinkList = ({
   linkTitle = false,
   headingLevel = 'h3',
   title,
-  titleUrl,
-  children /* = [
+  titleUrl = '#',
+  children = [
     <Link
       text='test'
       url='#'
@@ -61,7 +61,7 @@ const LinkList = ({
       text='test'
       url='#'
     ></Link>,
-  ],*/,
+  ],
 }: LinkListProps) => {
   // Uses React.Children.map to map out and manipulate the child elements in the LinkList
   const linkElements = React.Children.map(children, (child) => {
@@ -100,7 +100,7 @@ const LinkList = ({
               href: titleUrl,
               className: cn(inverted ? classes.inverted : classes.linkTitle),
             },
-            title,
+            createElement('span', { className: cn(classes.span) }, title),
           ),
         ),
       );
