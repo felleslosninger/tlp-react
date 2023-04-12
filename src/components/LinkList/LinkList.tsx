@@ -1,8 +1,6 @@
 import React, { createElement, useEffect, useState } from 'react';
 import cn from 'classnames';
 
-import { isValidUrl } from '../../utils/StringHelper';
-
 import classes from './LinkList.module.css';
 
 export interface LinkProps {
@@ -76,8 +74,8 @@ const LinkList = ({
       createNormalTitle();
     } else if (linkTitle) {
       // If linkTitle is true without a valid titleUrl or titleUrl is undefined, throw errormessage to
-      if (titleUrl === undefined || !isValidUrl(titleUrl)) {
-        throw Error('Enter a valid url in the titleUrl prop');
+      if (titleUrl === undefined) {
+        errorMessage('Enter a valid url in the titleUrl prop');
       } else {
         createLinkTitle();
       }
@@ -86,6 +84,9 @@ const LinkList = ({
     }
   }, [headingLevel, setHeading, linkTitle, title, titleUrl, inverted]);
 
+  const errorMessage = (message: string) => {
+    throw Error(message);
+  };
   const createNormalTitle = () => {
     setHeading(
       createElement(
