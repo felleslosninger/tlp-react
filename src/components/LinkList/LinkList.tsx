@@ -1,10 +1,10 @@
-import React, { createElement, useEffect, useState } from 'react';
+import React, { ReactElement, createElement, useEffect, useState } from 'react';
 import cn from 'classnames';
 
 import classes from './LinkList.module.css';
 
 export interface LinkProps {
-  inverted?: false;
+  inverted?: boolean;
 
   children: React.ReactNode;
 
@@ -42,7 +42,8 @@ interface LinkListProps {
   titleUrl?: string;
 
   /** Children in ul, must be instace of <Link/> component. Required to use the LinkList component */
-  children: React.ReactNode;
+  //children: React.ReactNode;
+  children: ReactElement<LinkProps> | Array<ReactElement<LinkProps>>;
 }
 
 const LinkList = ({
@@ -59,7 +60,7 @@ const LinkList = ({
     if (React.isValidElement(child) && child.type === Link) {
       // Clones the child element, spreads existing child props and the inverted prop to the cloned element
       return (
-        <li key={child.props.text + index}>
+        <li key={`${child.props.url}-${index}`}>
           {React.cloneElement(child, { ...child.props, inverted })}
         </li>
       );
