@@ -75,7 +75,7 @@ const LinkList = ({
       createNormalTitle();
     } else if (linkTitle) {
       // If linkTitle is true without a valid titleUrl or titleUrl is undefined, throw errormessage to
-      if (titleUrl === undefined) {
+      if (titleUrl === undefined || titleUrl === '') {
         errorMessage('Enter a valid url in the titleUrl prop');
       } else {
         createLinkTitle();
