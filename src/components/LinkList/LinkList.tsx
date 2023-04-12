@@ -70,51 +70,60 @@ const LinkList = ({
   });
 
   const [heading, setHeading] = useState<React.ReactNode | null>(null);
+
   useEffect(() => {
     if (!linkTitle) {
-      setHeading(
-        createElement(
-          headingLevel,
-          {
-            className: cn(
-              classes.heading,
-              classes.regularTitle,
-              inverted ? classes.invertedTitle : null,
-            ),
-          },
-          title,
-        ),
-      );
+      createNormalTitle();
     } else if (linkTitle) {
-      // If linkTitle without a valid titleUrl or titleUrl is undefines, throw errormessage to
+      // If linkTitle is true without a valid titleUrl or titleUrl is undefined, throw errormessage to
       if (titleUrl === undefined || !isValidUrl(titleUrl)) {
         throw Error('Enter a valid url in the titleUrl prop');
-      } // else {
-      setHeading(
-        createElement(
-          headingLevel,
-          { className: cn(classes.heading) },
-          createElement(
-            'a',
-            {
-              href: titleUrl,
-              className: cn(inverted ? classes.inverted : classes.linkTitle),
-            },
-            createElement(
-              'span',
-              {
-                className: cn(inverted ? classes.invertedSpan : classes.span),
-              },
-              title,
-            ),
-          ),
-        ),
-      );
-      //}
+      } else {
+        createLinkTitle();
+      }
     } else {
       setHeading(null);
     }
   }, [headingLevel, setHeading, linkTitle, title, titleUrl, inverted]);
+
+  const createNormalTitle = () => {
+    setHeading(
+      createElement(
+        headingLevel,
+        {
+          className: cn(
+            classes.heading,
+            classes.regularTitle,
+            inverted ? classes.invertedTitle : null,
+          ),
+        },
+        title,
+      ),
+    );
+  };
+
+  const createLinkTitle = () => {
+    setHeading(
+      createElement(
+        headingLevel,
+        { className: cn(classes.heading) },
+        createElement(
+          'a',
+          {
+            href: titleUrl,
+            className: cn(inverted ? classes.inverted : classes.linkTitle),
+          },
+          createElement(
+            'span',
+            {
+              className: cn(inverted ? classes.invertedSpan : classes.span),
+            },
+            title,
+          ),
+        ),
+      ),
+    );
+  };
 
   return (
     <>
