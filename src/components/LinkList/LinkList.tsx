@@ -70,8 +70,8 @@ const LinkList = ({
         </li>
       );
     } else {
-      console.log('Test');
-      // errorMessage(ERRORMESSAGE);
+      //console.log('Test');
+      errorMessage(ERRORMESSAGE);
     }
     return null;
   });
