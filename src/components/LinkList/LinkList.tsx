@@ -43,10 +43,10 @@ interface LinkListProps {
   titleUrl?: string;
 
   /** Children in ul, must be instace of <Link/> component. Required to use the LinkList component */
-  //children: React.ReactNode;
   children: ReactElement<LinkProps> | Array<ReactElement<LinkProps>>;
 }
 
+export const ERRORMESSAGE = 'Only use Link components as children';
 const LinkList = ({
   inverted = false,
   linkTitle = false,
@@ -55,6 +55,10 @@ const LinkList = ({
   titleUrl,
   children,
 }: LinkListProps) => {
+  const errorMessage = (message: string) => {
+    throw Error(message);
+  };
+
   // Uses React.Children.map to map out and manipulate the child elements in the LinkList
   const linkElements = React.Children.map(children, (child, index) => {
     // Verifies if the child element is a valid React component and of type Link
@@ -65,6 +69,9 @@ const LinkList = ({
           {React.cloneElement(child, { ...child.props, inverted })}
         </li>
       );
+    } else {
+      console.log('Test');
+      // errorMessage(ERRORMESSAGE);
     }
     return null;
   });
@@ -87,7 +94,7 @@ const LinkList = ({
         ),
       );
     } else if (linkTitle) {
-      // If linkTitle is true without a valid titleUrl or titleUrl is undefined, throw errormessage to
+      // If linkTitle is true without a valid titleUrl or titleUrl is undefined, throw error message
       if (titleUrl === undefined || titleUrl === '') {
         errorMessage('Enter a valid url in the titleUrl prop');
       } else {
@@ -116,10 +123,6 @@ const LinkList = ({
       setHeading(null);
     }
   }, [headingLevel, setHeading, linkTitle, title, titleUrl, inverted]);
-
-  const errorMessage = (message: string) => {
-    throw Error(message);
-  };
 
   return (
     <>
