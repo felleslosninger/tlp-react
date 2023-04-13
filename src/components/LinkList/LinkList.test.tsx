@@ -3,7 +3,7 @@ import React from 'react';
 import { render as renderRtl, screen } from '@testing-library/react';
 
 import type { LinkListProps } from './LinkList';
-import { LinkList, Link } from './LinkList';
+import { LinkList, Link, ERRORMESSAGE } from './LinkList';
 
 describe('LinkList', () => {
   it('should have the linkList class', () => {
@@ -37,11 +37,17 @@ describe('LinkList', () => {
     jest.spyOn(console, 'error').mockImplementation(jest.fn());
     expect(renderFnc).toThrow('Enter a valid url in the titleUrl prop');
   });
+
+  it('throw error message, if children is not Link component ', () => {
+    const renderFn = () => {
+      return render({
+        children: <p>test</p>,
+      });
+    };
+    jest.spyOn(console, 'error').mockImplementation(jest.fn());
+    expect(renderFn).toThrow(ERRORMESSAGE);
+  });
 });
 
-const render = (props?: LinkListProps) =>
-  renderRtl(
-    <LinkList {...props}>
-      <Link url='test'>test</Link>
-    </LinkList>,
-  );
+const render = (props: LinkListProps) =>
+  renderRtl(<LinkList {...props}>{props.children}</LinkList>);
