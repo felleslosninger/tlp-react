@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
 import { render as renderRtl, screen } from '@testing-library/react';
 
