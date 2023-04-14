@@ -27,7 +27,7 @@ describe('LinkList', () => {
       children: [
         <Link
           key={1}
-          href='hei'
+          href='test'
         >
           test
         </Link>,
