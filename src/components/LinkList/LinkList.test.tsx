@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import React from 'react';
 import { render as renderRtl, screen } from '@testing-library/react';
 
@@ -8,7 +7,14 @@ import { LinkList, Link, ERRORMESSAGE } from './LinkList';
 describe('LinkList', () => {
   it('should have the linkList class', () => {
     render({
-      children: [<Link url='#'>test</Link>],
+      children: [
+        <Link
+          key={1}
+          href='#'
+        >
+          test
+        </Link>,
+      ],
       title: 'title',
       headingLevel: 'h1',
     });
@@ -18,7 +24,14 @@ describe('LinkList', () => {
 
   it('should render an inverted list if inverted prop is provided', () => {
     render({
-      children: [<Link url='hei'>test</Link>],
+      children: [
+        <Link
+          key={1}
+          href='hei'
+        >
+          test
+        </Link>,
+      ],
       inverted: true,
       title: 'title',
     });
@@ -29,7 +42,14 @@ describe('LinkList', () => {
   it('throw error message, if linkTitle is true and url is undefined', () => {
     const renderFnc = () => {
       return render({
-        children: [<Link url='#'>test</Link>],
+        children: [
+          <Link
+            key={1}
+            href='#'
+          >
+            test
+          </Link>,
+        ],
         title: 'title',
         linkTitle: true,
       });

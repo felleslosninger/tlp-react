@@ -4,7 +4,7 @@ import React from 'react';
 import { Link, LinkList } from './LinkList';
 
 export default {
-  title: 'LinkList',
+  title: 'LinkList2',
   component: LinkList,
   tags: ['autodocs'],
   argTypes: {
@@ -34,11 +34,16 @@ export const Normal = {
     inverted: false,
     title: 'Tittel',
     children: [
-      <Link url='#'>Arkitekturprinsipper</Link>,
-      <Link url='#'>Deling av data</Link>,
-      <Link url='#'>Informasjonsforvaltning</Link>,
-      <Link url='#'>Design</Link>,
-      <Link url='#'>Interne applikasjoner</Link>,
+      <Link
+        href='https://www.digdir.no/'
+        className='test'
+      >
+        Arkitekturprinsipper
+      </Link>,
+      <Link href='https://www.digdir.no/'>Deling av data</Link>,
+      <Link href='https://www.digdir.no/'>Informasjonsforvaltning</Link>,
+      <Link href='https://www.digdir.no/'>Design</Link>,
+      <Link href='https://www.digdir.no/'>Interne applikasjoner</Link>,
     ],
   },
   parameters: {
@@ -49,11 +54,11 @@ export const Normal = {
 export const WithoutTitle = {
   args: {
     children: [
-      <Link url='#'>Arkitekturprinsipper</Link>,
-      <Link url='#'>Deling av data</Link>,
-      <Link url='#'>Informasjonsforvaltning</Link>,
-      <Link url='#'>Design</Link>,
-      <Link url='#'>Interne applikasjoner</Link>,
+      <Link href='https://www.digdir.no/'>Arkitekturprinsipper</Link>,
+      <Link href='https://www.digdir.no/'>Deling av data</Link>,
+      <Link href='https://www.digdir.no/'>Informasjonsforvaltning</Link>,
+      <Link href='https://www.digdir.no/'>Design</Link>,
+      <Link href='https://www.digdir.no/'>Interne applikasjoner</Link>,
     ],
   },
   parameters: {
@@ -66,11 +71,11 @@ export const Inverted = {
     inverted: true,
     title: 'Inverted list',
     children: [
-      <Link url='#'>Arkitekturprinsipper</Link>,
-      <Link url='#'>Deling av data</Link>,
-      <Link url='#'>Informasjonsforvaltning</Link>,
-      <Link url='#'>Design</Link>,
-      <Link url='#'>Interne applikasjoner</Link>,
+      <Link href='https://www.digdir.no/'>Arkitekturprinsipper</Link>,
+      <Link href='https://www.digdir.no/'>Deling av data</Link>,
+      <Link href='https://www.digdir.no/'>Informasjonsforvaltning</Link>,
+      <Link href='https://www.digdir.no/'>Design</Link>,
+      <Link href='https://www.digdir.no/'>Interne applikasjoner</Link>,
     ],
   },
   parameters: {
