@@ -106,7 +106,9 @@ const LinkList = ({
               createElement(
                 'span',
                 {
-                  className: cn(inverted ? classes.invertedSpan : classes.span),
+                  className: cn(
+                    inverted ? classes.invertedSpan : classes.insideLinkTxt,
+                  ),
                 },
                 title,
               ),
@@ -120,10 +122,10 @@ const LinkList = ({
   }, [headingLevel, setHeading, linkTitle, title, titleUrl, inverted]);
 
   return (
-    <>
+    <div className={classes.wrapper}>
       {heading}
       <ul className={cn(classes.linkList)}>{linkElements}</ul>
-    </>
+    </div>
   );
 };
 
