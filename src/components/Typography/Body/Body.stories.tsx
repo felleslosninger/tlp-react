@@ -1,8 +1,8 @@
-import { Heading } from './Heading';
+import { Body } from './Body';
 
 export default {
-  title: 'Components/Typography/Heading',
-  component: Heading,
+  title: 'Components/Typography/Body',
+  component: Body,
   tags: ['autodocs'],
   argTypes: {},
   parameters: {
@@ -25,8 +25,7 @@ export default {
 
 export const Default = {
   args: {
-    children: 'Heading',
-    level: 1,
-    size: 'large',
+    children: 'Body',
+    size: 'medium',
   },
 };
