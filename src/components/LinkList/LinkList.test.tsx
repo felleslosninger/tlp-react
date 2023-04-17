@@ -22,7 +22,7 @@ describe('LinkList', () => {
     expect(list.classList).toContain('linkList');
   });
 
-  it('should render an inverted list if inverted prop is provided', () => {
+  it('should render an inverted list if inverted prop is provided.', () => {
     render({
       children: [
         <Link
