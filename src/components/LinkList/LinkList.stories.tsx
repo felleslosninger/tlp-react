@@ -12,7 +12,7 @@ const CHILDREN = [
 ];
 
 export default {
-  title: 'LinkList',
+  title: 'Components/LinkList',
   component: LinkList,
   tags: ['autodocs'],
   argTypes: {

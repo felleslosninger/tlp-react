@@ -1,0 +1,36 @@
+.heading {
+  margin: 0;
+  color: #1e2b3c;
+}
+
+.headingMargin {
+  margin-bottom: 24px;
+}
+
+.headingXxlarge {
+  font-size: 44px;
+}
+
+.headingXlarge {
+  font-size: 36px;
+}
+
+.headingLarge {
+  font-size: 32px;
+}
+
+.headingMedium {
+  font-size: 28px;
+}
+
+.headingSmall {
+  font-size: 24px;
+}
+
+.headingXsmall {
+  font-size: 20px;
+}
+
+.headingXxsmall {
+  font-size: 18px;
+}

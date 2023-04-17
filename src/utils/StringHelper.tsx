@@ -10,3 +10,7 @@ export const isValidUrl = (urlString: string) => {
   ); // validate fragment locator
   return !!urlPattern.test(urlString);
 };
+
+export const capitalizeString = (string: string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
