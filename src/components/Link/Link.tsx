@@ -10,7 +10,13 @@ export interface LinkProps {
   className?: string;
 }
 
-const Link = ({ inverted, children, href, className, ...rest }: LinkProps) => {
+export const Link = ({
+  inverted,
+  children,
+  href,
+  className,
+  ...rest
+}: LinkProps) => {
   return (
     <a
       className={cn(

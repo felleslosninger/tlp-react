@@ -1,10 +1,8 @@
-.wrapper {
+.link {
   --color-blue-link: rgba(0 98 186 / 1);
   --color-blue-link-hover: rgba(0 78 149 / 1);
   --color-neutral-white: rgba(255 255 255 / 1);
-}
 
-.link {
   text-decoration: none;
 }
 
