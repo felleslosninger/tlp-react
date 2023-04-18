@@ -3,20 +3,14 @@ import cn from 'classnames';
 
 import classes from './Link.module.css';
 
-export interface LinkProps {
+interface LinkProps {
   inverted?: boolean;
   children: React.ReactNode;
   href: string;
   className?: string;
 }
 
-export const Link = ({
-  inverted,
-  children,
-  href,
-  className,
-  ...rest
-}: LinkProps) => {
+const Link = ({ inverted, children, href, className, ...rest }: LinkProps) => {
   return (
     <a
       className={cn(
@@ -32,4 +26,5 @@ export const Link = ({
   );
 };
 
-export default Link;
+export { Link };
+export type { LinkProps };
