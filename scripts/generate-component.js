@@ -3,7 +3,7 @@ const componentPath = 'src/components/';
 const { mkdir, writeFile } = require('fs').promises;
 
 (async function main() {
-  // Content for tst file
+  // Content for tsx file
   const tsxContent = `import React from 'react';
 import cn from 'classnames';
 
