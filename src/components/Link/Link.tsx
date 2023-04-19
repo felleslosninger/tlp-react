@@ -8,20 +8,40 @@ interface LinkProps {
   children: React.ReactNode;
   href: string;
   className?: string;
+  iconBefore?: React.ReactNode;
+  iconAfter?: React.ReactNode;
 }
 
-const Link = ({ inverted, children, href, className, ...rest }: LinkProps) => {
+const Link = ({
+  inverted,
+  children,
+  href = '#',
+  className,
+  iconBefore,
+  iconAfter,
+  ...rest
+}: LinkProps) => {
   return (
     <a
       className={cn(
         classes.link,
-        inverted ? classes.invertedTestLinks : classes.normal,
+        inverted ? classes.inverted : classes.normal,
         className,
       )}
       href={href}
       {...rest}
     >
-      {children}
+      {iconBefore && <span className={classes.iconBefore}>{iconBefore}</span>}
+      <span
+        className={cn(
+          classes.linkInner,
+          inverted ? classes.invertedInner : classes.normalInner,
+          className,
+        )}
+      >
+        {children}
+      </span>
+      {iconAfter && <span className={classes.iconAfter}>{iconAfter}</span>}
     </a>
   );
 };

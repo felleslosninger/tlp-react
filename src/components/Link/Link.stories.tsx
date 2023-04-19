@@ -1,3 +1,6 @@
+import React from 'react';
+import { MagnifyingGlassIcon } from '@navikt/aksel-icons';
+
 import { Link } from './Link';
 
 export default {
@@ -27,6 +30,26 @@ export default {
 
 export const Normal = {
   args: {
+    children: 'Link',
+  },
+  parameters: {
+    layout: 'centered',
+  },
+};
+
+export const WithIconBefore = {
+  args: {
+    iconBefore: <MagnifyingGlassIcon />,
+    children: 'Link',
+  },
+  parameters: {
+    layout: 'centered',
+  },
+};
+
+export const WithIconAfter = {
+  args: {
+    iconAfter: <MagnifyingGlassIcon />,
     children: 'Link',
   },
   parameters: {

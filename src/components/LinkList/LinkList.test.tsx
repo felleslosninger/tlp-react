@@ -1,8 +1,10 @@
 import React from 'react';
 import { render as renderRtl, screen } from '@testing-library/react';
 
+import { Link } from '../Link/Link';
+
 import type { LinkListProps } from './LinkList';
-import { LinkList, Link, ERRORMESSAGE } from './LinkList';
+import { LinkList, ERRORMESSAGE } from './LinkList';
 
 describe('LinkList', () => {
   it('should have the linkList class', () => {
