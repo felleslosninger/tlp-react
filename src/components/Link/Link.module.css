@@ -1,0 +1,43 @@
+.link {
+  --color-blue-link: rgba(0 98 186 / 1);
+  --color-blue-link-hover: rgba(0 78 149 / 1);
+  --color-neutral-white: rgba(255 255 255 / 1);
+
+  text-decoration: none;
+}
+
+.normal {
+  color: var(--color-blue-link);
+}
+
+.normal:hover {
+  color: var(--color-blue-link-hover);
+}
+
+.inverted {
+  color: var(--color-neutral-white);
+}
+
+.inverted:hover {
+  color: var(--color-neutral-white);
+}
+
+.normalInner {
+  border-bottom: 1px solid var(--color-blue-link);
+}
+
+.invertedInner {
+  border-bottom: 1px solid var(--color-neutral-white);
+}
+
+.invertedInner:hover {
+  border-bottom: none;
+}
+
+.iconBefore {
+  margin-right: 9px;
+}
+
+.iconAfter {
+  margin-left: 9px;
+}

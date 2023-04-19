@@ -1,14 +1,40 @@
-/* eslint-disable react/jsx-key */
 import React from 'react';
 
-import { Link, LinkList } from './LinkList';
+import { Link } from '../Link/Link';
+
+import { LinkList } from './LinkList';
 
 const CHILDREN = [
-  <Link href='https://www.digdir.no/'>Arkitekturprinsipper</Link>,
-  <Link href='https://www.digdir.no/'>Deling av data</Link>,
-  <Link href='https://www.digdir.no/'>Informasjonsforvaltning</Link>,
-  <Link href='https://www.digdir.no/'>Design</Link>,
-  <Link href='https://www.digdir.no/'>Interne applikasjoner</Link>,
+  <Link
+    key={1}
+    href='https://www.digdir.no/'
+  >
+    Arkitekturprinsipper
+  </Link>,
+  <Link
+    key={2}
+    href='https://www.digdir.no/'
+  >
+    Deling av data
+  </Link>,
+  <Link
+    key={3}
+    href='https://www.digdir.no/'
+  >
+    Informasjonsforvaltning
+  </Link>,
+  <Link
+    key={4}
+    href='https://www.digdir.no/'
+  >
+    Design
+  </Link>,
+  <Link
+    key={5}
+    href='https://www.digdir.no/'
+  >
+    Interne applikasjoner
+  </Link>,
 ];
 
 export default {
