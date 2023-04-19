@@ -20,13 +20,14 @@
 
 ## Get started with development ✨
 
-### 1. Install Node and Yarn
+### 1. Install Node and Yarn 3
 
-Make sure `node` and `yarn` is installed. You can do this by running:
+Make sure `node` and `yarn 3` is installed. You can do this by running:
 
 `node --version && yarn --version`
 
 ### 2. Install dependencies
+
 _(run command from root of the project)_
 
 `yarn install`
@@ -37,18 +38,18 @@ Serve Storybook on localhost:
 
 `yarn storybook`
 
-
 ## Commit ✍️
+
 This ropo uses the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
-specification in order to create nice and readable changelogs. 
+specification in order to create nice and readable changelogs.
 The [Semantic Versioning 2.0](https://semver.org/) specification is used for versioning.
 
-
 ## Styling 🎨
+
 CSS modules is used for styling in this library. Camelcase is used as the naming convention for the classes.
 
-
 ## Testing 🪛
+
 Run the following command to start the tests using React Testing Library
 
 `yarn test`
