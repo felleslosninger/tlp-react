@@ -38,7 +38,7 @@ describe('LinkList', () => {
       title: 'title',
     });
     const list = screen.getByRole('link');
-    expect(list.classList).toContain('invertedTestLinks');
+    expect(list.classList).toContain('inverted');
   });
 
   it('throw error message, if linkTitle is true and url is undefined', () => {
