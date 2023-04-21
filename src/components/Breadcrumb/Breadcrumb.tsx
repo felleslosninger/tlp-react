@@ -5,8 +5,8 @@ import { ChevronRightIcon } from '@navikt/aksel-icons';
 import classes from './Breadcrumb.module.css';
 
 interface BreadcrumbProps {
-  seperatorIcon: React.ReactNode;
-  children: React.ReactNode | Array<React.ReactNode>;
+  seperatorIcon?: React.ReactNode;
+  children: Array<React.ReactNode>;
 }
 
 const Breadcrumb = ({
@@ -24,7 +24,7 @@ const Breadcrumb = ({
   };
 
   const breadcrumbElements = React.Children.map(children, (child, index) => {
-    if (Array.isArray(children) && React.isValidElement(child)) {
+    if (children.length > 0 && React.isValidElement(child)) {
       return (
         <li
           key={index}
@@ -37,7 +37,7 @@ const Breadcrumb = ({
         </li>
       );
     } else {
-      errorMessage('Must be a valid Link element');
+      errorMessage('You must use one or more valid ReactNodes');
     }
     return null;
   });
