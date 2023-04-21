@@ -15,7 +15,9 @@
 }
 
 .seperator {
-  /* position: relative;
-  top: 4px; */
+  margin-left: 3px;
+  margin-right: 2px;
+  display: flex;
+  align-items: center;
   color: #262626;
 }

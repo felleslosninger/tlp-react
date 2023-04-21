@@ -5,7 +5,9 @@ import { ChevronRightIcon } from '@navikt/aksel-icons';
 import classes from './Breadcrumb.module.css';
 
 interface BreadcrumbProps {
+  /**Icon used to seperate elements in breadcrumb list */
   seperatorIcon?: React.ReactNode;
+  /**Array of children, that vil be rendered in the component */
   children: Array<React.ReactNode>;
 }
 
@@ -15,7 +17,6 @@ const Breadcrumb = ({
     <ChevronRightIcon
       title='a11y-title'
       fontSize='18px'
-      className={cn(classes.seperator)}
     />
   ),
 }: BreadcrumbProps) => {
@@ -33,7 +34,9 @@ const Breadcrumb = ({
           {React.cloneElement(child, {
             ...child.props,
           })}
-          {index === children.length - 1 ? null : seperatorIcon}
+          {index === children.length - 1 ? null : (
+            <span className={cn(classes.seperator)}>{seperatorIcon}</span>
+          )}
         </li>
       );
     } else {
