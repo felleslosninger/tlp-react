@@ -26,7 +26,10 @@ const Breadcrumb = ({
   const breadcrumbElements = React.Children.map(children, (child, index) => {
     if (Array.isArray(children) && React.isValidElement(child)) {
       return (
-        <li key={index}>
+        <li
+          key={index}
+          className={cn(classes.listItem)}
+        >
           {React.cloneElement(child, {
             ...child.props,
           })}

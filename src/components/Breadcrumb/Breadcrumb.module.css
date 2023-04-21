@@ -6,10 +6,16 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
 }
 
 .seperator {
-  position: relative;
-  top: 4px;
+  /* position: relative;
+  top: 4px; */
   color: #262626;
 }

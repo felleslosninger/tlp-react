@@ -4,6 +4,8 @@ import { Link } from '../Link';
 
 import { Breadcrumb } from './Breadcrumb';
 
+import { Body } from '../Typography/Body';
+
 const CHILDREN = [
   <Link
     key={1}
@@ -17,7 +19,12 @@ const CHILDREN = [
   >
     Forrige side
   </Link>,
-  <p key={3}>Nåværende side</p>,
+  <Body
+    key={3}
+    size='medium'
+  >
+    Body
+  </Body>,
 ];
 
 export default {
