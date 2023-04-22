@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+  width: 430px;
+  height: 80px;
+  left: 65px;
+  top: 213px;
+  border: 1px solid black;
+
+  background: #ffffff;
+}
