@@ -20,7 +20,7 @@ describe('LinkList', () => {
       title: 'title',
       headingLevel: 'h1',
     });
-    const list = screen.getByRole('listitem');
+    const list = screen.getByRole('list');
     expect(list.classList).toContain('linkList');
   });
 

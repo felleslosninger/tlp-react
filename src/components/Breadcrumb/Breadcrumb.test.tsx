@@ -1,11 +1,11 @@
 import React from 'react';
 import { render as renderRtl, screen } from '@testing-library/react';
+import { ChevronRightIcon } from '@navikt/aksel-icons';
+
+import { Link } from '../Link';
 
 import { Breadcrumb } from './Breadcrumb';
 import type { BreadcrumbProps } from './Breadcrumb';
-import { Link } from '../Link';
-
-import { ChevronRightIcon } from '@navikt/aksel-icons';
 
 describe('Breadcrumb', () => {
   it('should render a single child correctly', () => {
@@ -79,7 +79,6 @@ describe('Breadcrumb', () => {
         </Link>,
       ],
     });
-    screen.debug();
     const icon = screen.getByRole('img');
     expect(icon.classList).toContain('seperator');
   });
