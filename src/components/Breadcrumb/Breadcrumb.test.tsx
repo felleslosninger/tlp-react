@@ -1,6 +1,5 @@
 import React from 'react';
 import { render as renderRtl, screen } from '@testing-library/react';
-import { ChevronRightIcon } from '@navikt/aksel-icons';
 
 import { Link } from '../Link';
 
@@ -61,9 +60,6 @@ describe('Breadcrumb', () => {
 
   it('render seperator icon', () => {
     render({
-      seperatorIcon: (
-        <ChevronRightIcon className='seperator'></ChevronRightIcon>
-      ),
       children: [
         <Link
           key={1}

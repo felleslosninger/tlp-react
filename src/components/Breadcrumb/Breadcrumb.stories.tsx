@@ -1,10 +1,9 @@
 import React from 'react';
 
 import { Link } from '../Link';
+import { Body } from '../Typography/Body';
 
 import { Breadcrumb } from './Breadcrumb';
-
-import { Body } from '../Typography/Body';
 
 const CHILDREN = [
   <Link

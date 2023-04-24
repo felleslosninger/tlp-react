@@ -1,7 +1,3 @@
-import React from 'react';
-
-import { Link } from '../Link';
-
 import { LinkPanel } from './LinkPanel';
 
 const CHILDREN = 'Test Link';

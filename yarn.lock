@@ -1582,6 +1582,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@digdir/design-system-tokens@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@digdir/design-system-tokens@npm:0.0.3"
+  checksum: 70e914f0926993dfb2d0ff67f27e29f5a670f83deccf00c72f9469d595d708aec6a589b7d9d8404fd3a6d183444c3fb5a2f5ddac019dd617eba3c3f058e8e8a8
+  languageName: node
+  linkType: hard
+
 "@digdir/tlp-react@workspace:.":
   version: 0.0.0-use.local
   resolution: "@digdir/tlp-react@workspace:."
@@ -1593,6 +1600,7 @@ __metadata:
     "@babel/preset-react": ^7.18.6
     "@babel/preset-typescript": ^7.21.0
     "@digdir/design-system-react": ^0.9.0
+    "@digdir/design-system-tokens": ^0.0.3
     "@navikt/aksel-icons": ^2.8.2
     "@rollup/plugin-commonjs": ^24.0.1
     "@rollup/plugin-image": ^3.0.2

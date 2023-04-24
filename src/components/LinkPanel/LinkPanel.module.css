@@ -3,13 +3,12 @@
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
+  padding: 24px;
   color: #1e2b3c;
-  width: 430px;
-  height: 80px;
+  max-width: 600px;
+  width: 100%;
   border: 1px solid rgba(210 213 216 / 1);
   border-radius: 4px;
-
-  background: #ffffff;
 }
 
 .wrapper:hover {
@@ -17,11 +16,6 @@
 }
 
 .text {
-  margin-left: 24px;
   font-weight: 500;
   font-size: 18px;
-}
-
-.icon {
-  margin-right: 24px;
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import cn from 'classnames';
-
 import { ChevronRightIcon } from '@navikt/aksel-icons';
 
 import classes from './LinkPanel.module.css';
