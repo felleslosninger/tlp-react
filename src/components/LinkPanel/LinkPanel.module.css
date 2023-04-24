@@ -1,10 +1,27 @@
 .wrapper {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #1e2b3c;
   width: 430px;
   height: 80px;
-  left: 65px;
-  top: 213px;
-  border: 1px solid black;
+  border: 1px solid rgba(210 213 216 / 1);
+  border-radius: 4px;
 
   background: #ffffff;
+}
+
+.wrapper:hover {
+  background: rgba(230 239 248 / 1);
+}
+
+.text {
+  margin-left: 24px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.icon {
+  margin-right: 24px;
 }
