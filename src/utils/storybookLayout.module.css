@@ -1,0 +1,19 @@
+.responsiveContainer {
+  display: flex;
+  width: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .responsiveContainer {
+    width: 100%;
+  }
+}

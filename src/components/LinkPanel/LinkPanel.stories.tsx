@@ -1,6 +1,8 @@
 import type { ReactElement } from 'react';
 import React from 'react';
 
+import classes from '../../utils/storybookLayout.module.css';
+
 import { LinkPanel } from './LinkPanel';
 
 const CHILDREN = 'Test Link';
@@ -8,14 +10,14 @@ const CHILDREN = 'Test Link';
 export default {
   title: 'Components/LinkPanel',
   component: LinkPanel,
-  decorators: [
+  /*decorators: [
     (Component: () => ReactElement) => (
-      <div style={{ width: '500px' }}>{Component()}</div>
+      <div className={classes.responsiveContainer}>{Component()}</div>
     ),
-  ],
+  ],*/
   tags: ['autodocs'],
   parameters: {
-    layout: 'centered',
+    layout: 'fullwidth',
     backgrounds: {
       default: 'Light',
       values: [
@@ -33,20 +35,6 @@ export default {
 };
 
 export const Normal = {
-  args: {
-    children: CHILDREN,
-  },
-  parameters: {
-    layout: 'centered',
-  },
-};
-
-export const Small = {
-  decorators: [
-    (Component: () => ReactElement) => (
-      <div style={{ width: '300px', margin: '0 auto' }}>{Component()}</div>
-    ),
-  ],
   args: {
     children: CHILDREN,
   },

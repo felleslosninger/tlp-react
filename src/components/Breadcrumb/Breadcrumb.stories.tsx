@@ -19,7 +19,7 @@ const CHILDREN = [
     Forrige side
   </Link>,
   <Body
-    key={3}
+    key={4}
     size='medium'
   >
     Body
