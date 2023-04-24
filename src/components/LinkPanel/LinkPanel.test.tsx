@@ -1,21 +1,28 @@
 import React from 'react';
 import { render as renderRtl, screen } from '@testing-library/react';
-//import { ChevronRightIcon } from '@navikt/aksel-icons';
 
 import type { LinkPanelProps } from './LinkPanel';
 import { LinkPanel } from './LinkPanel';
 
 describe('LinkPanel', () => {
-  it('renders a link with the correct text and href', () => {
+  it('renders', () => {
+    render({
+      children: 'text',
+      href: 'https://www.test.com/',
+    });
+    expect(screen.getByRole('link')).toBeInTheDocument;
+  });
+
+  it('renders with correct text and href', () => {
     render({
       children: 'text',
       href: 'https://www.test.com/',
     });
     screen.debug;
-    expect(screen.getByRole('link')).toHaveAttribute(
-      'href',
-      'https://www.test.com/',
-    );
+    const link: HTMLAnchorElement = screen.getByRole('link');
+
+    expect(link.textContent).toEqual('text');
+    expect(link.href).toEqual('https://www.test.com/');
   });
 });
 
