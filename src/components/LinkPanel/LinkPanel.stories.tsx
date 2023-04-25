@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import React from 'react';
 
-import classes from '../../utils/storybookLayout.module.css';
+import { StorybookLayout } from '../../utils/components/StorybookLayout/StorybookLayoyt';
 
 import { LinkPanel } from './LinkPanel';
 
@@ -12,9 +12,7 @@ export default {
   component: LinkPanel,
   decorators: [
     (Component: () => ReactElement) => (
-      <div style={{ margin: '100px' }}>
-        <div className={classes.responsiveContainer}>{Component()}</div>
-      </div>
+      <StorybookLayout>{Component()}</StorybookLayout>
     ),
   ],
   tags: ['autodocs'],
