@@ -7,6 +7,7 @@
   color: #1e2b3c;
   max-width: 600px;
   min-width: 260px;
+  max-height: 80px;
   width: 100%;
   border: 1px solid rgba(210 213 216 / 1);
   border-radius: 4px;

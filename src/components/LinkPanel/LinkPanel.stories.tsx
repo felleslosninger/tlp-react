@@ -10,14 +10,16 @@ const CHILDREN = 'Test Link';
 export default {
   title: 'Components/LinkPanel',
   component: LinkPanel,
-  /*decorators: [
+  decorators: [
     (Component: () => ReactElement) => (
-      <div className={classes.responsiveContainer}>{Component()}</div>
+      <div style={{ margin: '100px' }}>
+        <div className={classes.responsiveContainer}>{Component()}</div>
+      </div>
     ),
-  ],*/
+  ],
   tags: ['autodocs'],
   parameters: {
-    layout: 'fullwidth',
+    layout: 'fullscreen',
     backgrounds: {
       default: 'Light',
       values: [
