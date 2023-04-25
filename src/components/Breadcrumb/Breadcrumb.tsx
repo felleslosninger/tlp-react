@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { ChevronRightIcon } from '@navikt/aksel-icons';
+import { errorMessage } from '../../utils/helperFunctions/ThrowMessageHelper';
 
 import classes from './Breadcrumb.module.css';
 
@@ -10,10 +11,6 @@ interface BreadcrumbProps {
 }
 
 const Breadcrumb = ({ children }: BreadcrumbProps) => {
-  const errorMessage = (message: string) => {
-    throw Error(message);
-  };
-
   const breadcrumbElements = React.Children.map(children, (child, index) => {
     if (children.length > 0 && React.isValidElement(child)) {
       return (

@@ -1,6 +1,8 @@
 import React, { createElement, useEffect, useState } from 'react';
 import cn from 'classnames';
 
+import { errorMessage } from '../../utils/helperFunctions/ThrowMessageHelper';
+
 import type { LinkProps } from '../Link/Link';
 import { Link } from '../Link/Link';
 
@@ -26,10 +28,6 @@ const LinkList = ({
   titleUrl,
   children,
 }: LinkListProps) => {
-  const errorMessage = (message: string) => {
-    throw Error(message);
-  };
-
   const linkElements = React.Children.map(children, (child, index) => {
     if (React.isValidElement(child) && child.type === Link) {
       return (
