@@ -1,15 +1,37 @@
 import React from 'react';
-import cn from 'classnames';
-
-import classes from './Dropdown.module.css';
 
 interface DropdownProps {
   children: React.ReactNode;
 }
 
-const Dropdown = ({ children }: DropdownProps) => {
-  return <div className={cn(classes.myClass)}>{children}</div>;
+export interface DropdownItemProps {
+  children: React.ReactNode;
+}
+
+const DropdownItem = ({ children }: DropdownItemProps) => {
+  return (
+    <li>
+      <a href='h'>{children}</a>
+    </li>
+  );
 };
+
+const Dropdown = ({ children }: DropdownProps) => {
+  return (
+    <ul>
+      {React.Children.map(children, (child) => {
+        if (!React.isValidElement(child)) return null;
+
+        if (child.type === Dropdown.Item) {
+          return React.cloneElement(child);
+        }
+        return null;
+      })}
+    </ul>
+  );
+};
+
+Dropdown.Item = DropdownItem;
 
 export { Dropdown };
 export type { DropdownProps };

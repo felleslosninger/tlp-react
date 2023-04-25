@@ -1,5 +1,11 @@
 import { Dropdown } from './Dropdown';
 
+const CHILDREN = [
+  <Dropdown.Item key={1}>Option 1</Dropdown.Item>,
+  <Dropdown.Item key={2}>Option 2</Dropdown.Item>,
+  <Dropdown.Item key={3}>Option 3</Dropdown.Item>,
+];
+
 export default {
   title: 'Components/Dropdown',
   component: Dropdown,
@@ -18,15 +24,14 @@ export default {
         },
         {
           name: 'Light',
-          value: '#00000',
+          value: '#FFFFFF',
         },
       ],
     },
   },
 };
-
 export const Normal = {
   args: {
-    children: 'myComponent',
+    children: CHILDREN,
   },
 };
