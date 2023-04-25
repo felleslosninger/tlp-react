@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { capitalizeString } from '../../../utils/StringHelper';
+import { capitalizeString } from '../../../utils/helperFunctions/StringHelper';
 
 import classes from './Heading.module.css';
 

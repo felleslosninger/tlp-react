@@ -96,6 +96,7 @@
   },
   "dependencies": {
     "@altinn/figma-design-tokens": "^6.0.1",
+    "@digdir/design-system-tokens": "^0.0.3",
     "upgrade": "^1.1.0"
   },
   "peerDependencies": {
