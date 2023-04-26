@@ -1,7 +1,9 @@
 import React from 'react';
+import cn from 'classnames';
+
+import classes from './Dropdown.module.css';
 
 interface DropdownProps {
-  Item: React.ReactElement;
   children:
     | React.ReactElement<DropdownItemProps>
     | Array<React.ReactElement<DropdownItemProps>>;
@@ -13,15 +15,20 @@ export interface DropdownItemProps {
 
 const DropdownItem = ({ children }: DropdownItemProps) => {
   return (
-    <li>
-      <a href='h'>{children}</a>
+    <li className={cn(classes.listItem)}>
+      <a
+        href='h'
+        className={cn(classes.listItemInner)}
+      >
+        {children}
+      </a>
     </li>
   );
 };
 
 const Dropdown = ({ children }: DropdownProps) => {
   return (
-    <ul>
+    <ul className={cn(classes.dropdownList)}>
       {React.Children.map(children, (child) => {
         if (!React.isValidElement(child)) return null;
 
@@ -34,7 +41,8 @@ const Dropdown = ({ children }: DropdownProps) => {
   );
 };
 
+DropdownItem.displayName = 'Dropdown.Item';
 Dropdown.Item = DropdownItem;
-Dropdown.Item.displayName = 'Dropdown.Item';
+
 export { Dropdown };
 export type { DropdownProps };

@@ -3,9 +3,11 @@ import React from 'react';
 import { Dropdown } from './Dropdown';
 
 const CHILDREN = [
-  <Dropdown.Item key={1}>Option 1</Dropdown.Item>,
-  <Dropdown.Item key={2}>Option 2</Dropdown.Item>,
-  <Dropdown.Item key={3}>Option 3</Dropdown.Item>,
+  <Dropdown.Item key={1}>Altinn</Dropdown.Item>,
+  <Dropdown.Item key={2}>Ansattporten</Dropdown.Item>,
+  <Dropdown.Item key={3}>Digdir</Dropdown.Item>,
+  <Dropdown.Item key={4}>Min profil</Dropdown.Item>,
+  <Dropdown.Item key={5}>Logg ut</Dropdown.Item>,
 ];
 
 export default {
