@@ -1,5 +1,11 @@
 import React from 'react';
-import { EnterIcon } from '@navikt/aksel-icons';
+import {
+  EnterIcon,
+  PersonCircleIcon,
+  HouseIcon,
+  HouseHeartIcon,
+  KeyVerticalIcon,
+} from '@navikt/aksel-icons';
 
 import { Dropdown } from './Dropdown';
 
@@ -8,6 +14,34 @@ const CHILDREN = [
   <Dropdown.Item key={2}>Ansattporten</Dropdown.Item>,
   <Dropdown.Item key={3}>Digdir</Dropdown.Item>,
   <Dropdown.Item key={4}>Min profil</Dropdown.Item>,
+  <Dropdown.Item key={5}>Logg ut</Dropdown.Item>,
+];
+
+const CHILDRENWITHICONS = [
+  <Dropdown.Item
+    icon={<HouseIcon fontSize='1.2rem' />}
+    key={1}
+  >
+    Altinn
+  </Dropdown.Item>,
+  <Dropdown.Item
+    icon={<KeyVerticalIcon fontSize='1.2rem' />}
+    key={2}
+  >
+    Ansattporten
+  </Dropdown.Item>,
+  <Dropdown.Item
+    icon={<HouseHeartIcon fontSize='1.2rem' />}
+    key={3}
+  >
+    Digdir
+  </Dropdown.Item>,
+  <Dropdown.Item
+    icon={<PersonCircleIcon fontSize='1.2rem' />}
+    key={4}
+  >
+    Min profil
+  </Dropdown.Item>,
   <Dropdown.Item
     icon={<EnterIcon fontSize='1.2rem' />}
     key={5}
@@ -40,5 +74,11 @@ export default {
 export const Normal = {
   args: {
     children: CHILDREN,
+  },
+};
+
+export const WithIcons = {
+  args: {
+    children: CHILDRENWITHICONS,
   },
 };
