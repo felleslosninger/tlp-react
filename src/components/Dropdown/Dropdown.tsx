@@ -1,7 +1,10 @@
 import React from 'react';
 
 interface DropdownProps {
-  children: React.ReactNode;
+  Item: React.ReactElement;
+  children:
+    | React.ReactElement<DropdownItemProps>
+    | Array<React.ReactElement<DropdownItemProps>>;
 }
 
 export interface DropdownItemProps {
@@ -32,6 +35,6 @@ const Dropdown = ({ children }: DropdownProps) => {
 };
 
 Dropdown.Item = DropdownItem;
-
+Dropdown.Item.displayName = 'Dropdown.Item';
 export { Dropdown };
 export type { DropdownProps };
