@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cn from 'classnames';
 
 import classes from './Dropdown.module.css';
@@ -29,17 +29,25 @@ const DropdownItem = ({ children, icon }: DropdownItemProps) => {
 };
 
 const Dropdown = ({ children }: DropdownProps) => {
-  return (
-    <ul className={cn(classes.dropdownList)}>
-      {React.Children.map(children, (child) => {
-        if (!React.isValidElement(child)) return null;
+  const [expanded, setExpanded] = useState(true);
 
-        if (child.type === Dropdown.Item) {
-          return React.cloneElement(child);
-        }
-        return null;
-      })}
-    </ul>
+  const expandedHandler = () => {
+    setExpanded(!expanded);
+  };
+  return (
+    <>
+      <button onClick={expandedHandler}>Klikk</button>
+      <ul className={cn(!expanded && classes.hide, classes.dropdownList)}>
+        {React.Children.map(children, (child) => {
+          if (!React.isValidElement(child)) return null;
+
+          if (child.type === Dropdown.Item) {
+            return React.cloneElement(child);
+          }
+          return null;
+        })}
+      </ul>
+    </>
   );
 };
 
