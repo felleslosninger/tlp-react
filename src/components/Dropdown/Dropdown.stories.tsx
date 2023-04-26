@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Dropdown } from './Dropdown';
 
 const CHILDREN = [
@@ -10,9 +12,6 @@ export default {
   title: 'Components/Dropdown',
   component: Dropdown,
   tags: ['autodocs'],
-  argTypes: {
-    children: { control: 'text' },
-  },
   parameters: {
     layout: 'centered',
     backgrounds: {
