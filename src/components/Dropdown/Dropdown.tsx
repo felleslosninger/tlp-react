@@ -11,15 +11,17 @@ interface DropdownProps {
 
 export interface DropdownItemProps {
   children: React.ReactNode;
+  icon?: React.ReactNode;
 }
 
-const DropdownItem = ({ children }: DropdownItemProps) => {
+const DropdownItem = ({ children, icon }: DropdownItemProps) => {
   return (
     <li className={cn(classes.listItem)}>
       <a
         href='h'
         className={cn(classes.listItemInner)}
       >
+        {icon && <span className={cn(classes.icon)}>{icon}</span>}
         {children}
       </a>
     </li>

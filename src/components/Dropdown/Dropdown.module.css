@@ -13,6 +13,7 @@
 }
 
 .listItemInner {
+  display: flex;
   color: var(--fds-semantic-text-neutral-default);
   width: 100%;
   text-decoration: none;
@@ -21,4 +22,11 @@
 
 .listItemInner:hover {
   background-color: var(--fds-semantic-surface-neutral-subtle-hover);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
 }

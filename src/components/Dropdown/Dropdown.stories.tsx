@@ -1,4 +1,5 @@
 import React from 'react';
+import { EnterIcon } from '@navikt/aksel-icons';
 
 import { Dropdown } from './Dropdown';
 
@@ -7,7 +8,12 @@ const CHILDREN = [
   <Dropdown.Item key={2}>Ansattporten</Dropdown.Item>,
   <Dropdown.Item key={3}>Digdir</Dropdown.Item>,
   <Dropdown.Item key={4}>Min profil</Dropdown.Item>,
-  <Dropdown.Item key={5}>Logg ut</Dropdown.Item>,
+  <Dropdown.Item
+    icon={<EnterIcon fontSize='1.2rem' />}
+    key={5}
+  >
+    Logg ut
+  </Dropdown.Item>,
 ];
 
 export default {
