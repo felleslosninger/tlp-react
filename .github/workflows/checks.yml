@@ -7,7 +7,7 @@ on:
       - main
   push:
     branches:
-      - main
+      - chore/checks
 jobs:
   checks:
     name: Checks, builds and tests code
@@ -19,11 +19,13 @@ jobs:
           version: 6.32.9
       - uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '14'
           cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: Lint Code
         run: pnpm lint:all
       - name: Lint CSS
         run: pnpm lint:style
+      - name: Tests
+        run: pnpm test

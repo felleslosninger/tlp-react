@@ -11,7 +11,7 @@
     "build:react": "pnpm --filter @digdir/tlp-react build",
     "lint": "eslint",
     "lint:all": "eslint .",
-    "lint:style": "stylelint  \"src/**/*.css\"",
+    "lint:style": "stylelint  \"packages/**/*.css\"",
     "test": "jest",
     "generate-component": "cd packages/react && node scripts/generate-component.js"
   },

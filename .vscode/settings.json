@@ -1,6 +1,7 @@
 {
   "git.rebaseWhenSync": true,
   "git.autofetch": true,
+  "files.eol": "\n",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "prettier.prettierPath": "./node_modules/prettier",
