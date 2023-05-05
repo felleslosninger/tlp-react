@@ -223,6 +223,9 @@ importers:
       '@altinn/figma-design-tokens':
         specifier: ^6.0.1
         version: 6.0.1
+      '@digdir/design-system-tokens':
+        specifier: ^0.0.3
+        version: 0.0.3
       '@navikt/ds-icons':
         specifier: ^2.3.0
         version: 2.9.8(@types/react@18.0.31)(react@18.2.0)
@@ -1753,6 +1756,10 @@ packages:
     transitivePeerDependencies:
       - '@types/react'
     dev: true
+
+  /@digdir/design-system-tokens@0.0.3:
+    resolution: {integrity: sha512-gfmUOuLsZ8rm/T9P81rVCxTa97DWtekp3ii9Joo520NB7KGJLQZeAqx+vKtkLy7a+QyKmtGwWjoXTHDjqF8wYg==}
+    dev: false
 
   /@discoveryjs/json-ext@0.5.7:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}

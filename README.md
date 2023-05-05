@@ -1,10 +1,10 @@
 <h1 align="center">
     <img src="https://i.imgur.com/aa1IP0w.png" />
-    <br/>  <br/>TLP React components
+    <br/>  <br/>NPM Packages by TLP
 </h1>
 
 <div align="center">
-<p>Internal react components used and created by the TLP team.</p>
+<p>NPM packages maintained by the TLP team. Currently has a package of react components.</p>
 
 <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/license-MIT-yellowgreen" />
@@ -20,9 +20,9 @@
 
 ## Get started with development ✨
 
-### 1. Install Node and Yarn 3
+### 1. Install Node and Pnpm 8
 
-Make sure `node` and `yarn 3` is installed. You can do this by running:
+Make sure `node` and `pnpm 8` is installed. You can do this by running:
 
 `node --version && yarn --version`
 
@@ -30,7 +30,7 @@ Make sure `node` and `yarn 3` is installed. You can do this by running:
 
 _(run command from root of the project)_
 
-`yarn install`
+`pnpm install`
 
 ### 3. Start storybook
 
@@ -52,4 +52,4 @@ CSS modules is used for styling in this library. Camelcase is used as the naming
 
 Run the following command to start the tests using React Testing Library
 
-`yarn test`
+`pnpm test`
