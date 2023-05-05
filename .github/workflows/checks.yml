@@ -7,7 +7,7 @@ on:
       - main
   push:
     branches:
-      - chore/checks
+      - main
 jobs:
   checks:
     name: Checks, builds and tests code
