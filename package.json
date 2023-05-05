@@ -87,5 +87,8 @@
     "typescript": "^5.0.2",
     "typescript-plugin-css-modules": "^5.0.0",
     "upgrade": "^1.1.0"
+  },
+  "dependencies": {
+    "@digdir/design-system-tokens": "^0.0.3"
   }
 }
