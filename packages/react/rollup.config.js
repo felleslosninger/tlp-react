@@ -8,6 +8,9 @@ import postcss from 'rollup-plugin-postcss';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import svgr from '@svgr/rollup';
 
+import terser from './rollup-terser.mjs';
+import packageJson from './package.json';
+
 // css files needs to be bundled
 const altinnFigmaTokensExceptCss = /@altinn\/figma-design-tokens.*(?<!css)$/;
 
@@ -16,30 +19,32 @@ export default [
     input: 'src/index.ts',
     output: [
       {
-        file: 'dist/cjs/index.js',
+        file: packageJson.main,
         format: 'cjs',
       },
       {
-        file: 'dist/esm/index.js',
+        file: packageJson.module,
         format: 'esm',
       },
     ],
     external: [
       altinnFigmaTokensExceptCss,
       /@react-hookz\/web/,
+      /@radix-ui\/react-popover$/,
       /react-number-format/,
       /react-leaflet/,
       /leaflet/,
-      /@navikt\/aksel-icons/,
+      /@navikt\/ds-icons/,
     ],
     plugins: [
       peerDepsExternal(),
       resolve(),
       commonjs(),
       json(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({ tsconfig: './tsconfig.build.json' }),
       svgr({ exportType: 'named' }),
       postcss(),
+      terser(),
       image(),
     ],
   },
