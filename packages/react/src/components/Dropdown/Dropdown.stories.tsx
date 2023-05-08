@@ -6,23 +6,15 @@ import {
   HouseHeartIcon,
   KeyVerticalIcon,
 } from '@navikt/aksel-icons';
-import {
+/*import {
   Button,
   ButtonVariant,
   ButtonColor,
 } from '@digdir/design-system-react';
-
+*/
 import { Dropdown } from './Dropdown';
 
 const CHILDREN = [
-  <Dropdown.Button key={0}>
-    <Button
-      variant={ButtonVariant.Quiet}
-      color={ButtonColor.Secondary}
-    >
-      Klikk på meg
-    </Button>
-  </Dropdown.Button>,
   <Dropdown.Item key={1}>Altinn</Dropdown.Item>,
   <Dropdown.Item key={2}>Ansattporten</Dropdown.Item>,
   <Dropdown.Item key={3}>Digdir</Dropdown.Item>,
@@ -31,9 +23,6 @@ const CHILDREN = [
 ];
 
 const CHILDRENWITHICONS = [
-  <Dropdown.Button key={0}>
-    <p>Klikk på meg</p>
-  </Dropdown.Button>,
   <Dropdown.Item
     icon={<HouseIcon fontSize='1.2rem' />}
     key={1}
