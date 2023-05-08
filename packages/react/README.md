@@ -22,7 +22,7 @@
 
 ### 1. Install Node and Yarn 3
 
-Make sure `node` and `Pnpm 8` is installed. You can do this by running:
+Make sure `node` and `Pnpm 8` is installed. You can do this by running
 
 `node --version && pnpm --version`
 
