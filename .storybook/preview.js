@@ -12,6 +12,11 @@ const preview = {
         date: /Date$/,
       },
     },
+    options: {
+      storySort: {
+        order: ['Components', 'Changelogs'],
+      },
+    },
   },
 };
 
