@@ -12,9 +12,7 @@
   ],
   "scripts": {
     "build": "pnpm clean && tsc -p tsconfig.build.json && rollup -c",
-    "clean": "rimraf dist",
-    "lerna:version": "lerna version  --conventional-commits --no-private",
-    "lerna:publish": "lerna publish from-package"
+    "clean": "rimraf dist"
   },
   "peerDependencies": {
     "react": ">=16.8",
