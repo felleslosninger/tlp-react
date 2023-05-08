@@ -7,6 +7,8 @@ import {
 } from '@digdir/design-system-react';
 import { MenuHamburgerIcon, MagnifyingGlassIcon } from '@navikt/aksel-icons';
 
+import { One } from '@digdir/illustrations';
+
 import { Container } from '../Container/Container';
 
 import classes from './Header.module.css';
@@ -24,7 +26,9 @@ const Header = ({ backgroundColor = 'red' }: HeaderProps) => {
             src='img/digdir-logo.svg'
             alt=''
           />
+          <One />
         </div>
+
         <div className={classes.middle}>Menu</div>
         <div className={classes.right}>
           <Button

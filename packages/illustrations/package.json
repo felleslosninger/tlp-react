@@ -1,0 +1,28 @@
+{
+  "name": "@digdir/illustrations",
+  "version": "0.0.0",
+  "description": "Digdir illustrations as react components and SVG files",
+  "author": "Team Løysingar og Portalar",
+  "keywords": [
+    "illustrations",
+    "svg"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "files": [
+    "/svg",
+    "/cjs",
+    "/esm"
+  ],
+  "private": false,
+  "scripts": {
+    "clean": "rimraf ./optimized",
+    "optimize": "svgo -q -p 8 -f ./svg -o ./optimized",
+    "build": "pnpm clean && node build.js && pnpm clean"
+  },
+  "devDependencies": {
+    "date-fns": "^2.29.3"
+  }
+}
