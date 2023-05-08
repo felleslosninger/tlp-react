@@ -14,7 +14,9 @@
     "lint:all": "eslint .",
     "lint:style": "stylelint  \"packages/**/*.css\"",
     "test": "jest",
-    "generate-component": "cd packages/react && node scripts/generate-component.js"
+    "generate-component": "cd packages/react && node scripts/generate-component.js",
+    "lerna:version": "lerna version  --conventional-commits --no-private",
+    "lerna:publish": "lerna publish from-package"
   },
   "devDependencies": {
     "@altinn/figma-design-tokens": "^6.0.1",
@@ -92,5 +94,10 @@
     "typescript": "^5.0.2",
     "typescript-plugin-css-modules": "^5.0.0",
     "upgrade": "^1.1.0"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@digdir/design-system-tokens": "^0.0.3"
   }
 }

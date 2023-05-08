@@ -19,4 +19,5 @@ const Container = ({ children, className, ...props }: ContainerProps) => {
   );
 };
 
+export type { ContainerProps };
 export { Container };
