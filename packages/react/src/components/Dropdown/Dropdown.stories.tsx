@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from '../Link';
 import {
   EnterIcon,
   PersonCircleIcon,
@@ -55,29 +56,9 @@ const CHILDRENWITHICONS = [
   </Dropdown.Item>,
 ];
 
-const div = () => {
-  const [expanded, setExpanded] = useState(true);
-
-  const handleClose = () => {
-    setExpanded(!expanded);
-  };
-  return (
-    <>
-      <Button onClick={handleClose}>Åpne nedtrekksliste</Button>
-      <Dropdown open={expanded}>
-        <Dropdown.Item>Altinn</Dropdown.Item>
-        <Dropdown.Item>Ansattporten</Dropdown.Item>
-        <Dropdown.Item>Digdir</Dropdown.Item>
-        <Dropdown.Item>Min profil</Dropdown.Item>
-        <Dropdown.Item>Logg ut</Dropdown.Item>
-      </Dropdown>
-    </>
-  );
-};
-
 export default {
   title: 'Components/Dropdown',
-  component: div,
+  component: Dropdown,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
@@ -96,6 +77,36 @@ export default {
     },
   },
 };
+export const NormalWithButton = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleToggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+  return (
+    <div style={{ position: 'relative' }}>
+      <Button onClick={handleToggleDropdown}>Åpne nedtrekksliste</Button>
+      <Dropdown open={isOpen}>
+        <Dropdown.Item onClick={handleClose}>Altinn</Dropdown.Item>
+        <Dropdown.Item onClick={handleClose}>Ansattporten</Dropdown.Item>
+        <Dropdown.Item onClick={handleClose}>Digdir</Dropdown.Item>
+        <Dropdown.Item onClick={handleClose}>Min profil</Dropdown.Item>
+        <Dropdown.Item
+          onClick={handleClose}
+          as='a'
+          href='/'
+        >
+          Logg ut
+        </Dropdown.Item>
+      </Dropdown>
+    </div>
+  );
+};
+
 export const Normal = {
   args: {
     children: CHILDREN,

@@ -1,52 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
 import classes from './Dropdown.module.css';
 
 interface DropdownProps {
   children:
-    | React.ReactElement<DropdownItemProps>
-    | Array<React.ReactElement<DropdownItemProps>>;
-  open?: false;
+    | React.ReactElement<DropdownItemProps<React.ElementType>>
+    | Array<React.ReactElement<DropdownItemProps<React.ElementType>>>;
+  open?: boolean;
 }
 
-export interface DropdownItemProps {
+export interface DropdownItemProps<Type extends React.ElementType> {
+  as?: Type;
   children: React.ReactNode;
   icon?: React.ReactNode;
-  onClick: () => void;
+  href?: string;
+  onClick?: () => void;
 }
 
-const DropdownItem = ({ children, icon, onClick }: DropdownItemProps) => {
+const DropdownItem = <Type extends React.ElementType = 'button'>({
+  as,
+  children,
+  icon,
+  onClick,
+  ...rest
+}: DropdownItemProps<Type>) => {
+  const Component = as || 'button';
+
   return (
     <li className={cn(classes.listItem)}>
-      <a
-        href='h'
-        className={cn(classes.listItemInner)}
+      <Component
+        className={cn(classes.listComponent)}
         onClick={onClick}
+        {...rest}
       >
         {icon && <span className={cn(classes.icon)}>{icon}</span>}
         {children}
-      </a>
+      </Component>
     </li>
   );
 };
 
-const Dropdown = ({ open, children }: DropdownProps) => {
-  const [expanded, setExpanded] = useState(true);
-
-  /*const expandedHandler = () => {
-    setExpanded(!expanded);
-  };*/
-
-  const handleClose = (e) => {
-    e.preventDefault();
-    setExpanded(!expanded);
-  };
-
+const Dropdown = ({ open = true, children }: DropdownProps) => {
   return (
     <>
       {open && (
-        <ul className={cn(!expanded && classes.hide, classes.dropdownList)}>
+        <ul className={cn(classes.dropdownList)}>
           {React.Children.map(children, (child) => {
             if (!React.isValidElement(child)) return null;
 
