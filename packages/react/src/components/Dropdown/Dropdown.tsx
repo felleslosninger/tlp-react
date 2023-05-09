@@ -7,19 +7,22 @@ interface DropdownProps {
   children:
     | React.ReactElement<DropdownItemProps>
     | Array<React.ReactElement<DropdownItemProps>>;
+  open?: false;
 }
 
 export interface DropdownItemProps {
   children: React.ReactNode;
   icon?: React.ReactNode;
+  onClick: () => void;
 }
 
-const DropdownItem = ({ children, icon }: DropdownItemProps) => {
+const DropdownItem = ({ children, icon, onClick }: DropdownItemProps) => {
   return (
     <li className={cn(classes.listItem)}>
       <a
         href='h'
         className={cn(classes.listItemInner)}
+        onClick={onClick}
       >
         {icon && <span className={cn(classes.icon)}>{icon}</span>}
         {children}
@@ -28,16 +31,21 @@ const DropdownItem = ({ children, icon }: DropdownItemProps) => {
   );
 };
 
-const Dropdown = ({ children }: DropdownProps) => {
+const Dropdown = ({ open, children }: DropdownProps) => {
   const [expanded, setExpanded] = useState(true);
 
-  const expandedHandler = () => {
+  /*const expandedHandler = () => {
+    setExpanded(!expanded);
+  };*/
+
+  const handleClose = (e) => {
+    e.preventDefault();
     setExpanded(!expanded);
   };
 
   return (
     <>
-      {expanded && (
+      {open && (
         <ul className={cn(!expanded && classes.hide, classes.dropdownList)}>
           {React.Children.map(children, (child) => {
             if (!React.isValidElement(child)) return null;
