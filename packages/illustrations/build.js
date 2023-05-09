@@ -18,6 +18,8 @@ async function transformSVGtoJSX(file, componentName, format) {
     { componentName },
   );
 
+  console.log(componentName)
+
   const { code } = await transformAsync(svgReactContent, {
     presets: [['@babel/preset-react', { useBuiltIns: true }]],
   });
@@ -44,6 +46,7 @@ function indexFileContent(files, format, includeExtension = true) {
   files.map((fileName) => {
     const componentName = `${camelcase(fileName.replace(/.svg/, ''), {
       pascalCase: true,
+      locale: false,
     })}`;
     const directoryString = `'./${componentName}${extension}'`;
     content +=
