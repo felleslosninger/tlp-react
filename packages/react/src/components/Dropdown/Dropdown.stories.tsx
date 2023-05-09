@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   EnterIcon,
   PersonCircleIcon,
@@ -6,12 +6,12 @@ import {
   HouseHeartIcon,
   KeyVerticalIcon,
 } from '@navikt/aksel-icons';
-/*import {
+import {
   Button,
   ButtonVariant,
   ButtonColor,
 } from '@digdir/design-system-react';
-*/
+
 import { Dropdown } from './Dropdown';
 
 const CHILDREN = [
@@ -55,9 +55,29 @@ const CHILDRENWITHICONS = [
   </Dropdown.Item>,
 ];
 
+const div = () => {
+  const [expanded, setExpanded] = useState(true);
+
+  const handleClose = () => {
+    setExpanded(!expanded);
+  };
+  return (
+    <>
+      <Button onClick={handleClose}>Åpne nedtrekksliste</Button>
+      <Dropdown open={expanded}>
+        <Dropdown.Item>Altinn</Dropdown.Item>
+        <Dropdown.Item>Ansattporten</Dropdown.Item>
+        <Dropdown.Item>Digdir</Dropdown.Item>
+        <Dropdown.Item>Min profil</Dropdown.Item>
+        <Dropdown.Item>Logg ut</Dropdown.Item>
+      </Dropdown>
+    </>
+  );
+};
+
 export default {
   title: 'Components/Dropdown',
-  component: Dropdown,
+  component: div,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
