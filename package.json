@@ -91,6 +91,8 @@
     "upgrade": "^1.1.0"
   },
   "dependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
     "@digdir/design-system-tokens": "^0.0.3"
   }
 }
