@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link } from '../Link';
+import React, { useState, useRef } from 'react';
 import {
   EnterIcon,
   PersonCircleIcon,
@@ -7,11 +6,7 @@ import {
   HouseHeartIcon,
   KeyVerticalIcon,
 } from '@navikt/aksel-icons';
-import {
-  Button,
-  ButtonVariant,
-  ButtonColor,
-} from '@digdir/design-system-react';
+import { Button } from '@digdir/design-system-react';
 
 import { Dropdown } from './Dropdown';
 
@@ -77,32 +72,49 @@ export default {
     },
   },
 };
+
 export const NormalWithButton = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const handleClose = () => {
-    setIsOpen(!isOpen);
-  };
-
+  const dropdownButtonRef = useRef<HTMLButtonElement>(null);
   const handleToggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
   return (
-    <div style={{ position: 'relative' }}>
-      <Button onClick={handleToggleDropdown}>Åpne nedtrekksliste</Button>
-      <Dropdown open={isOpen}>
-        <Dropdown.Item onClick={handleClose}>Altinn</Dropdown.Item>
-        <Dropdown.Item onClick={handleClose}>Ansattporten</Dropdown.Item>
-        <Dropdown.Item onClick={handleClose}>Digdir</Dropdown.Item>
-        <Dropdown.Item onClick={handleClose}>Min profil</Dropdown.Item>
-        <Dropdown.Item
-          onClick={handleClose}
-          as='a'
-          href='/'
+    <div
+      style={{
+        position: 'relative',
+        top: 0,
+        bottom: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        height: '300px',
+      }}
+    >
+      <Button
+        ref={dropdownButtonRef}
+        onClick={handleToggleDropdown}
+      >
+        Åpne nedtrekksliste
+      </Button>
+      <div> test</div>
+      {isOpen && (
+        <Dropdown
+          open={isOpen}
+          anchorEl={dropdownButtonRef.current}
         >
-          Logg ut
-        </Dropdown.Item>
-      </Dropdown>
+          <Dropdown.Item key={1}>Altinn</Dropdown.Item>
+          <Dropdown.Item key={2}>Ansattporten</Dropdown.Item>
+          <Dropdown.Item key={3}>Digdir</Dropdown.Item>
+          <Dropdown.Item key={4}>Min profil</Dropdown.Item>
+          <Dropdown.Item
+            key={5}
+            as='a'
+          >
+            Logg ut
+          </Dropdown.Item>
+        </Dropdown>
+      )}
     </div>
   );
 };

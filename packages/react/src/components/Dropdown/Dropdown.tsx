@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import cn from 'classnames';
 
 import classes from './Dropdown.module.css';
@@ -8,6 +8,7 @@ interface DropdownProps {
     | React.ReactElement<DropdownItemProps<React.ElementType>>
     | Array<React.ReactElement<DropdownItemProps<React.ElementType>>>;
   open?: boolean;
+  anchorEl?: HTMLElement | null;
 }
 
 export interface DropdownItemProps<Type extends React.ElementType> {
@@ -15,7 +16,7 @@ export interface DropdownItemProps<Type extends React.ElementType> {
   children: React.ReactNode;
   icon?: React.ReactNode;
   href?: string;
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const DropdownItem = <Type extends React.ElementType = 'button'>({
@@ -41,11 +42,42 @@ const DropdownItem = <Type extends React.ElementType = 'button'>({
   );
 };
 
-const Dropdown = ({ open = true, children }: DropdownProps) => {
+const Dropdown = ({ open = true, children, anchorEl }: DropdownProps) => {
+  const dropdownRef = useRef<HTMLUListElement>(null);
+  const [positionStyle, setPositionStyle] = useState({});
+
+  useLayoutEffect(() => {
+    const updatePosition = () => {
+      const dropdownNode = dropdownRef.current;
+
+      if (dropdownNode && anchorEl) {
+        const buttonRect = anchorEl.getBoundingClientRect();
+        const { width } = buttonRect;
+        const positionStyle = {
+          position: 'absolute',
+          top: `${buttonRect.height}px`,
+          width: `${width}px`,
+        };
+        setPositionStyle(positionStyle);
+      }
+    };
+
+    updatePosition();
+    window.addEventListener('resize', updatePosition);
+
+    return () => {
+      window.removeEventListener('resize', updatePosition);
+    };
+  }, [anchorEl]);
+
   return (
     <>
       {open && (
-        <ul className={cn(classes.dropdownList)}>
+        <ul
+          ref={dropdownRef}
+          className={cn(classes.dropdownList)}
+          style={positionStyle}
+        >
           {React.Children.map(children, (child) => {
             if (!React.isValidElement(child)) return null;
 
