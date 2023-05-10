@@ -52,6 +52,8 @@ const Dropdown = ({ open = true, children, anchorEl }: DropdownProps) => {
 
       if (dropdownNode && anchorEl) {
         const buttonRect = anchorEl.getBoundingClientRect();
+        console.log(anchorEl);
+        console.log(buttonRect);
         const { width } = buttonRect;
         const positionStyle = {
           position: 'absolute',
