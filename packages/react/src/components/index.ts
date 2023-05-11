@@ -6,3 +6,5 @@ export { LinkList } from './LinkList';
 export type { LinkListProps } from './LinkList';
 export { Container } from './Container';
 export type { ContainerProps } from './Container';
+export { Breadcrumb } from './Breadcrumb';
+export type { BreadcrumbProps } from './Breadcrumb';
