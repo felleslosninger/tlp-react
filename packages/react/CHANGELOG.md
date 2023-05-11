@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.1...@digdir/tlp-react@0.1.2) (2023-05-11)
+
+### Bug Fixes
+
+- added Breadcrumbs to export ([41390c3](https://github.com/felleslosninger/tlp-react/commit/41390c3e853a524cdfc12ef5bc4202cb720784f6))
+
 ## [0.1.1](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.0...@digdir/tlp-react@0.1.1) (2023-05-08)
 
 ### Bug Fixes
