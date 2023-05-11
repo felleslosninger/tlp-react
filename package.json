@@ -93,6 +93,7 @@
   "dependencies": {
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
-    "@digdir/design-system-tokens": "^0.0.3"
+    "@digdir/design-system-tokens": "^0.0.3",
+    "rollup-plugin-copy": "^3.4.0"
   }
 }

@@ -7,6 +7,7 @@ import dts from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import svgr from '@svgr/rollup';
+import copy from 'rollup-plugin-copy';
 
 import terser from './rollup-terser.mjs';
 import packageJson from './package.json';
@@ -46,6 +47,9 @@ export default [
       postcss(),
       terser(),
       image(),
+      copy({
+        targets: [{ src: 'src/tokens/tokens.css', dest: 'dist' }],
+      }),
     ],
   },
   {
