@@ -8,7 +8,7 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build -o ./docs",
-    "build:react": "pnpm --filter @digdir/tlp-react build",
+    "build": "lerna run build",
     "lint": "eslint",
     "lint:all": "eslint .",
     "lint:style": "stylelint  \"packages/**/*.css\"",
