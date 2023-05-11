@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.2...@digdir/tlp-react@0.1.3) (2023-05-11)
+
+### Bug Fixes
+
+- added tokens for react package ([fb37a40](https://github.com/felleslosninger/tlp-react/commit/fb37a40a88f0351a72c8f97309f27d3a0582894b))
+
 ## [0.1.2](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.1...@digdir/tlp-react@0.1.2) (2023-05-11)
 
 ### Bug Fixes
