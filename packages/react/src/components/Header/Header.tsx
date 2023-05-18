@@ -13,39 +13,82 @@ import classes from './Header.module.css';
 
 interface HeaderProps {
   backgroundColor?: 'red' | 'blue' | 'yellow';
+  children:
+    | React.ReactElement<HeaderLeftProps>
+    | React.ReactElement<HeaderMiddleProps>
+    | React.ReactElement<HeaderRightProps>
+    | React.ReactElement<HeaderBottomProps>;
 }
 
-const Header = ({ backgroundColor = 'red' }: HeaderProps) => {
+interface HeaderLeftProps {
+  children: React.ReactNode;
+}
+
+interface HeaderMiddleProps {
+  children: React.ReactNode;
+}
+interface HeaderRightProps {
+  children: React.ReactNode;
+}
+interface HeaderBottomProps {
+  children: React.ReactNode;
+}
+
+const Header = ({ backgroundColor = 'red', children }: HeaderProps) => {
   return (
     <header className={cn(classes.header, classes[backgroundColor])}>
       <Container className={classes.container}>
-        <div className={classes.left}>
-          <img
-            src='img/digdir-logo.svg'
-            alt=''
-          />
-        </div>
-        <div className={classes.middle}>Menu</div>
-        <div className={classes.right}>
-          <Button
-            variant={ButtonVariant.Quiet}
-            color={ButtonColor.Secondary}
-            icon={<MagnifyingGlassIcon />}
-          >
-            Søk
-          </Button>
-          <Button
-            variant={ButtonVariant.Quiet}
-            color={ButtonColor.Secondary}
-            icon={<MenuHamburgerIcon />}
-          >
-            Meny
-          </Button>
-        </div>
+        {React.Children.map(children, (child) => (
+          <>
+            {child.type == Header.Left && (
+              <div className={classes.left}>{child}</div>
+            )}
+            {child.type == Header.Middle && (
+              <div className={classes.middle}>{child}</div>
+            )}
+            {child.type == Header.Right && (
+              <div className={classes.right}>{child}</div>
+            )}
+          </>
+        ))}
       </Container>
     </header>
   );
 };
 
+const HeaderLeft = ({ children }: HeaderLeftProps) => {
+  return <>{children}</>;
+};
+
+const HeaderMiddle = ({ children }: HeaderMiddleProps) => {
+  return <>{children}</>;
+};
+
+const HeaderRight = ({ children }: HeaderRightProps) => {
+  return <>{children}</>;
+};
+
+const HeaderBottom = ({ children }: HeaderBottomProps) => {
+  return <>{children}</>;
+};
+
+HeaderLeft.displayName = 'Header.Left';
+Header.Left = HeaderLeft;
+
+HeaderMiddle.displayName = 'Header.Middle';
+Header.Middle = HeaderMiddle;
+
+HeaderRight.displayName = 'Header.Right';
+Header.Right = HeaderRight;
+
+HeaderBottom.displayName = 'Header.Bottom';
+Header.Bottom = HeaderBottom;
+
 export { Header };
-export type { HeaderProps };
+export type {
+  HeaderProps,
+  HeaderLeftProps,
+  HeaderMiddleProps,
+  HeaderRightProps,
+  HeaderBottomProps,
+};

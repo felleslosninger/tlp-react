@@ -1,6 +1,13 @@
+/* eslint-disable react/jsx-key */
+import React from 'react';
+
 import { Header } from './Header';
 
-// More on how to set up stories at: https://storybook.js.org/docs/7.0/react/writing-stories/introduction
+const children = [
+  <Header.Left>dd</Header.Left>,
+  <Header.Right>rrr</Header.Right>,
+];
+
 export default {
   title: 'Components/Header',
   component: Header,
@@ -16,5 +23,6 @@ export default {
 export const Primary = {
   args: {
     backgroundColor: 'red',
+    children: children,
   },
 };
