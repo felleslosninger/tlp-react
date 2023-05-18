@@ -1,5 +1,7 @@
 export { Header } from './Header';
 export type { HeaderProps } from './Header';
+export { Footer } from './Footer';
+export type { FooterProps } from './Footer';
 export { Link } from './Link';
 export type { LinkProps } from './Link';
 export { LinkList } from './LinkList';
