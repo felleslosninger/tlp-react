@@ -15,7 +15,8 @@
     "test": "jest",
     "generate-component": "cd packages/react && node scripts/generate-component.js",
     "lerna:version": "lerna version  --conventional-commits --no-private",
-    "lerna:publish": "lerna publish from-package"
+    "lerna:publish": "lerna publish from-package",
+    "pack-eid": "cd packages/react && node scripts/pack-eid.js"
   },
   "devDependencies": {
     "@altinn/figma-design-tokens": "^6.0.1",
