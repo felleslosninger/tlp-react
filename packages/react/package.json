@@ -13,7 +13,7 @@
   "scripts": {
     "build": "pnpm clean && tsc -p tsconfig.build.json && rollup -c",
     "clean": "rimraf dist",
-    "pack-eid ": "rimraf ./digdir-tlp-react-0.1.5.tgz && pnpm build && cd /packages/react/dist && pnpm pack"
+    "pack-eid": "rimraf ./digdir-tlp-react-*.tgz && pnpm build && cd ./dist && pnpm pack"
   },
   "peerDependencies": {
     "react": ">=16.8",
