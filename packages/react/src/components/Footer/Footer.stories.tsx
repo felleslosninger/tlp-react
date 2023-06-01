@@ -6,12 +6,21 @@ import { Footer } from './Footer';
 const Children = [
   <Footer.Column>
     <h2>Åpningstider</h2>
+    <p>test</p>
+    <p>test</p>
+    <p>testdewdewewdewdewdewdew dewdfewfwef fwewf </p>
   </Footer.Column>,
   <Footer.Column>
     <h2>E-post</h2>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
   </Footer.Column>,
   <Footer.Column>
     <h2>Viktige lenker</h2>
+    <p>test</p>
   </Footer.Column>,
   <Footer.Bottom>
     Tjenesten er levert av Digitaliseringsdirektoratet

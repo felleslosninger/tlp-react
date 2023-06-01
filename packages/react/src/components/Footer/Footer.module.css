@@ -1,6 +1,6 @@
 .footer {
   background-color: #111e3c;
-  color: rgb(220, 220, 220);
+  color: rgb(220 220 220);
 }
 
 .topContainer {
@@ -13,11 +13,17 @@
   padding: 64px 0;
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.column {
+  max-width: 33.3333%;
+  flex: 0 0 auto;
+  min-width: 280px;
 }
 
 .bottomContent {
-  border-top: 1px solid rgb(57, 61, 94);
+  border-top: 1px solid rgb(57 61 94);
   padding: 24px 0;
 }

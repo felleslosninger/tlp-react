@@ -40,7 +40,7 @@ const Footer = ({ children }: FooterProps) => {
 };
 
 const FooterColumn = ({ children }: FooterColumnProps) => {
-  return <>{children}</>;
+  return <div className={classes.column}>{children}</div>;
 };
 
 const FooterBottom = ({ children }: FooterBottomProps) => {
