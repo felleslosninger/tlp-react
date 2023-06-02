@@ -57,7 +57,7 @@ const Dropdown = ({ open = true, children, anchorEl }: DropdownProps) => {
         const { width } = buttonRect;
         const positionStyle = {
           position: 'absolute',
-          top: `${buttonRect.height}px`,
+          top: `${buttonRect.height + 4}px`,
           width: `${width}px`,
         };
         setPositionStyle(positionStyle);

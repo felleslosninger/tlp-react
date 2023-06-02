@@ -95,7 +95,7 @@ export const NormalWithButton = () => {
         ref={dropdownButtonRef}
         onClick={handleToggleDropdown}
       >
-        Åpne nedtrekksliste
+        {isOpen ? 'Lukk nedtrekksliste' : 'Åpne nedtrekksliste'}
       </Button>
       <div> test</div>
       {isOpen && (
