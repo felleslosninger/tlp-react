@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.5...@digdir/tlp-react@0.1.6) (2023-06-06)
+
+### Bug Fixes
+
+- removed comment ([7dff032](https://github.com/felleslosninger/tlp-react/commit/7dff03279cab10227bce2419e3efbbbe6d5f7903))
+- removed unused grid tokens ([bb4ad84](https://github.com/felleslosninger/tlp-react/commit/bb4ad84df6254b54ca69ae288ea36f01ab728631))
+
 ## [0.1.5](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.4...@digdir/tlp-react@0.1.5) (2023-05-18)
 
 ### Bug Fixes
