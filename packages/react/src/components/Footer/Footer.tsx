@@ -21,7 +21,7 @@ interface FooterBottomProps {
 const Footer = ({ children }: FooterProps) => {
   return (
     <footer className={classes.footer}>
-      <div className={classes.containerWrapper}>
+      <Container>
         <Container className={classes.topContainer}>
           <div className={classes.topContent}>
             {React.Children.map(children, (child) => (
@@ -36,7 +36,7 @@ const Footer = ({ children }: FooterProps) => {
             ))}
           </div>
         </Container>
-      </div>
+      </Container>
     </footer>
   );
 };
