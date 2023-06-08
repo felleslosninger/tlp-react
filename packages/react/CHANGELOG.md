@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.6...@digdir/tlp-react@0.1.7) (2023-06-08)
+
+### Bug Fixes
+
+- wrappet components inside footer in with container component. ([a31551d](https://github.com/felleslosninger/tlp-react/commit/a31551da4635c57c6362a09dca0bec9239e53909))
+
 ## [0.1.6](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.5...@digdir/tlp-react@0.1.6) (2023-06-06)
 
 ### Bug Fixes
