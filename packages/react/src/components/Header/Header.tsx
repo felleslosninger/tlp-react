@@ -12,12 +12,19 @@ import { Container } from '../Container/Container';
 import classes from './Header.module.css';
 
 interface HeaderProps {
-  backgroundColor?: 'red' | 'blue' | 'yellow';
   children:
     | React.ReactElement<HeaderLeftProps>
     | React.ReactElement<HeaderMiddleProps>
     | React.ReactElement<HeaderRightProps>
-    | React.ReactElement<HeaderBottomProps>;
+    | React.ReactElement<HeaderBottomProps>
+    | Array<
+        React.ReactElement<
+          | HeaderLeftProps
+          | HeaderMiddleProps
+          | HeaderRightProps
+          | HeaderBottomProps
+        >
+      >;
 }
 
 interface HeaderLeftProps {
@@ -34,9 +41,12 @@ interface HeaderBottomProps {
   children: React.ReactNode;
 }
 
-const Header = ({ backgroundColor = 'red', children }: HeaderProps) => {
+const Header = ({ children, ...rest }: HeaderProps) => {
   return (
-    <header className={cn(classes.header, classes[backgroundColor])}>
+    <header
+      className={cn(classes.header)}
+      {...rest}
+    >
       <Container className={classes.container}>
         {React.Children.map(children, (child) => (
           <>
