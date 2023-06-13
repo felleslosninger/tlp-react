@@ -23,8 +23,10 @@ const Link = ({
   as,
   ...rest
 }: LinkProps) => {
+  const Component = as || 'a';
+
   return (
-    <a
+    <Component
       className={cn(
         classes.link,
         inverted ? classes.inverted : classes.normal,
@@ -44,7 +46,7 @@ const Link = ({
         {children}
       </span>
       {iconAfter && <span className={classes.iconAfter}>{iconAfter}</span>}
-    </a>
+    </Component>
   );
 };
 
