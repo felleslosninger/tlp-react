@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.10](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.9...@digdir/tlp-react@0.1.10) (2023-06-13)
+
+### Bug Fixes
+
+- added transparent background to breadcrumd ([b1712ea](https://github.com/felleslosninger/tlp-react/commit/b1712ea823749d1cd4e0a3d57814091da180a3e1))
+- using as in link component ([c27b25f](https://github.com/felleslosninger/tlp-react/commit/c27b25fb1a4fb20ebe279140ae059433596f1d71))
+
 ## [0.1.9](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.8...@digdir/tlp-react@0.1.9) (2023-06-13)
 
 ### Bug Fixes
