@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.8](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.7...@digdir/tlp-react@0.1.8) (2023-06-13)
+
+### Bug Fixes
+
+- Added array prop and rest prop header komponent. ([2f34586](https://github.com/felleslosninger/tlp-react/commit/2f34586f0ee426e3670dd25355742673bd5af620))
+
 ## [0.1.7](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.6...@digdir/tlp-react@0.1.7) (2023-06-08)
 
 ### Bug Fixes
