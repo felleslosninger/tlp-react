@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.9](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.8...@digdir/tlp-react@0.1.9) (2023-06-13)
+
+### Bug Fixes
+
+- added as prop to Link ([9e3672d](https://github.com/felleslosninger/tlp-react/commit/9e3672d569f044ccc2c861f7da0bb5c9d3ec8a74))
+
 ## [0.1.8](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.7...@digdir/tlp-react@0.1.8) (2023-06-13)
 
 ### Bug Fixes
