@@ -10,6 +10,7 @@ interface LinkProps {
   className?: string;
   iconBefore?: React.ReactNode;
   iconAfter?: React.ReactNode;
+  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
 }
 
 const Link = ({
@@ -19,6 +20,7 @@ const Link = ({
   className,
   iconBefore,
   iconAfter,
+  as,
   ...rest
 }: LinkProps) => {
   return (
