@@ -1,5 +1,5 @@
 .wrapper {
-  background: var(--fds-semantic-background-default);
+  background: transparent;
 }
 
 .breadcrumbList {
