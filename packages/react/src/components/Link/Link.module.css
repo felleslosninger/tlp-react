@@ -4,6 +4,7 @@
   --color-neutral-white: rgba(255 255 255 / 1);
 
   text-decoration: none;
+  display: flex;
 }
 
 .normal {

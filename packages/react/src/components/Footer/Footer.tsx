@@ -18,9 +18,12 @@ interface FooterBottomProps {
   children: React.ReactNode;
 }
 
-const Footer = ({ children }: FooterProps) => {
+const Footer = ({ children, ...rest }: FooterProps) => {
   return (
-    <footer className={classes.footer}>
+    <footer
+      className={classes.footer}
+      {...rest}
+    >
       <Container>
         <Container className={classes.topContainer}>
           <div className={classes.topContent}>
