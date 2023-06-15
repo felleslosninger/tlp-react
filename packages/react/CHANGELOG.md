@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.13](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.12...@digdir/tlp-react@0.1.13) (2023-06-15)
+
+### Bug Fixes
+
+- importet classnems in footer ([4717e85](https://github.com/felleslosninger/tlp-react/commit/4717e85953faaf7903f52b3dc9972fec03c06d70))
+
 ## [0.1.12](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.11...@digdir/tlp-react@0.1.12) (2023-06-15)
 
 ### Bug Fixes
