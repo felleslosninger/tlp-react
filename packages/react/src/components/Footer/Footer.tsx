@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 
 import { Container } from '../Container/Container';
 
@@ -21,7 +22,7 @@ interface FooterBottomProps {
 const Footer = ({ children, ...rest }: FooterProps) => {
   return (
     <footer
-      className={classes.footer}
+      className={cn(classes.footer)}
       {...rest}
     >
       <Container>
