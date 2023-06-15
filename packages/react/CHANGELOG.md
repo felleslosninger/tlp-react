@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.11](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.10...@digdir/tlp-react@0.1.11) (2023-06-15)
+
+### Bug Fixes
+
+- added display flex to link komponent, gave rest props to footer ([79139a8](https://github.com/felleslosninger/tlp-react/commit/79139a80bba18719479e306ad9f6b4f5b614b8dc))
+
 ## [0.1.10](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.9...@digdir/tlp-react@0.1.10) (2023-06-13)
 
 ### Bug Fixes
