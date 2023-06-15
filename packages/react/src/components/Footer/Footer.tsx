@@ -44,12 +44,12 @@ const Footer = ({ children, ...rest }: FooterProps) => {
   );
 };
 
-const FooterColumn = ({ children }: FooterColumnProps) => {
-  return <div className={classes.column}>{children}</div>;
-};
-
 const FooterBottom = ({ children }: FooterBottomProps) => {
   return <div className={classes.bottom2}>{children}</div>;
+};
+
+const FooterColumn = ({ children }: FooterColumnProps) => {
+  return <div className={classes.column}>{children}</div>;
 };
 
 FooterColumn.displayName = 'Footer.Column';
