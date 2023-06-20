@@ -5,6 +5,7 @@ import { Container } from '../Container/Container';
 
 import classes from './Header.module.css';
 import { Hamburger } from '@navikt/ds-icons';
+import { XMarkIcon } from '@navikt/aksel-icons';
 
 interface HeaderProps {
   children:
@@ -45,17 +46,21 @@ type HeaderMobileProps = {
 
 const Header = ({ children, className }: HeaderProps) => {
   const breakpoint = 768;
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(Boolean);
   const [showMenu, setShowMenu] = useState(false);
 
+  const handleResize = () => {
+    if (window.innerWidth < breakpoint) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < breakpoint) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
+    // Kjører en gang ved oppstart for å sette riktig verdifor isMobile
+
+    handleResize();
 
     window.addEventListener('resize', handleResize);
 
@@ -71,37 +76,41 @@ const Header = ({ children, className }: HeaderProps) => {
   return (
     <header className={cn(classes.header, className)}>
       <Container className={classes.container}>
-        {React.Children.map(children, (child) => (
-          <>
-            {child.type == Header.Left && (
-              <div className={classes.left}>{child}</div>
-            )}
-            {child.type == Header.Middle && !isMobile && (
-              <div className={classes.middle}>{child}</div>
-            )}
-            {child.type == Header.Right && (
+        {React.Children.map(children, (child) => {
+          if (child.type === HeaderLeft) {
+            return <div className={classes.left}>{child}</div>;
+          }
+          if (child.type === HeaderMiddle && !isMobile) {
+            return <div className={classes.middle}>{child}</div>;
+          }
+          if (child.type === HeaderRight) {
+            return (
               <div className={classes.right}>
                 {!isMobile ? (
                   child
                 ) : (
-                  <Hamburger onChange={toggleMenu}></Hamburger>
+                  <button onClick={toggleMenu}>
+                    {showMenu ? <XMarkIcon /> : <Hamburger />}
+                  </button>
                 )}
               </div>
-            )}
-          </>
-        ))}
+            );
+          }
+          return null;
+        })}
       </Container>
       <Container className={classes.container}>
-        {React.Children.map(children, (child) => (
-          <>
-            {child.type == Header.Bottom && !isMobile && (
-              <div className={classes.bottom}>{child}</div>
-            )}
-            {child.type == Header.Mobile && isMobile && (
-              <div className={classes.bottom}>{child}</div>
-            )}
-          </>
-        ))}
+        {React.Children.map(children, (child) => {
+          if (child.type === HeaderBottom && !isMobile) {
+            return <div className={classes.bottom}>{child}</div>;
+          }
+          if (child.type === HeaderMobile && isMobile) {
+            return (
+              <>{showMenu && <div className={classes.bottom}>{child}</div>}</>
+            );
+          }
+          return null;
+        })}
       </Container>
     </header>
   );

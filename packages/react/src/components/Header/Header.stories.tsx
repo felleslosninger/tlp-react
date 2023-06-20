@@ -20,6 +20,9 @@ const children = [
   <Header.Bottom>
     <p>Header bottom</p>
   </Header.Bottom>,
+  <Header.Mobile>
+    <p>heeiiiiiiiiiiiiiiiiiiiiii</p>
+  </Header.Mobile>,
 ];
 
 export default {
