@@ -1,11 +1,25 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
 
+import myLogo from '../../../../../assets/img/digdir-logo.svg';
+
 import { Header } from './Header';
 
 const children = [
-  <Header.Left>dd</Header.Left>,
+  <Header.Left>
+    <img
+      src={myLogo}
+      alt='SVG logo'
+    />
+  </Header.Left>,
+  <Header.Middle>
+    <span>hei</span>
+    <span>hei</span>
+  </Header.Middle>,
   <Header.Right>rrr</Header.Right>,
+  <Header.Bottom>
+    <p>Header bottom</p>
+  </Header.Bottom>,
 ];
 
 export default {
