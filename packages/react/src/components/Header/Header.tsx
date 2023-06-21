@@ -89,8 +89,15 @@ const Header = ({ children, className }: HeaderProps) => {
                 {!isMobile ? (
                   child
                 ) : (
-                  <button onClick={toggleMenu}>
-                    {showMenu ? <XMarkIcon /> : <Hamburger />}
+                  <button
+                    onClick={toggleMenu}
+                    className={cn(classes.mobileMenuButton)}
+                  >
+                    {showMenu ? (
+                      <XMarkIcon fontSize='1.8rem' />
+                    ) : (
+                      <Hamburger fontSize='1.5rem' />
+                    )}
                   </button>
                 )}
               </div>

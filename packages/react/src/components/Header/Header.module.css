@@ -24,3 +24,9 @@
   display: flex;
   align-items: center;
 }
+
+.mobileMenuButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

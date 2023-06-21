@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import React from 'react';
 
 import myLogo from '../../../../../assets/img/digdir-logo.svg';
@@ -21,7 +20,9 @@ const children = [
     <p>Header bottom</p>
   </Header.Bottom>,
   <Header.Mobile>
-    <p>heeiiiiiiiiiiiiiiiiiiiiii</p>
+    <form>
+      <input type='search' />
+    </form>
   </Header.Mobile>,
 ];
 
