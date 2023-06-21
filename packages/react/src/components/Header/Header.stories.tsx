@@ -3,24 +3,24 @@ import React from 'react';
 import myLogo from '../../../../../assets/img/digdir-logo.svg';
 
 import { Header } from './Header';
-import { Link } from '../Link';
+import { Link } from '../Link/Link';
 
 const children = [
-  <Header.Left>
+  <Header.Left key={0}>
     <img
       src={myLogo}
       alt='SVG logo'
     />
   </Header.Left>,
-  <Header.Middle>
-    <span>hei</span>
-    <span>hei</span>
+  <Header.Middle key={1}>
+    <span>Middle</span>
+    <span>Middle</span>
   </Header.Middle>,
-  <Header.Right>rrr</Header.Right>,
-  <Header.Bottom>
+  <Header.Right key={2}>Right</Header.Right>,
+  <Header.Bottom key={3}>
     <p>Header bottom</p>
   </Header.Bottom>,
-  <Header.Mobile>
+  <Header.Mobile key={4}>
     <nav style={{ padding: '10px', fontSize: '16px' }}>
       <Link href='#'>Link to something</Link>
       <h2>Languange</h2>
@@ -29,11 +29,11 @@ const children = [
         <li>Nynorsk</li>
         <li>English</li>
       </ul>
-      <h2>Languange</h2>
-      <ul>
-        <li>Norsk</li>
-        <li>Nynorsk</li>
-        <li>English</li>
+      <h2>Other</h2>
+      <ul style={{ listStyle: 'none' }}>
+        <li>Something first</li>
+        <li>Something else</li>
+        <li>Something last</li>
       </ul>
     </nav>
   </Header.Mobile>,
