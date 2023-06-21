@@ -3,6 +3,7 @@ import React from 'react';
 import myLogo from '../../../../../assets/img/digdir-logo.svg';
 
 import { Header } from './Header';
+import { Link } from '../Link';
 
 const children = [
   <Header.Left>
@@ -20,9 +21,21 @@ const children = [
     <p>Header bottom</p>
   </Header.Bottom>,
   <Header.Mobile>
-    <form>
-      <input type='search' />
-    </form>
+    <nav>
+      <Link href='#'>Link to something</Link>
+      <h2>Languange</h2>
+      <ul>
+        <li>Norsk</li>
+        <li>Nynorsk</li>
+        <li>English</li>
+      </ul>
+      <h2>Languange</h2>
+      <ul>
+        <li>Norsk</li>
+        <li>Nynorsk</li>
+        <li>English</li>
+      </ul>
+    </nav>
   </Header.Mobile>,
 ];
 

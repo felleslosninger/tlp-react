@@ -106,19 +106,30 @@ const Header = ({ children, className }: HeaderProps) => {
           return null;
         })}
       </Container>
-      <Container className={classes.container}>
-        {React.Children.map(children, (child) => {
-          if (child.type === HeaderBottom && !isMobile) {
-            return <div className={classes.bottom}>{child}</div>;
-          }
-          if (child.type === HeaderMobile && isMobile) {
-            return (
-              <>{showMenu && <div className={classes.bottom}>{child}</div>}</>
-            );
-          }
-          return null;
-        })}
-      </Container>
+
+      {React.Children.map(children, (child) => {
+        if (child.type === HeaderBottom && !isMobile) {
+          return (
+            <Container className={cn(classes.container)}>
+              <div className={classes.bottom}>{child}</div>
+            </Container>
+          );
+        }
+        if (child.type === HeaderMobile && isMobile && showMenu) {
+          return (
+            <>
+              <Container className={cn(classes.mobileContainer)}>
+                <div className={classes.mobile}>{child}</div>
+              </Container>
+              <div
+                onClick={toggleMenu}
+                className={classes.overlay}
+              ></div>
+            </>
+          );
+        }
+        return null;
+      })}
     </header>
   );
 };
