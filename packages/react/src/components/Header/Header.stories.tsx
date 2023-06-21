@@ -2,8 +2,8 @@ import React from 'react';
 
 import myLogo from '../../../../../assets/img/digdir-logo.svg';
 
-import { Header } from './Header';
 import { Link } from '../Link/Link';
+import { Header } from './Header';
 
 const children = [
   <Header.Left key={0}>
