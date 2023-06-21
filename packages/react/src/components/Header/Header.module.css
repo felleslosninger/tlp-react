@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: space-between;
   min-height: 100%;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid var(--fds-semantic-surface-neutral-subtle-hover);
 }
 
 .mobileContainer {

@@ -23,7 +23,7 @@ interface HeaderProps {
           | HeaderMobileProps
         >
       >;
-  className: string;
+  className?: string;
 }
 
 interface HeaderLeftProps {

@@ -21,10 +21,10 @@ const children = [
     <p>Header bottom</p>
   </Header.Bottom>,
   <Header.Mobile>
-    <nav>
+    <nav style={{ padding: '10px', fontSize: '16px' }}>
       <Link href='#'>Link to something</Link>
       <h2>Languange</h2>
-      <ul>
+      <ul style={{ listStyle: 'none' }}>
         <li>Norsk</li>
         <li>Nynorsk</li>
         <li>English</li>
