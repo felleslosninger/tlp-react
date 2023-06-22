@@ -1,0 +1,26 @@
+.middleUl {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.middleLi {
+  margin-right: 8px;
+}
+
+.mobileNav {
+  padding: 10px 0;
+  width: 100%;
+}
+
+.mobileUl {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileLi {
+  width: 100%;
+  padding: 12px 13px;
+  border-bottom: 1px solid var(--fds-semantic-surface-neutral-subtle-hover);
+}

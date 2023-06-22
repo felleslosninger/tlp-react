@@ -33,6 +33,7 @@
 }
 
 .middle {
+  display: flex;
   margin-right: auto;
   margin-left: 48px;
 }

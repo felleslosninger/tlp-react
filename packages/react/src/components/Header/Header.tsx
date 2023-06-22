@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
+import { Hamburger } from '@navikt/ds-icons';
+import { XMarkIcon } from '@navikt/aksel-icons';
 
 import { Container } from '../Container/Container';
 
 import classes from './Header.module.css';
-import { Hamburger } from '@navikt/ds-icons';
-import { XMarkIcon } from '@navikt/aksel-icons';
 
 interface HeaderProps {
   children:
@@ -89,16 +89,28 @@ const Header = ({ children, className }: HeaderProps) => {
                 {!isMobile ? (
                   child
                 ) : (
-                  <button
-                    onClick={toggleMenu}
-                    className={cn(classes.mobileMenuButton)}
-                  >
+                  <>
                     {showMenu ? (
-                      <XMarkIcon fontSize='1.8rem' />
+                      <button
+                        onClick={toggleMenu}
+                        onFocus={toggleMenu}
+                        className={cn(classes.mobileMenuButton)}
+                        aria-expanded={true}
+                        aria-haspopup={true}
+                      >
+                        <XMarkIcon fontSize='1.8rem' />
+                      </button>
                     ) : (
-                      <Hamburger fontSize='1.5rem' />
+                      <button
+                        onClick={toggleMenu}
+                        className={cn(classes.mobileMenuButton)}
+                        aria-expanded={false}
+                        aria-haspopup={true}
+                      >
+                        <Hamburger fontSize='1.5rem' />
+                      </button>
                     )}
-                  </button>
+                  </>
                 )}
               </div>
             );
@@ -122,7 +134,9 @@ const Header = ({ children, className }: HeaderProps) => {
                 <div className={classes.mobile}>{child}</div>
               </Container>
               <div
-                onClick={toggleMenu}
+                onFocus={toggleMenu}
+                role='button'
+                tabIndex={0}
                 className={classes.overlay}
               ></div>
             </>
