@@ -13,6 +13,17 @@
   width: 100%;
 }
 
+.bottomNav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bottomLi {
+  width: 100%;
+  padding: 12px 0;
+}
+
 .mobileUl {
   list-style: none;
   margin: 0;
