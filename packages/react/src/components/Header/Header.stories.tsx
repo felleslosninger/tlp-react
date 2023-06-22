@@ -1,11 +1,10 @@
 import React from 'react';
 
-import classes from './HeaderStories.module.css';
 import myLogo from '../../../../../assets/img/digdir-logo.svg';
 import { Link } from '../Link/Link';
 
 import { Header } from './Header';
-import { Container } from '../Container';
+import classes from './HeaderStories.module.css';
 
 const children = [
   <Header.Left key={0}>
@@ -39,22 +38,42 @@ const children = [
   </Header.Bottom>,
   <Header.Mobile key={4}>
     <nav className={classes.mobileNav}>
-      <Container>
-        <Link href='#'>Link to something</Link>
-        <Link href='#'>Link to something</Link>
-        <Link href='#'>Link to something</Link>
-      </Container>
-      <h2>Languange</h2>
+      <h2 className={classes.mobileH2}>Links</h2>
       <ul className={classes.mobileUl}>
-        <li className={classes.mobileLi}>Norsk</li>
-        <li className={classes.mobileLi}>Nynorsk</li>
-        <li className={classes.mobileLi}>English</li>
+        <li className={classes.mobileLi}>
+          <Link href='#'>Link to something</Link>
+        </li>
+        <li className={classes.mobileLi}>
+          <Link href='#'>Link to something</Link>
+        </li>
+        <li className={classes.mobileLi}>
+          <Link href='#'>Link to something</Link>
+        </li>
       </ul>
-      <h2>Other</h2>
+
+      <h2 className={classes.mobileH2}>Languange</h2>
       <ul className={classes.mobileUl}>
-        <li className={classes.mobileLi}>Something first</li>
-        <li className={classes.mobileLi}>Something else</li>
-        <li className={classes.mobileLi}>Something last</li>
+        <li className={classes.mobileLi}>
+          <Link href='#'>Norsk</Link>
+        </li>
+        <li className={classes.mobileLi}>
+          <Link href='#'>Engelsk</Link>
+        </li>
+        <li className={classes.mobileLi}>
+          <Link href='#'>Samisk</Link>
+        </li>
+      </ul>
+      <h2 className={classes.mobileH2}>Other</h2>
+      <ul className={classes.mobileUl}>
+        <li className={classes.mobileLi}>
+          <Link href='#'>Link to something</Link>
+        </li>
+        <li className={classes.mobileLi}>
+          <Link href='#'>Link to something</Link>
+        </li>
+        <li className={classes.mobileLi}>
+          <Link href='#'>Link to something</Link>
+        </li>
       </ul>
     </nav>
   </Header.Mobile>,

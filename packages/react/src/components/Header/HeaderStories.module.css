@@ -24,3 +24,9 @@
   padding: 12px 13px;
   border-bottom: 1px solid var(--fds-semantic-surface-neutral-subtle-hover);
 }
+
+.mobileH2 {
+  padding: 0 12px;
+  border-bottom: 1px solid var(--fds-semantic-surface-neutral-subtle-hover);
+  margin-bottom: 5px;
+}

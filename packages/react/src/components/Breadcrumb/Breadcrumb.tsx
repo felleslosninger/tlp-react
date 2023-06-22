@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { ChevronRightIcon } from '@navikt/aksel-icons';
+
 import { errorMessage } from '../../utils/helperFunctions/ThrowMessageHelper';
 
 import classes from './Breadcrumb.module.css';
