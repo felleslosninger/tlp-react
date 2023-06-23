@@ -24,6 +24,7 @@ interface HeaderProps {
         >
       >;
   className?: string;
+  closeMenu?: false;
 }
 
 interface HeaderLeftProps {
@@ -44,7 +45,7 @@ type HeaderMobileProps = {
   children: React.ReactNode;
 };
 
-const Header = ({ children, className }: HeaderProps) => {
+const Header = ({ children, className, closeMenu }: HeaderProps) => {
   const breakpoint = 768;
   const [isMobile, setIsMobile] = useState(Boolean);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,6 +57,31 @@ const Header = ({ children, className }: HeaderProps) => {
       setIsMobile(false);
     }
   };
+
+  useEffect(() => {
+    const handleLinkClick = () => {
+      setIsMenuOpen(false);
+    };
+    if (isMenuOpen) {
+      const links = document.querySelectorAll('a');
+      console.log(links);
+      links.forEach((link) => {
+        link.addEventListener('click', handleLinkClick);
+      });
+
+      return () => {
+        links.forEach((link) => {
+          link.removeEventListener('click', handleLinkClick);
+        });
+      };
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (closeMenu) {
+      setIsMenuOpen(false);
+    }
+  }, [closeMenu]);
 
   useEffect(() => {
     // Runs once at startup to set the correct value for isMobile
