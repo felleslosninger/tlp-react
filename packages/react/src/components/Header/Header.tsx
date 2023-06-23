@@ -100,7 +100,7 @@ const Header = ({ children, className, closeMenu }: HeaderProps) => {
   }, []);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prevState) => !prevState);
   };
 
   return (
