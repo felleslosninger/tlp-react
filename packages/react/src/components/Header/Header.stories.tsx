@@ -1,4 +1,5 @@
 import React from 'react';
+import { MagnifyingGlassIcon } from '@navikt/aksel-icons';
 
 import myLogo from '../../../../../assets/img/digdir-logo.svg';
 import { Link } from '../Link/Link';
@@ -8,12 +9,12 @@ import classes from './HeaderStories.module.css';
 
 const leftSection = (
   <Header.Left key={0}>
-    <a href='.'>
+    <Link>
       <img
         src={myLogo}
         alt='SVG logo'
       />
-    </a>
+    </Link>
   </Header.Left>
 );
 const middleSection = (
@@ -25,7 +26,7 @@ const middleSection = (
             className={classes.middleLi}
             key={index}
           >
-            <Link href='#'>middle</Link>
+            <Link href='.'>middle</Link>
           </li>
         ))}
       </ul>
@@ -45,7 +46,7 @@ const bottomSection = (
         >
           <h2>Links</h2>
           <ul className={classes.mobileUl}>
-            {[...Array(3)].map((_, index) => (
+            {[...Array(3)].map((index) => (
               <li
                 className={classes.bottomLi}
                 key={index}
@@ -60,6 +61,12 @@ const bottomSection = (
   </Header.Bottom>
 );
 
+const mobileRightSection = (
+  <Header.RightMobile>
+    <MagnifyingGlassIcon fontSize='1.7rem'></MagnifyingGlassIcon>
+  </Header.RightMobile>
+);
+
 const mobileSection = (
   <Header.Mobile key={4}>
     <nav className={classes.mobileNav}>
@@ -67,15 +74,14 @@ const mobileSection = (
         <React.Fragment key={index}>
           <h2 className={classes.mobileH2}>Links</h2>
           <ul className={classes.mobileUl}>
-            <li className={classes.mobileLi}>
-              <Link href='#'>Link to something</Link>
-            </li>
-            <li className={classes.mobileLi}>
-              <Link href='#'>Link to something</Link>
-            </li>
-            <li className={classes.mobileLi}>
-              <Link href='#'>Link to something</Link>
-            </li>
+            {[...Array(3)].map((index) => (
+              <li
+                key={index}
+                className={classes.mobileLi}
+              >
+                <Link>Link to something</Link>
+              </li>
+            ))}
           </ul>
         </React.Fragment>
       ))}
@@ -83,27 +89,12 @@ const mobileSection = (
   </Header.Mobile>
 );
 
-const AllChildren = [
-  leftSection,
-  middleSection,
-  rightSection,
-  bottomSection,
-  mobileSection,
-];
-
-const WithoutBottomChildren = [
-  leftSection,
-  middleSection,
-  rightSection,
-  mobileSection,
-];
-
 export default {
   title: 'Components/Header',
   component: Header,
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color' },
+    closeMenu: { control: 'boolean' },
   },
   parameters: {
     layout: 'fullscreen',
@@ -112,12 +103,24 @@ export default {
 
 export const Primary = {
   args: {
-    children: AllChildren,
+    children: [
+      leftSection,
+      middleSection,
+      rightSection,
+      bottomSection,
+      mobileSection,
+    ],
   },
 };
 
 export const WithoutBottom = {
   args: {
-    children: WithoutBottomChildren,
+    children: [leftSection, middleSection, rightSection, mobileSection],
+  },
+};
+
+export const OnlyLeftWithMobile = {
+  args: {
+    children: [leftSection, mobileRightSection, mobileSection],
   },
 };

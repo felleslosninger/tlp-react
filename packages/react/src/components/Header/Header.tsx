@@ -14,12 +14,14 @@ interface HeaderProps {
     | React.ReactElement<HeaderRightProps>
     | React.ReactElement<HeaderBottomProps>
     | React.ReactElement<HeaderMobileProps>
+    | React.ReactElement<HeaderMobileProps>
     | Array<
         React.ReactElement<
           | HeaderLeftProps
           | HeaderMiddleProps
           | HeaderRightProps
           | HeaderBottomProps
+          | HeaderRightMobileProps
           | HeaderMobileProps
         >
       >;
@@ -27,19 +29,24 @@ interface HeaderProps {
   closeMenu?: false;
 }
 
-interface HeaderLeftProps {
+type HeaderLeftProps = {
   children: React.ReactNode;
-}
+};
 
-interface HeaderMiddleProps {
+type HeaderMiddleProps = {
   children: React.ReactNode;
-}
-interface HeaderRightProps {
+};
+type HeaderRightProps = {
   children: React.ReactNode;
-}
-interface HeaderBottomProps {
+};
+
+type HeaderBottomProps = {
   children: React.ReactNode;
-}
+};
+
+type HeaderRightMobileProps = {
+  children?: React.ReactNode;
+};
 
 type HeaderMobileProps = {
   children: React.ReactNode;
@@ -64,7 +71,6 @@ const Header = ({ children, className, closeMenu }: HeaderProps) => {
     };
     if (isMenuOpen) {
       const links = document.querySelectorAll('a');
-      console.log(links);
       links.forEach((link) => {
         link.addEventListener('click', handleLinkClick);
       });
@@ -84,8 +90,6 @@ const Header = ({ children, className, closeMenu }: HeaderProps) => {
   }, [closeMenu]);
 
   useEffect(() => {
-    // Runs once at startup to set the correct value for isMobile
-
     handleResize();
 
     window.addEventListener('resize', handleResize);
@@ -109,35 +113,35 @@ const Header = ({ children, className, closeMenu }: HeaderProps) => {
           if (child.type === HeaderMiddle && !isMobile) {
             return <div className={classes.middle}>{child}</div>;
           }
-          if (child.type === HeaderRight) {
+          if (child.type === HeaderRight && !isMobile) {
+            return <div className={classes.right}>{child}</div>;
+          }
+          if (child.type === HeaderRightMobile && isMobile) {
             return (
               <div className={classes.right}>
-                {!isMobile ? (
-                  child
-                ) : (
-                  <>
-                    {isMenuOpen ? (
-                      <button
-                        onClick={toggleMenu}
-                        onFocus={toggleMenu}
-                        className={cn(classes.mobileMenuButton)}
-                        aria-expanded={true}
-                        aria-haspopup={true}
-                      >
-                        <XMarkIcon fontSize='1.8rem' />
-                      </button>
-                    ) : (
-                      <button
-                        onClick={toggleMenu}
-                        className={cn(classes.mobileMenuButton)}
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                      >
-                        <Hamburger fontSize='1.5rem' />
-                      </button>
-                    )}
-                  </>
-                )}
+                {child}
+                <>
+                  {isMenuOpen ? (
+                    <button
+                      onClick={toggleMenu}
+                      onFocus={toggleMenu}
+                      className={cn(classes.mobileMenuButton)}
+                      aria-expanded={true}
+                      aria-haspopup={true}
+                    >
+                      <XMarkIcon fontSize='1.8rem' />
+                    </button>
+                  ) : (
+                    <button
+                      onClick={toggleMenu}
+                      className={cn(classes.mobileMenuButton)}
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                    >
+                      <Hamburger fontSize='1.5rem' />
+                    </button>
+                  )}
+                </>
               </div>
             );
           }
@@ -190,6 +194,10 @@ const HeaderBottom = ({ children }: HeaderBottomProps) => {
   return <>{children}</>;
 };
 
+const HeaderRightMobile = ({ children }: HeaderRightMobileProps) => {
+  return <>{children}</>;
+};
+
 const HeaderMobile = ({ children }: HeaderMobileProps) => {
   return <>{children}</>;
 };
@@ -205,6 +213,9 @@ Header.Right = HeaderRight;
 
 HeaderBottom.displayName = 'Header.Bottom';
 Header.Bottom = HeaderBottom;
+
+HeaderRightMobile.displayName = 'Header.RightMobile';
+Header.RightMobile = HeaderRightMobile;
 
 HeaderMobile.displayName = 'Header.Mobile';
 Header.Mobile = HeaderMobile;
