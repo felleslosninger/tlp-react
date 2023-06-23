@@ -47,7 +47,7 @@ type HeaderMobileProps = {
 const Header = ({ children, className }: HeaderProps) => {
   const breakpoint = 768;
   const [isMobile, setIsMobile] = useState(Boolean);
-  const [showMenu, setShowMenu] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleResize = () => {
     if (window.innerWidth < breakpoint) {
@@ -58,7 +58,7 @@ const Header = ({ children, className }: HeaderProps) => {
   };
 
   useEffect(() => {
-    // Kjører en gang ved oppstart for å sette riktig verdifor isMobile
+    // Runs once at startup to set the correct value for isMobile
 
     handleResize();
 
@@ -70,7 +70,7 @@ const Header = ({ children, className }: HeaderProps) => {
   }, []);
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -90,7 +90,7 @@ const Header = ({ children, className }: HeaderProps) => {
                   child
                 ) : (
                   <>
-                    {showMenu ? (
+                    {isMenuOpen ? (
                       <button
                         onClick={toggleMenu}
                         onFocus={toggleMenu}
@@ -127,7 +127,7 @@ const Header = ({ children, className }: HeaderProps) => {
             </Container>
           );
         }
-        if (child.type === HeaderMobile && isMobile && showMenu) {
+        if (child.type === HeaderMobile && isMobile && isMenuOpen) {
           return (
             <>
               <Container className={cn(classes.mobileContainer)}>

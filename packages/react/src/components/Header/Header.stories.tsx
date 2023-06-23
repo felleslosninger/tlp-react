@@ -6,7 +6,7 @@ import { Link } from '../Link/Link';
 import { Header } from './Header';
 import classes from './HeaderStories.module.css';
 
-const AllChildren = [
+const leftSection = (
   <Header.Left key={0}>
     <a href='.'>
       <img
@@ -14,141 +14,88 @@ const AllChildren = [
         alt='SVG logo'
       />
     </a>
-  </Header.Left>,
+  </Header.Left>
+);
+const middleSection = (
   <Header.Middle key={1}>
     <nav>
       <ul className={classes.middleUl}>
-        <li className={classes.middleLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
-        <li className={classes.middleLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
-        <li className={classes.middleLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
+        {[...Array(3)].map((index) => (
+          <li
+            className={classes.middleLi}
+            key={index}
+          >
+            <Link href='#'>middle</Link>
+          </li>
+        ))}
       </ul>
     </nav>
-  </Header.Middle>,
-  <Header.Right key={2}>Right</Header.Right>,
+  </Header.Middle>
+);
+
+const rightSection = <Header.Right key={2}>Right</Header.Right>;
+
+const bottomSection = (
   <Header.Bottom key={3}>
     <nav className={classes.bottomNav}>
-      <div className={classes.bottomDiv}>
-        <h2>Links</h2>
-        <ul className={classes.mobileUl}>
-          <li className={classes.bottomLi}>
-            <Link href='#'>Link to something</Link>
-          </li>
-          <li className={classes.bottomLi}>
-            <Link href='#'>Link to something</Link>
-          </li>
-          <li className={classes.bottomLi}>
-            <Link href='#'>Link to something</Link>
-          </li>
-        </ul>
-      </div>
-      <div className={classes.bottomDiv}>
-        <h2>Languange</h2>
-        <ul className={classes.mobileUl}>
-          <li className={classes.bottomLi}>
-            <Link href='#'>Norsk</Link>
-          </li>
-          <li className={classes.bottomLi}>
-            <Link href='#'>Engelsk</Link>
-          </li>
-          <li className={classes.bottomLi}>
-            <Link href='#'>Samisk</Link>
-          </li>
-        </ul>
-      </div>
-      <div className={classes.bottomDiv}>
-        <h2>Other</h2>
-        <ul className={classes.mobileUl}>
-          <li className={classes.bottomLi}>
-            <Link href='#'>Link to something</Link>
-          </li>
-          <li className={classes.bottomLi}>
-            <Link href='#'>Link to something</Link>
-          </li>
-          <li className={classes.bottomLi}>
-            <Link href='#'>Link to something</Link>
-          </li>
-        </ul>
-      </div>
+      {[...Array(3)].map((index) => (
+        <div
+          key={index}
+          className={classes.bottomDiv}
+        >
+          <h2>Links</h2>
+          <ul className={classes.mobileUl}>
+            {[...Array(3)].map((_, index) => (
+              <li
+                className={classes.bottomLi}
+                key={index}
+              >
+                <Link href='#'>Link to something</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </nav>
-  </Header.Bottom>,
-  <Header.Mobile key={4}>
-    <nav className={classes.mobileNav}>
-      <h2 className={classes.mobileH2}>Links</h2>
-      <ul className={classes.mobileUl}>
-        <li className={classes.mobileLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
-        <li className={classes.mobileLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
-        <li className={classes.mobileLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
-      </ul>
+  </Header.Bottom>
+);
 
-      <h2 className={classes.mobileH2}>Languange</h2>
-      <ul className={classes.mobileUl}>
-        <li className={classes.mobileLi}>
-          <Link href='#'>Norsk</Link>
-        </li>
-        <li className={classes.mobileLi}>
-          <Link href='#'>Engelsk</Link>
-        </li>
-        <li className={classes.mobileLi}>
-          <Link href='#'>Samisk</Link>
-        </li>
-      </ul>
-      <h2 className={classes.mobileH2}>Other</h2>
-      <ul className={classes.mobileUl}>
-        <li className={classes.mobileLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
-        <li className={classes.mobileLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
-        <li className={classes.mobileLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
-      </ul>
-    </nav>
-  </Header.Mobile>,
-];
-const WithoutBottomChildren = [
-  <Header.Left key={0}>
-    <a href='.'>
-      <img
-        src={myLogo}
-        alt='SVG logo'
-      />
-    </a>
-  </Header.Left>,
-  <Header.Middle key={1}>
-    <nav>
-      <ul className={classes.middleUl}>
-        <li className={classes.middleLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
-        <li className={classes.middleLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
-        <li className={classes.middleLi}>
-          <Link href='#'>Link to something</Link>
-        </li>
-      </ul>
-    </nav>
-  </Header.Middle>,
-  <Header.Right key={2}>Right</Header.Right>,
+const mobileSection = (
   <Header.Mobile key={4}>
     <nav className={classes.mobileNav}>
-      <h2 className={classes.mobileH2}>Mobile Menu</h2>
+      {[...Array(3)].map((index) => (
+        <React.Fragment key={index}>
+          <h2 className={classes.mobileH2}>Links</h2>
+          <ul className={classes.mobileUl}>
+            <li className={classes.mobileLi}>
+              <Link href='#'>Link to something</Link>
+            </li>
+            <li className={classes.mobileLi}>
+              <Link href='#'>Link to something</Link>
+            </li>
+            <li className={classes.mobileLi}>
+              <Link href='#'>Link to something</Link>
+            </li>
+          </ul>
+        </React.Fragment>
+      ))}
     </nav>
-  </Header.Mobile>,
+  </Header.Mobile>
+);
+
+const AllChildren = [
+  leftSection,
+  middleSection,
+  rightSection,
+  bottomSection,
+  mobileSection,
+];
+
+const WithoutBottomChildren = [
+  leftSection,
+  middleSection,
+  rightSection,
+  mobileSection,
 ];
 
 export default {
