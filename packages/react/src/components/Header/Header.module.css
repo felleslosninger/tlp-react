@@ -1,13 +1,30 @@
 .header {
   height: 80px;
-  border-bottom: 1px solid #dbdbdb;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    height: 56px;
+  }
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 100%;
+  border-bottom: 1px solid var(--fds-semantic-surface-neutral-subtle-hover);
+}
+
+.mobileContainer {
+  padding: 0;
+}
+
+.overlay {
+  background: rgba(0 0 0 / 0.5);
+  position: fixed;
   height: 100%;
+  width: 100%;
 }
 
 .left {
@@ -16,6 +33,7 @@
 }
 
 .middle {
+  display: flex;
   margin-right: auto;
   margin-left: 48px;
 }
@@ -23,4 +41,23 @@
 .right {
   display: flex;
   align-items: center;
+}
+
+.bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.mobile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+}
+
+.mobileMenuButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

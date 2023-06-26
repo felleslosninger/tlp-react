@@ -3,7 +3,8 @@
   --color-blue-link-hover: rgba(0 78 149 / 1);
   --color-neutral-white: rgba(255 255 255 / 1);
 
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   display: flex;
 }
 
@@ -24,11 +25,11 @@
 }
 
 .normalInner {
-  border-bottom: 1px solid var(--color-blue-link);
+  text-decoration: underline var(--color-blue-link);
 }
 
 .invertedInner {
-  border-bottom: 1px solid var(--color-neutral-white);
+  text-decoration: underline var(--color-neutral-white);
 }
 
 .invertedInner:hover {

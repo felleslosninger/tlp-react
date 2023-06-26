@@ -6,11 +6,12 @@ import classes from './Link.module.css';
 interface LinkProps {
   inverted?: boolean;
   children: React.ReactNode;
-  href: string;
+  href?: string;
   className?: string;
   iconBefore?: React.ReactNode;
   iconAfter?: React.ReactNode;
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
+  to?: string;
 }
 
 const Link = ({
@@ -21,6 +22,7 @@ const Link = ({
   iconBefore,
   iconAfter,
   as,
+  to,
   ...rest
 }: LinkProps) => {
   const Component = as || 'a';
@@ -34,6 +36,7 @@ const Link = ({
       )}
       href={href}
       {...rest}
+      to={to}
     >
       {iconBefore && <span className={classes.iconBefore}>{iconBefore}</span>}
       <span

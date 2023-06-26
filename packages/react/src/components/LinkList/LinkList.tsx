@@ -2,7 +2,6 @@ import React, { createElement, useEffect, useState } from 'react';
 import cn from 'classnames';
 
 import { errorMessage } from '../../utils/helperFunctions/ThrowMessageHelper';
-
 import type { LinkProps } from '../Link/Link';
 import { Link } from '../Link/Link';
 
