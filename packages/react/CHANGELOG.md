@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.13...@digdir/tlp-react@0.2.0) (2023-06-26)
+
+### Features
+
+- **header:** header component. basic skeleton for header component, … ([#25](https://github.com/felleslosninger/tlp-react/issues/25)) ([f9e23bb](https://github.com/felleslosninger/tlp-react/commit/f9e23bb3a410503453fb5ce1f8ffb07582f49673))
+
 ## [0.1.13](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.12...@digdir/tlp-react@0.1.13) (2023-06-15)
 
 ### Bug Fixes
