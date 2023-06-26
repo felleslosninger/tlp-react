@@ -9,6 +9,7 @@ interface FooterProps {
   children:
     | Array<React.ReactElement<FooterColumnProps>>
     | React.ReactElement<FooterBottomProps>;
+  className?: string;
 }
 
 interface FooterColumnProps {
@@ -19,10 +20,10 @@ interface FooterBottomProps {
   children: React.ReactNode;
 }
 
-const Footer = ({ children, ...rest }: FooterProps) => {
+const Footer = ({ children, className, ...rest }: FooterProps) => {
   return (
     <footer
-      className={cn(classes.footer)}
+      className={cn(classes.footer, className)}
       {...rest}
     >
       <Container>
