@@ -25,5 +25,6 @@
     "@altinn/figma-design-tokens": "^6.0.1",
     "@digdir/design-system-tokens": "^0.0.3",
     "@navikt/ds-icons": "^2.3.0"
-  }
+  },
+  "gitHead": "52d5bebabe2bcdc934192f3c7a802186eed0130c"
 }
