@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.2.0...@digdir/tlp-react@0.3.0) (2023-07-04)
+
+### Features
+
+- let Link komponent be able to handle onclick functions. let header pass mobile menu state to parent component, and some small css changes ([3a3eba0](https://github.com/felleslosninger/tlp-react/commit/3a3eba06577c2c20da460d327d4f1bfbebb97729))
+
 # [0.2.0](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.1.13...@digdir/tlp-react@0.2.0) (2023-06-26)
 
 ### Features
