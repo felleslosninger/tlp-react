@@ -12,6 +12,7 @@ interface LinkProps {
   iconAfter?: React.ReactNode;
   as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
   to?: string;
+  onClick?: () => void; // Legger til typen for onClick-prop
 }
 
 const Link = ({
@@ -23,9 +24,16 @@ const Link = ({
   iconAfter,
   as,
   to,
+  onClick,
   ...rest
 }: LinkProps) => {
   const Component = as || 'a';
+
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
+  };
 
   return (
     <Component
@@ -35,6 +43,7 @@ const Link = ({
         className,
       )}
       href={href}
+      onClick={handleClick} // Legger til onClick-hendelsesbehandleren
       {...rest}
       to={to}
     >
