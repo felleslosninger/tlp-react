@@ -6,6 +6,7 @@ import classes from './CourceCard.module.css';
 type CourceCardProps = {
   date: Date;
   brand: 'primary' | 'secondary' | 'tertiary';
+  title: string;
   time: string;
   location: string;
   tags: string;
@@ -14,6 +15,7 @@ type CourceCardProps = {
 const CourceCard = ({
   date = new Date(2023, 8, 10),
   brand = 'primary',
+  title,
   time,
   location,
   tags,
@@ -39,7 +41,7 @@ const CourceCard = ({
         <span>{year}</span>
       </div>
       <div className={cn(classes.informationBox)}>
-        information block
+        <h2>{title}</h2>
         <div>
           <span>{time}</span>
           <span>{location}</span>

@@ -14,13 +14,37 @@
 }
 
 .primary {
-  background-color: red;
+  background-color: var(--fds-semantic-surface-primary-primary);
+}
+
+.primary:hover {
+  background-color: var(--fds-semantic-surface-primary-primary-hover);
+}
+
+.primary:active {
+  background-color: var(--fds-semantic-surface-primary-primary-active);
 }
 
 .secondary {
-  background-color: yellow;
+  background-color: var(--fds-semantic-surface-secondary-secondary);
+}
+
+.secondary:hover {
+  background-color: var(--fds-semantic-surface-secondary-secondary-hover);
+}
+
+.secondary:active {
+  background-color: var(--fds-semantic-surface-secondary-secondary-active);
 }
 
 .tertiary {
-  background-color: blue;
+  background-color: var(--fds-semantic-surface-tertiary-tertiary);
+}
+
+.tertiary:hover {
+  background-color: var(--fds-semantic-surface-tertiary-tertiary-hover);
+}
+
+.tertiary:active {
+  background-color: var(--fds-semantic-surface-tertiary-tertiary-active);
 }

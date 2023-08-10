@@ -4,9 +4,7 @@ export default {
   title: 'Components/CourceCard',
   component: CourceCard,
   tags: ['autodocs'],
-  argTypes: {
-    color: { control: 'color' },
-  },
+
   parameters: {
     layout: 'centered',
     backgrounds: {
@@ -29,6 +27,10 @@ export const Primary = {
   args: {
     date: new Date(2023, 8, 10),
     brand: 'primary',
+    title: 'tittel',
+    time: '13:00',
+    location: 'Digital',
+    tags: 'Digitlization',
   },
 };
 
