@@ -44,12 +44,15 @@
 .informationBox {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  justify-content: center;
+  padding: 10px 30px;
   background-color: var(--fds-semantic-background-default);
 }
 
 .informationBox h2 {
   text-decoration: underline;
+  margin-top: 0;
+  font-size: 18px;
 }
 
 .courceLabels {
