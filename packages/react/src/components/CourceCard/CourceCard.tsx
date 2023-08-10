@@ -25,7 +25,10 @@ const CourceCard = ({
   const year = date.getFullYear();
 
   return (
-    <div className={cn(classes.courceCardWrapper)}>
+    <a
+      href='.'
+      className={cn(classes.courceCardWrapper)}
+    >
       <div
         className={cn(
           classes.dateBox,
@@ -48,7 +51,7 @@ const CourceCard = ({
           <span>{tags}</span>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 
