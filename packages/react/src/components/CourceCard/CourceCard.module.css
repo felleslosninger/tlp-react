@@ -17,14 +17,50 @@
   outline: 2px solid var(--fds-semantic-surface-secondary-secondary-active);
 }
 
+.mobile {
+  flex-direction: column;
+}
+
 .dateBox {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.dateDay {
+  margin: 5px 0 0;
+}
+
+.dateMonth {
+  margin: 5px 0;
+}
+
+.dateYear {
+  margin: 5px 0 0;
 }
 
 .informationBox {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  background-color: var(--fds-semantic-background-default);
+}
+
+.informationBox h2 {
+  text-decoration: underline;
+}
+
+.courceLabels {
+  display: flex;
+  gap: 15px;
+}
+
+.courceLabels span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .primary {

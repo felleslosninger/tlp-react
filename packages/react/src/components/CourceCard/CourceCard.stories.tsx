@@ -27,45 +27,43 @@ export default {
 
 export const Primary = {
   args: {
-    date: new Date(2023, 8, 10),
+    date: new Date(2018, 11, 24, 10, 3),
     brand: 'primary',
-    time: '13:00',
-    location: 'Digital',
-    tags: 'Digitalization',
-    children: (
-      <CourceCard.Title>
+    children: [
+      <CourceCard.Title key='title'>
         Unik sommerjobb for studenter innen digitalisering
-      </CourceCard.Title>
-    ),
+      </CourceCard.Title>,
+      <CourceCard.Location key='location'>Leikanger</CourceCard.Location>,
+      <CourceCard.Tag key='tag'>Digitalization</CourceCard.Tag>,
+    ],
   },
 };
 
 export const Secondary = {
   args: {
-    date: new Date(2023, 8, 10),
+    date: new Date(2018, 11, 24, 10, 3),
     brand: 'secondary',
-    time: '13:00',
-    location: 'Digital',
-    tags: 'Digitalization',
-    children: (
-      <CourceCard.Title>
+    children: [
+      <CourceCard.Title key='title'>
         Unik sommerjobb for studenter innen digitalisering
-      </CourceCard.Title>
-    ),
+      </CourceCard.Title>,
+      <CourceCard.Location key='location'>Leikanger</CourceCard.Location>,
+      <CourceCard.Tag key='tag'>Digitalization</CourceCard.Tag>,
+    ],
   },
 };
 
 export const Tertiary = {
   args: {
-    date: new Date(2023, 8, 10),
+    date: new Date(2018, 11, 24, 10, 3),
     brand: 'tertiary',
-    time: '13:00',
-    location: 'Digital',
-    tags: 'Digitalization',
-    children: (
-      <CourceCard.Title>
+    breakpoint: 100,
+    children: [
+      <CourceCard.Title key='title'>
         Unik sommerjobb for studenter innen digitalisering
-      </CourceCard.Title>
-    ),
+      </CourceCard.Title>,
+      <CourceCard.Location key='location'>Leikanger</CourceCard.Location>,
+      <CourceCard.Tag key='tag'>Digitalization</CourceCard.Tag>,
+    ],
   },
 };
