@@ -1,0 +1,26 @@
+.courceCardWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.dateBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.informationBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.primary {
+  background-color: red;
+}
+
+.secondary {
+  background-color: yellow;
+}
+
+.tertiary {
+  background-color: blue;
+}
