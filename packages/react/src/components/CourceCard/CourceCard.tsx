@@ -8,34 +8,18 @@ type CourceCardProps = {
   date: Date;
   brand: 'primary' | 'secondary' | 'tertiary';
   breakpoint: number;
-  children:
-    | React.ReactElement<CourceTitleProps>
-    | React.ReactElement<CourceTagProps>
-    | React.ReactElement<CourceLocationProps>
-    | Array<
-        React.ReactElement<
-          CourceTitleProps | CourceTagProps | CourceLocationProps
-        >
-      >;
-};
-
-type CourceTitleProps = {
-  children: React.ReactNode;
-};
-
-type CourceLocationProps = {
-  children: React.ReactNode;
-};
-
-type CourceTagProps = {
-  children: React.ReactNode;
+  title: string;
+  location: string;
+  tag: string;
 };
 
 const CourceCard = ({
   date = new Date(),
   brand = 'primary',
   breakpoint = 768,
-  children,
+  title,
+  location,
+  tag,
 }: CourceCardProps) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < breakpoint);
 
@@ -54,13 +38,19 @@ const CourceCard = ({
   const day = date.getDate();
   const month = date.toLocaleString('default', { month: 'long' });
   const year = date.getFullYear();
-  const hours = date.getHours();
-  let minutes;
 
+  let minutes;
   if (date.getMinutes() < 10) {
     minutes = '0' + date.getMinutes();
   } else {
     minutes = date.getMinutes();
+  }
+
+  let hours;
+  if (date.getMinutes() < 10) {
+    hours = '0' + date.getHours();
+  } else {
+    hours = date.getHours();
   }
 
   return (
@@ -85,9 +75,7 @@ const CourceCard = ({
           isMobile ? classes.mobileInformationBox : null,
         )}
       >
-        {React.Children.map(children, (child) => {
-          if (child.type === CourceTitle) return <h2>{child}</h2>;
-        })}
+        <h2>{title}</h2>
         <div>
           <div
             className={cn(
@@ -99,51 +87,20 @@ const CourceCard = ({
               <ClockIcon fontSize='1rem' />
               {hours}:{minutes}
             </span>
-            {React.Children.map(children, (child) => {
-              if (child.type === CourceLocation)
-                return (
-                  <span>
-                    <PinIcon fontSize='1rem' />
-                    {child}
-                  </span>
-                );
-            })}
-            {React.Children.map(children, (child) => {
-              if (child.type === CourceTag)
-                return (
-                  <span>
-                    <BookmarkIcon fontSize='1rem' />
-                    {child}
-                  </span>
-                );
-            })}
+            <span>
+              <PinIcon fontSize='1rem' />
+              {location}
+            </span>
+            <span>
+              <BookmarkIcon fontSize='1rem' />
+              {tag}
+            </span>
           </div>
         </div>
       </div>
     </a>
   );
 };
-
-const CourceTitle = ({ children }: CourceTitleProps) => {
-  return <>{children}</>;
-};
-
-const CourceTag = ({ children }: CourceTagProps) => {
-  return <>{children}</>;
-};
-
-const CourceLocation = ({ children }: CourceLocationProps) => {
-  return <>{children}</>;
-};
-
-CourceTitle.displayName = 'CourceCard.Title';
-CourceCard.Title = CourceTitle;
-
-CourceTag.displayName = 'CourceCard.Tag';
-CourceCard.Tag = CourceTag;
-
-CourceLocation.displayName = 'CourceCard.Location';
-CourceCard.Location = CourceLocation;
 
 export { CourceCard };
 export type { CourceCardProps };
