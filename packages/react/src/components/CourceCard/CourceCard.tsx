@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
-
 import { ClockIcon, PinIcon, BookmarkIcon } from '@navikt/aksel-icons';
 
 import classes from './CourceCard.module.css';
@@ -73,17 +72,29 @@ const CourceCard = ({
         isMobile ? classes.mobile : null,
       )}
     >
-      <div className={cn(classes.dateBox)}>
+      <div
+        className={cn(classes.dateBox, isMobile ? classes.mobileDateBox : null)}
+      >
         <span className={cn(classes.dateDay)}>{day}</span>
         <span className={cn(classes.dateMonth)}>{month}</span>
         <span className={cn(classes.dateYear)}>{year}</span>
       </div>
-      <div className={cn(classes.informationBox)}>
+      <div
+        className={cn(
+          classes.informationBox,
+          isMobile ? classes.mobileInformationBox : null,
+        )}
+      >
         {React.Children.map(children, (child) => {
           if (child.type === CourceTitle) return <h2>{child}</h2>;
         })}
         <div>
-          <div className={cn(classes.courceLabels)}>
+          <div
+            className={cn(
+              classes.courceLabels,
+              isMobile ? classes.mobile : null,
+            )}
+          >
             <span>
               <ClockIcon fontSize='1rem' />
               {hours}:{minutes}

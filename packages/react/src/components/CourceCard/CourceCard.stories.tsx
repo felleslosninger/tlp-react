@@ -57,7 +57,7 @@ export const Tertiary = {
   args: {
     date: new Date(2018, 11, 24, 10, 3),
     brand: 'tertiary',
-    breakpoint: 100,
+    breakpoint: 10000,
     children: [
       <CourceCard.Title key='title'>
         Unik sommerjobb for studenter innen digitalisering
