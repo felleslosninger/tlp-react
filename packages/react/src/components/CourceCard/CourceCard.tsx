@@ -6,8 +6,8 @@ import classes from './CourceCard.module.css';
 
 type CourceCardProps = {
   date: Date;
-  brand: 'primary' | 'secondary' | 'tertiary';
-  breakpoint: number;
+  brand?: 'primary' | 'secondary' | 'tertiary';
+  breakpoint?: number;
   title: string;
   location: string;
   tag: string;
@@ -36,22 +36,15 @@ const CourceCard = ({
   }, [breakpoint]);
 
   const day = date.getDate();
-  const month = date.toLocaleString('default', { month: 'long' });
+  const month = date.toLocaleString('default', {
+    month: isMobile ? 'long' : 'short',
+  });
   const year = date.getFullYear();
 
-  let minutes;
-  if (date.getMinutes() < 10) {
-    minutes = '0' + date.getMinutes();
-  } else {
-    minutes = date.getMinutes();
-  }
-
-  let hours;
-  if (date.getMinutes() < 10) {
-    hours = '0' + date.getHours();
-  } else {
-    hours = date.getHours();
-  }
+  const formattedMinutes =
+    date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+  const formattedHours =
+    date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
 
   return (
     <a
@@ -85,7 +78,7 @@ const CourceCard = ({
           >
             <span>
               <ClockIcon fontSize='1rem' />
-              {hours}:{minutes}
+              {formattedHours}:{formattedMinutes}
             </span>
             <span>
               <PinIcon fontSize='1rem' />

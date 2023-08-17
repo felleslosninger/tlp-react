@@ -28,12 +28,13 @@
 }
 
 .mobileDateBox {
-  width: none;
-  height: none;
+  width: auto;
+  height: auto;
   padding: 24px;
   flex-direction: row;
   justify-content: left;
   align-items: normal;
+  font: var(--fds-typography-body-medium);
 }
 
 .mobileDateBox span:not(:last-child)::after {
@@ -41,6 +42,7 @@
 }
 
 .dateDay {
+  font: var(--fds-typography-heading-large);
   margin: 5px 0 0;
 }
 
