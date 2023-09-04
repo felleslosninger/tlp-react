@@ -29,7 +29,7 @@ export const Primary = {
   args: {
     date: new Date(2018, 11, 24, 10, 3),
     brand: 'primary',
-    title: 'Unik sommerjobb for studenter innen digitalisering',
+    title: 'Unik sommerjobb ',
     location: 'Leikanger',
     tag: 'Digitalization',
   },
@@ -40,8 +40,8 @@ export const Secondary = {
     date: new Date(2018, 11, 24, 10, 3),
     brand: 'secondary',
     title: 'Unik sommerjobb for studenter innen digitalisering',
-    location: 'Leikanger',
-    tag: 'Digitalization',
+    location: 'Leikanger, Leikanger, Leikanger, Leikanger',
+    tag: 'Digitalization, Leikanger, Leikanger',
   },
 };
 

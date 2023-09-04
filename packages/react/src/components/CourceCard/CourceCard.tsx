@@ -58,9 +58,24 @@ const CourceCard = ({
       <div
         className={cn(classes.dateBox, isMobile ? classes.mobileDateBox : null)}
       >
-        <span className={cn(classes.dateDay)}>{day}</span>
-        <span className={cn(classes.dateMonth)}>{month}</span>
-        <span className={cn(classes.dateYear)}>{year}</span>
+        <span
+          className={cn(classes.dateDay, isMobile ? classes.mobileDate : null)}
+        >
+          {day}
+        </span>
+        <span
+          className={cn(
+            classes.dateMonth,
+            isMobile ? classes.mobileDate : null,
+          )}
+        >
+          {month}
+        </span>
+        <span
+          className={cn(classes.dateYear, isMobile ? classes.mobileDate : null)}
+        >
+          {year}
+        </span>
       </div>
       <div
         className={cn(
@@ -76,18 +91,26 @@ const CourceCard = ({
               isMobile ? classes.mobile : null,
             )}
           >
-            <span>
-              <ClockIcon fontSize='1rem' />
-              {formattedHours}:{formattedMinutes}
-            </span>
-            <span>
-              <PinIcon fontSize='1rem' />
-              {location}
-            </span>
-            <span>
-              <BookmarkIcon fontSize='1rem' />
-              {tag}
-            </span>
+            <div>
+              <span className={classes.icon}>
+                <ClockIcon fontSize='1rem' />
+              </span>
+              <span>
+                {formattedHours}:{formattedMinutes}
+              </span>
+            </div>
+            <div>
+              <span className={classes.icon}>
+                <PinIcon fontSize='1rem' />
+              </span>
+              <span>{location}</span>
+            </div>
+            <div>
+              <span className={classes.icon}>
+                <BookmarkIcon fontSize='1rem' />
+              </span>
+              <span>{tag}</span>
+            </div>
           </div>
         </div>
       </div>
