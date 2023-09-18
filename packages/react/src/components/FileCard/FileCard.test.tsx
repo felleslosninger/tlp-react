@@ -5,14 +5,16 @@ import type { FileCardProps } from './FileCard';
 import { FileCard } from './FileCard';
 
 describe('FileCard', () => {
-  it('should have the myClass class', () => {
+  it('should have the fileCard class', () => {
     render({
-      children: 'myComponent',
+      heading: 'test',
+      subHeading: 'test',
+      filePath: '/test',
+      ariaLabel: 'test',
     });
-    const list = screen.getByRole('list');
-    expect(list.classList).toContain('myClass');
+    const list = screen.getByLabelText('test');
+    expect(list.classList).toContain('fileCard');
   });
 });
 
-const render = (props: FileCardProps) =>
-  renderRtl(<FileCard {...props}>{props.children}</FileCard>);
+const render = (props: FileCardProps) => renderRtl(<FileCard {...props} />);

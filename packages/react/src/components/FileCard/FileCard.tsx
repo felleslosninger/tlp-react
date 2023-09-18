@@ -8,10 +8,10 @@ import useIsMobile from '../../hooks/useIsMobile';
 import classes from './FileCard.module.css';
 
 type FileCardProps = {
-  icon: React.ReactNode;
   heading: string;
   subHeading: string;
   filePath: string;
+  icon?: React.ReactNode;
   fileName?: string;
   brand?: 'primary' | 'secondary' | 'tertiary';
   ariaLabel?: string;
