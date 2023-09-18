@@ -1,3 +1,59 @@
-.myClass {
-  color: red;
+.fileCard {
+  display: grid;
+  grid-template-columns: 80px 1fr 80px;
+  width: 100%;
+  border: 1px solid var(--fds-semantic-border-neutral-default);
+  border-radius: 4px;
+  cursor: pointer;
+
+  --color-200: var(--fds-brand-primary-200);
+  --color-300: var(--fds-brand-primary-300);
+  --color-400: var(--fds-brand-primary-400);
+}
+
+.fileCard:hover {
+  border-width: 2px;
+  background-color: var(--color-200);
+}
+
+.fileCard:hover .fileIcon {
+  background-color: var(--color-400);
+}
+
+.primary {
+  --color-200: var(--fds-brand-primary-200);
+  --color-300: var(--fds-brand-primary-300);
+}
+
+.secondary {
+  --color-200: var(--fds-brand-secondary-200);
+  --color-300: var(--fds-brand-secondary-300);
+}
+
+.tertiary {
+  --color-200: var(--fds-brand-tertiary-200);
+  --color-300: var(--fds-brand-tertiary-300);
+}
+
+.fileIcon {
+  display: grid;
+  place-items: center;
+  height: 80px;
+  background-color: var(--color-300);
+  font-size: 2rem;
+}
+
+.fileText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 24px;
+  flex: 1;
+}
+
+.fileDownload {
+  display: grid;
+  place-items: center;
+  height: 80px;
+  font-size: 2rem;
 }

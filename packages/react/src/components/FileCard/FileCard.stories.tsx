@@ -1,3 +1,6 @@
+import React from 'react';
+import { FilePdfIcon } from '@navikt/aksel-icons';
+
 import { FileCard } from './FileCard';
 
 export default {
@@ -5,7 +8,12 @@ export default {
   component: FileCard,
   tags: ['autodocs'],
   argTypes: {
-    children: { control: 'text' },
+    brand: {
+      control: {
+        type: 'radio',
+        options: ['primary', 'secondary', 'tertiary'],
+      },
+    },
   },
   parameters: {
     layout: 'centered',
@@ -27,6 +35,26 @@ export default {
 
 export const Normal = {
   args: {
-    children: 'myComponent',
+    icon: <FilePdfIcon />,
+    heading: 'Dette er en fil',
+    subHeading: 'Dette er en filbeskrivelse',
+  },
+};
+
+export const Secondary = {
+  args: {
+    icon: <FilePdfIcon />,
+    heading: 'Dette er en fil',
+    subHeading: 'Dette er en filbeskrivelse',
+    brand: 'secondary',
+  },
+};
+
+export const Tertiary = {
+  args: {
+    icon: <FilePdfIcon />,
+    heading: 'Dette er en fil',
+    subHeading: 'Dette er en filbeskrivelse',
+    brand: 'tertiary',
   },
 };
