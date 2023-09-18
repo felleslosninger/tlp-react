@@ -9,6 +9,8 @@ interface FileCardProps {
   icon: React.ReactNode;
   heading: string;
   subHeading: string;
+  filePath: string;
+  fileName?: string;
   brand?: 'primary' | 'secondary' | 'tertiary';
 }
 
@@ -16,10 +18,17 @@ const FileCard = ({
   icon,
   heading,
   subHeading,
+  filePath,
+  fileName,
   brand = 'primary',
 }: FileCardProps) => {
   return (
-    <div className={cn(classes.fileCard, classes[brand])}>
+    <a
+      className={cn(classes.fileCard, classes[brand])}
+      href={filePath}
+      download={fileName}
+      aria-label='Last ned fil'
+    >
       <div className={cn(classes.fileIcon)}>{icon ? icon : <FileIcon />}</div>
       <div className={cn(classes.fileText)}>
         <Heading size='xxsmall'>{heading}</Heading>
@@ -28,7 +37,7 @@ const FileCard = ({
       <div className={cn(cn(classes.fileDownload))}>
         <DownloadIcon />
       </div>
-    </div>
+    </a>
   );
 };
 
