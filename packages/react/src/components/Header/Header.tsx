@@ -4,9 +4,9 @@ import { Hamburger } from '@navikt/ds-icons';
 import { XMarkIcon } from '@navikt/aksel-icons';
 
 import { Container } from '../Container/Container';
+import useIsMobile from '../../hooks/useIsMobile';
 
 import classes from './Header.module.css';
-import useIsMobile from '../../hooks/useIsMobile';
 
 interface HeaderProps {
   children:

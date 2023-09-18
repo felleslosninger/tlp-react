@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import { DownloadIcon, FileIcon } from '@navikt/aksel-icons';
 import { Heading, Paragraph } from '@digdir/design-system-react';
 
-import classes from './FileCard.module.css';
 import useIsMobile from '../../hooks/useIsMobile';
+
+import classes from './FileCard.module.css';
 
 type FileCardProps = {
   icon: React.ReactNode;
