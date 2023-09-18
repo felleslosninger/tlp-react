@@ -1,6 +1,3 @@
-import React from 'react';
-import { FilePdfIcon } from '@navikt/aksel-icons';
-
 import { FileCard } from './FileCard';
 
 export default {
@@ -35,7 +32,6 @@ export default {
 
 export const Normal = {
   args: {
-    icon: <FilePdfIcon />,
     heading: 'Dette er en fil',
     subHeading: 'Dette er en filbeskrivelse',
   },
@@ -43,7 +39,6 @@ export const Normal = {
 
 export const Secondary = {
   args: {
-    icon: <FilePdfIcon />,
     heading: 'Dette er en fil',
     subHeading: 'Dette er en filbeskrivelse',
     brand: 'secondary',
@@ -52,7 +47,6 @@ export const Secondary = {
 
 export const Tertiary = {
   args: {
-    icon: <FilePdfIcon />,
     heading: 'Dette er en fil',
     subHeading: 'Dette er en filbeskrivelse',
     brand: 'tertiary',
