@@ -3,12 +3,11 @@
   grid-template-columns: 80px 1fr 80px;
   width: 100%;
   min-width: 360px;
-  outline: 1px solid var(--fds-semantic-outline-neutral-default);
+  outline: 1px solid var(--fds-semantic-border-neutral-default);
   border-radius: 4px;
   cursor: pointer;
   color: var(--fds-semantic-text-neutral-default);
   text-decoration: none;
-  box-sizing: border-box;
 
   --color-200: var(--fds-brand-primary-200);
   --color-300: var(--fds-brand-primary-300);
@@ -29,7 +28,7 @@
 .fileCard:focus {
   outline-width: 3px;
   background-color: var(--color-300);
-  box-shadow: 0 0 0 3px var(--fds-semantic-outline-focus-outline);
+  box-shadow: 0 0 0 6px var(--fds-semantic-border-focus-outline);
 }
 
 .primary {

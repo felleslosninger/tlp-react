@@ -6,6 +6,7 @@ import { XMarkIcon } from '@navikt/aksel-icons';
 import { Container } from '../Container/Container';
 
 import classes from './Header.module.css';
+import useIsMobile from '../../hooks/useIsMobile';
 
 interface HeaderProps {
   children:
@@ -59,17 +60,9 @@ const Header = ({
   closeMenu,
   onMenuOpenChange,
 }: HeaderProps) => {
-  const breakpoint = 768;
-  const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleResize = () => {
-    if (window.innerWidth < breakpoint) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  };
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -84,16 +77,6 @@ const Header = ({
       setIsMenuOpen(false);
     }
   }, [closeMenu]);
-
-  useEffect(() => {
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);

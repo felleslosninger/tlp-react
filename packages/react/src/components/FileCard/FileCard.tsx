@@ -4,6 +4,7 @@ import { DownloadIcon, FileIcon } from '@navikt/aksel-icons';
 import { Heading, Paragraph } from '@digdir/design-system-react';
 
 import classes from './FileCard.module.css';
+import useIsMobile from '../../hooks/useIsMobile';
 
 type FileCardProps = {
   icon: React.ReactNode;
@@ -12,6 +13,7 @@ type FileCardProps = {
   filePath: string;
   fileName?: string;
   brand?: 'primary' | 'secondary' | 'tertiary';
+  ariaLabel?: string;
 };
 
 const FileCard = ({
@@ -21,27 +23,9 @@ const FileCard = ({
   filePath,
   fileName,
   brand = 'primary',
+  ariaLabel = 'Last ned fil',
 }: FileCardProps) => {
-  const breakpoint = 768;
-  const [isMobile, setIsMobile] = useState(false);
-
-  const handleResize = () => {
-    if (window.innerWidth < breakpoint) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  };
-
-  useEffect(() => {
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const isMobile = useIsMobile();
 
   return (
     <a
@@ -52,7 +36,7 @@ const FileCard = ({
       )}
       href={filePath}
       download={fileName}
-      aria-label='Last ned fil'
+      aria-label={ariaLabel}
     >
       <div className={cn(classes.fileIcon)}>{icon ? icon : <FileIcon />}</div>
       <div className={cn(classes.fileText)}>
