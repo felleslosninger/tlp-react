@@ -5,10 +5,13 @@
   border: 1px solid var(--fds-semantic-border-neutral-default);
   border-radius: 4px;
   cursor: pointer;
+  color: var(--fds-semantic-text-neutral-default);
+  text-decoration: none;
 
   --color-200: var(--fds-brand-primary-200);
   --color-300: var(--fds-brand-primary-300);
   --color-400: var(--fds-brand-primary-400);
+  --color-500: var(--fds-brand-primary-500);
 }
 
 .fileCard:hover {
@@ -16,22 +19,31 @@
   background-color: var(--color-200);
 }
 
+.fileCard:focus {
+  border-width: 3px;
+  background-color: var(--color-300);
+  box-shadow: 0 0 0 3px var(--fds-semantic-border-focus-outline);
+}
+
 .primary {
   --color-200: var(--fds-brand-primary-200);
   --color-300: var(--fds-brand-primary-300);
   --color-400: var(--fds-brand-primary-400);
+  --color-500: var(--fds-brand-primary-500);
 }
 
 .secondary {
   --color-200: var(--fds-brand-secondary-200);
   --color-300: var(--fds-brand-secondary-300);
   --color-400: var(--fds-brand-secondary-400);
+  --color-500: var(--fds-brand-secondary-500);
 }
 
 .tertiary {
   --color-200: var(--fds-brand-tertiary-200);
   --color-300: var(--fds-brand-tertiary-300);
   --color-400: var(--fds-brand-tertiary-400);
+  --color-500: var(--fds-brand-tertiary-500);
 }
 
 .fileIcon {
@@ -46,12 +58,17 @@
   background-color: var(--color-400);
 }
 
+.fileCard:focus .fileIcon {
+  background-color: var(--color-500);
+}
+
 .fileText {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 16px 24px;
   flex: 1;
+  gap: 4px;
 }
 
 .fileDownload {
