@@ -4,7 +4,7 @@ import { Hamburger } from '@navikt/ds-icons';
 import { XMarkIcon } from '@navikt/aksel-icons';
 
 import { Container } from '../Container/Container';
-import useIsMobile from '../../hooks/useDeviceBreakpoints';
+import useDeviceBreakpoints from '../../hooks/useDeviceBreakpoints';
 
 import classes from './Header.module.css';
 
@@ -62,7 +62,7 @@ const Header = ({
 }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const isMobile = useIsMobile();
+  const { isMobile } = useDeviceBreakpoints();
 
   useEffect(() => {
     if (isMenuOpen) {

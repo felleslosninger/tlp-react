@@ -5,9 +5,11 @@ import { FileJsonIcon } from '@navikt/aksel-icons';
 import type { FileCardProps } from './FileCard';
 import { FileCard } from './FileCard';
 
-let mockIsMobile = false;
+let mockIsMobile = {
+  isMobile: false,
+};
 
-jest.mock('../../hooks/useIsMobile', () => () => mockIsMobile);
+jest.mock('../../hooks/useDeviceBreakpoints', () => () => mockIsMobile);
 
 describe('FileCard', () => {
   it('should have the fileCard class', () => {
@@ -16,7 +18,7 @@ describe('FileCard', () => {
       description: 'test',
       filePath: '/test',
     });
-    const list = screen.getByLabelText('test');
+    const list = screen.getByRole('link');
     expect(list.classList).toContain('fileCard');
   });
 
@@ -57,19 +59,21 @@ describe('FileCard', () => {
       description: 'test',
       filePath: '/test',
     });
-    const fileCard = screen.getByLabelText('test');
+    const fileCard = screen.getByRole('link');
     fileCard.focus();
     expect(fileCard).toHaveFocus();
   });
 
   it('should have class "isMobile", when isMobile is true', () => {
-    mockIsMobile = true;
+    mockIsMobile = {
+      isMobile: true,
+    };
     render({
       heading: 'test',
       description: 'test',
       filePath: '/test',
     });
-    const fileCard = screen.getByLabelText('test label');
+    const fileCard = screen.getByRole('link');
     expect(fileCard.classList).toContain('isMobile');
   });
 });
