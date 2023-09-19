@@ -1,9 +1,9 @@
 import React, { createElement, useEffect, useState } from 'react';
 import cn from 'classnames';
+import type { LinkProps } from '@digdir/design-system-react';
+import { Link } from '@digdir/design-system-react';
 
 import { errorMessage } from '../../utils/helperFunctions/ThrowMessageHelper';
-import type { LinkProps } from '../Link/Link';
-import { Link } from '../Link/Link';
 
 import classes from './LinkList.module.css';
 

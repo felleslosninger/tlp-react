@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Link } from '../Link/Link';
+import { Link } from '@digdir/design-system-react';
 
 import { LinkList } from './LinkList';
 

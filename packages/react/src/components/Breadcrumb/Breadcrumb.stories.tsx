@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from '@digdir/design-system-react';
 
-import { Link } from '../Link';
 import { Body } from '../Typography/Body';
 
 import { Breadcrumb } from './Breadcrumb';
