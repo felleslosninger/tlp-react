@@ -11,6 +11,8 @@ type CourceCardProps = {
   title: string;
   location: string;
   tag: string;
+  as?: keyof JSX.IntrinsicElements | React.ComponentType<any>;
+  href?: string;
 };
 
 const CourceCard = ({
@@ -20,6 +22,9 @@ const CourceCard = ({
   title,
   location,
   tag,
+  as,
+  href,
+  ...rest
 }: CourceCardProps) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < breakpoint);
 
@@ -46,14 +51,17 @@ const CourceCard = ({
   const formattedHours =
     date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
 
+  const Component = as || 'a';
+
   return (
-    <a
-      href='.'
+    <Component
+      href={href}
       className={cn(
         classes.courceCardWrapper,
         classes[brand],
         isMobile ? classes.mobile : null,
       )}
+      {...rest}
     >
       <div
         className={cn(classes.dateBox, isMobile ? classes.mobileDateBox : null)}
@@ -114,7 +122,7 @@ const CourceCard = ({
           </div>
         </div>
       </div>
-    </a>
+    </Component>
   );
 };
 

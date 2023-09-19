@@ -39,9 +39,9 @@ export const Secondary = {
   args: {
     date: new Date(2018, 11, 24, 10, 3),
     brand: 'secondary',
-    title: 'Unik sommerjobb for studenter innen digitalisering',
-    location: 'Leikanger, Leikanger, Leikanger, Leikanger',
-    tag: 'Digitalization, Leikanger, Leikanger',
+    title: 'U',
+    location: 'L',
+    tag: 'D',
   },
 };
 

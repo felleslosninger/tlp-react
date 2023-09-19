@@ -7,6 +7,9 @@
   color: var(--fds-semantic-text-neutral-default);
   overflow: hidden;
   width: 100%;
+  max-width: 1000px;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .courceCardWrapper:hover {
@@ -19,18 +22,19 @@
 }
 
 .dateBox {
-  width: 150px;
+  min-width: 150px;
   height: 150px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5px;
 }
 
 .mobileDateBox {
   width: auto;
   height: auto;
+  margin: 0;
   padding: 24px;
   flex-direction: row;
   justify-content: left;
@@ -44,6 +48,7 @@
 
 .mobileInformationBox span {
   color: var(--colors-grey-700);
+  word-break: break-word;
 }
 
 .mobileDateBox span:first-child::after {
@@ -78,7 +83,6 @@
   justify-content: center;
   padding: 38px;
   background-color: var(--fds-semantic-background-default);
-  width: 100%;
 }
 
 .mobileInformationBox {
