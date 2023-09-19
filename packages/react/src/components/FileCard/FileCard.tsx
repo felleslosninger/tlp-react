@@ -17,6 +17,17 @@ type FileCardProps = {
   ariaLabel?: string;
 };
 
+/**
+ * Component that displays allows the user to download a file.
+ *
+ * @param heading: string;
+ * @param subHeading: string;
+ * @param filePath: string;
+ * @param icon?: React.ReactNode = FileIcon
+ * @param fileName?: string = undefined;
+ * @param brand?: 'primary' | 'secondary' | 'tertiary' = 'primary';
+ * @param ariaLabel?: string = 'Last ned fil';
+ */
 const FileCard = ({
   icon,
   heading,
@@ -44,7 +55,7 @@ const FileCard = ({
         <Heading size='xxsmall'>{heading}</Heading>
         <Paragraph size='small'>{subHeading}</Paragraph>
       </div>
-      <div className={cn(cn(classes.fileDownload))}>
+      <div className={cn(classes.fileDownload)}>
         <DownloadIcon />
       </div>
     </a>
