@@ -20,20 +20,20 @@ const useDeviceBreakpoints = (props: UseIsMobile = {}) => {
     );
   }
 
-  const handleResize = () => {
-    if (window.innerWidth <= mobileBreakpoint) {
-      setIsMobile(true);
-      setIsTablet(false);
-    } else if (window.innerWidth <= tabletBreakpoint) {
-      setIsMobile(false);
-      setIsTablet(true);
-    } else {
-      setIsMobile(false);
-      setIsTablet(false);
-    }
-  };
-
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= mobileBreakpoint) {
+        setIsMobile(true);
+        setIsTablet(false);
+      } else if (window.innerWidth <= tabletBreakpoint) {
+        setIsMobile(false);
+        setIsTablet(true);
+      } else {
+        setIsMobile(false);
+        setIsTablet(false);
+      }
+    };
+
     handleResize();
 
     window.addEventListener('resize', handleResize);
@@ -41,9 +41,7 @@ const useDeviceBreakpoints = (props: UseIsMobile = {}) => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
-
-  console.log({ isMobile, isTablet });
+  }, [mobileBreakpoint, tabletBreakpoint]);
 
   return { isMobile, isTablet };
 };
