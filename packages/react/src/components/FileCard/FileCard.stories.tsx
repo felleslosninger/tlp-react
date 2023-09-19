@@ -33,28 +33,25 @@ export default {
 export const Normal = {
   args: {
     heading: 'Dette er en fil',
-    subHeading: 'Dette er en filbeskrivelse',
+    description: 'Dette er en filbeskrivelse',
     filePath: '/test',
-    fileName: 'test',
   },
 };
 
 export const Secondary = {
   args: {
     heading: 'Dette er en fil',
-    subHeading: 'Dette er en filbeskrivelse',
+    description: 'Dette er en filbeskrivelse',
     brand: 'secondary',
     filePath: '/test',
-    fileName: 'test',
   },
 };
 
 export const Tertiary = {
   args: {
     heading: 'Dette er en fil',
-    subHeading: 'Dette er en filbeskrivelse',
+    description: 'Dette er en filbeskrivelse',
     brand: 'tertiary',
     filePath: '/test',
-    fileName: 'test',
   },
 };

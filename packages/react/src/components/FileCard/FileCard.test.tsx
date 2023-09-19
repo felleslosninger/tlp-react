@@ -13,9 +13,8 @@ describe('FileCard', () => {
   it('should have the fileCard class', () => {
     render({
       heading: 'test',
-      subHeading: 'test',
+      description: 'test',
       filePath: '/test',
-      ariaLabel: 'test',
     });
     const list = screen.getByLabelText('test');
     expect(list.classList).toContain('fileCard');
@@ -24,31 +23,28 @@ describe('FileCard', () => {
   it('should render the heading', () => {
     render({
       heading: 'test heading',
-      subHeading: 'test',
+      description: 'test',
       filePath: '/test',
-      ariaLabel: 'test',
     });
     const heading = screen.getByText('test heading');
     expect(heading).toBeInTheDocument();
   });
 
-  it('should render the subHeading', () => {
+  it('should render the description', () => {
     render({
       heading: 'test',
-      subHeading: 'test subHeading',
+      description: 'test description',
       filePath: '/test',
-      ariaLabel: 'test',
     });
-    const subHeading = screen.getByText('test subHeading');
-    expect(subHeading).toBeInTheDocument();
+    const description = screen.getByText('test description');
+    expect(description).toBeInTheDocument();
   });
 
   it('should render the file icon when icon is passed', () => {
     render({
       heading: 'test',
-      subHeading: 'test',
+      description: 'test',
       filePath: '/test',
-      ariaLabel: 'test',
       icon: <FileJsonIcon title='JSON Icon' />,
     });
     const fileIcon = screen.getByTitle('JSON Icon');
@@ -58,9 +54,8 @@ describe('FileCard', () => {
   it('should be focusable', () => {
     render({
       heading: 'test',
-      subHeading: 'test',
+      description: 'test',
       filePath: '/test',
-      ariaLabel: 'test',
     });
     const fileCard = screen.getByLabelText('test');
     fileCard.focus();
@@ -71,9 +66,8 @@ describe('FileCard', () => {
     mockIsMobile = true;
     render({
       heading: 'test',
-      subHeading: 'test',
+      description: 'test',
       filePath: '/test',
-      ariaLabel: 'test label',
     });
     const fileCard = screen.getByLabelText('test label');
     expect(fileCard.classList).toContain('isMobile');

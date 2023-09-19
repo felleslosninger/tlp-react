@@ -4,38 +4,34 @@ import { DownloadIcon, FileIcon } from '@navikt/aksel-icons';
 import { Heading, Paragraph } from '@digdir/design-system-react';
 
 import useIsMobile from '../../hooks/useIsMobile';
+import type { BrandColor } from '../../types/brand';
 
 import classes from './FileCard.module.css';
 
 type FileCardProps = {
   heading: string;
-  subHeading: string;
+  description: string;
   filePath: string;
   icon?: React.ReactNode;
-  fileName?: string;
-  brand?: 'primary' | 'secondary' | 'tertiary';
-  ariaLabel?: string;
+  brand?: BrandColor;
 };
 
 /**
  * Component that allows the user to download a file.
  *
  * @param heading: string;
- * @param subHeading: string;
+ * @param description: string;
  * @param filePath: string;
  * @param icon?: React.ReactNode = FileIcon
- * @param fileName?: string = undefined;
  * @param brand?: 'primary' | 'secondary' | 'tertiary' = 'primary';
- * @param ariaLabel?: string = 'Last ned fil';
  */
 const FileCard = ({
   icon,
   heading,
-  subHeading,
+  description,
   filePath,
-  fileName,
   brand = 'primary',
-  ariaLabel = 'Last ned fil',
+  ...rest
 }: FileCardProps) => {
   const isMobile = useIsMobile();
 
@@ -47,13 +43,13 @@ const FileCard = ({
         isMobile && classes.isMobile,
       )}
       href={filePath}
-      download={fileName || true}
-      aria-label={ariaLabel}
+      download={true}
+      {...rest}
     >
       <div className={cn(classes.fileIcon)}>{icon ? icon : <FileIcon />}</div>
       <div className={cn(classes.fileText)}>
         <Heading size='xxsmall'>{heading}</Heading>
-        <Paragraph size='small'>{subHeading}</Paragraph>
+        <Paragraph size='small'>{description}</Paragraph>
       </div>
       <div className={cn(classes.fileDownload)}>
         <DownloadIcon />

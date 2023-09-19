@@ -7,11 +7,6 @@
   cursor: pointer;
   color: var(--fds-semantic-text-neutral-default);
   text-decoration: none;
-
-  --color-200: var(--fds-brand-primary-200);
-  --color-300: var(--fds-brand-primary-300);
-  --color-400: var(--fds-brand-primary-400);
-  --color-500: var(--fds-brand-primary-500);
 }
 
 .isMobile {
