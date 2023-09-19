@@ -18,7 +18,7 @@ type FileCardProps = {
 };
 
 /**
- * Component that displays allows the user to download a file.
+ * Component that allows the user to download a file.
  *
  * @param heading: string;
  * @param subHeading: string;
@@ -47,7 +47,7 @@ const FileCard = ({
         isMobile && classes.isMobile,
       )}
       href={filePath}
-      download={fileName}
+      download={fileName || true}
       aria-label={ariaLabel}
     >
       <div className={cn(classes.fileIcon)}>{icon ? icon : <FileIcon />}</div>
