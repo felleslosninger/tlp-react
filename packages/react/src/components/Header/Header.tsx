@@ -4,7 +4,7 @@ import { Hamburger } from '@navikt/ds-icons';
 import { XMarkIcon } from '@navikt/aksel-icons';
 
 import { Container } from '../Container/Container';
-import useIsMobile from '../../hooks/useIsMobile';
+import useIsMobile from '../../hooks/useDeviceBreakpoints';
 
 import classes from './Header.module.css';
 

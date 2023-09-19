@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { DownloadIcon, FileIcon } from '@navikt/aksel-icons';
 import { Heading, Paragraph } from '@digdir/design-system-react';
 
-import useIsMobile from '../../hooks/useIsMobile';
+import useDeviceBreakpoints from '../../hooks/useDeviceBreakpoints';
 import type { BrandColor } from '../../types/brand';
 
 import classes from './FileCard.module.css';
@@ -33,7 +33,7 @@ const FileCard = ({
   brand = 'primary',
   ...rest
 }: FileCardProps) => {
-  const isMobile = useIsMobile();
+  const { isMobile } = useDeviceBreakpoints();
 
   return (
     <a
