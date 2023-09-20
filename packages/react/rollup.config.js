@@ -48,7 +48,10 @@ export default [
       terser(),
       image(),
       copy({
-        targets: [{ src: 'src/tokens/tokens.css', dest: 'dist' }],
+        targets: [
+          { src: 'src/tokens/tokens.css', dest: 'dist' },
+          { src: 'src/styles/**/*.css', dest: 'dist/styles' },
+        ],
       }),
     ],
   },

@@ -11,7 +11,7 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "pnpm clean && tsc -p tsconfig.build.json && rollup -c",
+    "build": "pnpm clean && esno ./scripts/generate-css.ts && tsc -p tsconfig.build.json && rollup -c",
     "clean": "rimraf dist"
   },
   "peerDependencies": {
