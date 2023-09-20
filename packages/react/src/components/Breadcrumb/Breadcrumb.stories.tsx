@@ -1,7 +1,5 @@
 import React from 'react';
-
-import { Link } from '../Link';
-import { Body } from '../Typography/Body';
+import { Link, Paragraph } from '@digdir/design-system-react';
 
 import { Breadcrumb } from './Breadcrumb';
 
@@ -18,12 +16,12 @@ const CHILDREN = [
   >
     Forrige side
   </Link>,
-  <Body
+  <Paragraph
     key={4}
     size='medium'
   >
     Body
-  </Body>,
+  </Paragraph>,
 ];
 
 export default {
