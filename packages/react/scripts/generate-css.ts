@@ -6,6 +6,8 @@ import postcssModules from 'postcss-modules';
 import glob from 'fast-glob';
 import fs from 'fs-extra';
 
+import { generateScopedName } from '../rollup/hash-css-name.mjs';
+
 console.log({
   path: path.resolve(__dirname, '../src/**/*.css').replace(/\\/g, '/'),
 });
@@ -58,21 +60,3 @@ async function processFile(
 
 modules.forEach((file) => processFile(file, 'local'));
 processFile(global, 'global');
-
-function hashCode(input: string) {
-  let hash = 0;
-  for (let i = 0; i < input.length; i += 1) {
-    const chr = input.charCodeAt(i);
-    hash = (hash << 5) - hash + chr;
-    hash |= 0;
-  }
-  return (hash + 2147483648).toString(16);
-}
-
-function generateScopedName(selector: string, fileName: string) {
-  const componentName = path
-    .basename(fileName)
-    .replace('.module', '')
-    .replace('.css', '');
-  return `m-${hashCode(`${componentName}-${selector}`)}`;
-}
