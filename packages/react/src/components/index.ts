@@ -10,3 +10,5 @@ export { Container } from './Container';
 export type { ContainerProps } from './Container';
 export { Breadcrumb } from './Breadcrumb';
 export type { BreadcrumbProps } from './Breadcrumb';
+export { FileCard } from './FileCard';
+export type { FileCardProps } from './FileCard';

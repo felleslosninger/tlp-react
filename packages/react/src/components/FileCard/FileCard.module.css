@@ -1,0 +1,107 @@
+.fileCard {
+  display: grid;
+  grid-template-columns: var(--fds-spacing-18) 1fr var(--fds-spacing-18);
+  width: 100%;
+  outline: 1px solid var(--fds-semantic-border-neutral-default);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--fds-semantic-text-neutral-default);
+  text-decoration: none;
+}
+
+.isMobile {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+}
+
+.fileCard:hover {
+  outline-width: 2px;
+  background-color: var(--color-200);
+}
+
+.fileCard:focus {
+  outline-width: 3px;
+  background-color: var(--color-300);
+  box-shadow: 0 0 0 6px var(--fds-semantic-border-focus-outline);
+}
+
+.primary {
+  --color-200: var(--fds-brand-primary-200);
+  --color-300: var(--fds-brand-primary-300);
+  --color-400: var(--fds-brand-primary-400);
+  --color-500: var(--fds-brand-primary-500);
+}
+
+.secondary {
+  --color-200: var(--fds-brand-secondary-200);
+  --color-300: var(--fds-brand-secondary-300);
+  --color-400: var(--fds-brand-secondary-400);
+  --color-500: var(--fds-brand-secondary-500);
+}
+
+.tertiary {
+  --color-200: var(--fds-brand-tertiary-200);
+  --color-300: var(--fds-brand-tertiary-300);
+  --color-400: var(--fds-brand-tertiary-400);
+  --color-500: var(--fds-brand-tertiary-500);
+}
+
+.fileIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--color-300);
+  font-size: 2rem;
+}
+
+.isMobile .fileIcon {
+  justify-content: flex-start;
+  padding: var(--fds-spacing-3) var(--fds-spacing-6);
+}
+
+.fileCard:hover .fileIcon {
+  background-color: var(--color-400);
+}
+
+.fileCard:focus .fileIcon {
+  background-color: var(--color-500);
+}
+
+.fileText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--fds-spacing-4) var(--fds-spacing-6);
+  flex: 1;
+  gap: 4px;
+}
+
+.isMobile .fileText {
+  padding: 24px;
+  grid-column: 1 / 3;
+}
+
+.fileDownload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 2rem;
+}
+
+.isMobile .fileDownload {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-content: flex-end;
+  background-color: var(--color-300);
+  padding: var(--fds-spacing-3) var(--fds-spacing-7);
+}
+
+.isMobile:hover .fileDownload {
+  background-color: var(--color-400);
+}
+
+.isMobile:focus .fileDownload {
+  background-color: var(--color-500);
+}

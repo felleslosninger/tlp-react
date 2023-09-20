@@ -4,6 +4,7 @@ import { Hamburger } from '@navikt/ds-icons';
 import { XMarkIcon } from '@navikt/aksel-icons';
 
 import { Container } from '../Container/Container';
+import useDeviceBreakpoints from '../../hooks/useDeviceBreakpoints';
 
 import classes from './Header.module.css';
 
@@ -59,17 +60,9 @@ const Header = ({
   closeMenu,
   onMenuOpenChange,
 }: HeaderProps) => {
-  const breakpoint = 768;
-  const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleResize = () => {
-    if (window.innerWidth < breakpoint) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  };
+  const { isMobile } = useDeviceBreakpoints();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -84,16 +77,6 @@ const Header = ({
       setIsMenuOpen(false);
     }
   }, [closeMenu]);
-
-  useEffect(() => {
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
