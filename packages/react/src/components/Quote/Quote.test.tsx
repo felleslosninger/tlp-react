@@ -5,12 +5,24 @@ import type { QuoteProps } from './Quote';
 import { Quote } from './Quote';
 
 describe('Quote', () => {
-  it('should have the myClass class', () => {
+  it('should render the quote text and author correctly', () => {
+    const author = 'John Doe';
+    const quoteText = 'This is a test quote';
+
     render({
-      children: 'myComponent',
+      author,
+      children: quoteText,
     });
-    const list = screen.getByRole('list');
-    expect(list.classList).toContain('myClass');
+    expect(screen.getByText(quoteText)).toBeInTheDocument();
+    expect(screen.getByText(author)).toBeInTheDocument();
+  });
+
+  it('should apply the "quoteWrapper" class', () => {
+    const { container } = render({
+      author: 'Author',
+      children: 'Quote Text',
+    });
+    expect(container.querySelector('.quoteWrapper')).toBeInTheDocument();
   });
 });
 
