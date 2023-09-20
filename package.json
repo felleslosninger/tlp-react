@@ -104,7 +104,6 @@
     "fs-extra": "^11.1.1",
     "postcss": "^8.4.30",
     "postcss-modules": "^6.0.0",
-    "postcss-preset-mantine": "^1.7.0",
     "rollup-plugin-copy": "^3.4.0"
   }
 }

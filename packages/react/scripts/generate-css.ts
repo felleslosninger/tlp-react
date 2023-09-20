@@ -1,7 +1,5 @@
 import path from 'path';
 
-// @ts-ignore
-import postcssPresetMantine from 'postcss-preset-mantine';
 import postcss from 'postcss';
 import cssnano from 'cssnano';
 import postcssModules from 'postcss-modules';
@@ -42,7 +40,6 @@ async function processFile(
   scopeBehaviour: 'local' | 'global',
 ) {
   const result = await postcss([
-    postcssPresetMantine,
     postcssModules({
       generateScopedName,
       getJSON: () => {
@@ -62,7 +59,7 @@ async function processFile(
 modules.forEach((file) => processFile(file, 'local'));
 processFile(global, 'global');
 
-export function hashCode(input: string) {
+function hashCode(input: string) {
   let hash = 0;
   for (let i = 0; i < input.length; i += 1) {
     const chr = input.charCodeAt(i);
@@ -72,7 +69,7 @@ export function hashCode(input: string) {
   return (hash + 2147483648).toString(16);
 }
 
-export function generateScopedName(selector: string, fileName: string) {
+function generateScopedName(selector: string, fileName: string) {
   const componentName = path
     .basename(fileName)
     .replace('.module', '')
