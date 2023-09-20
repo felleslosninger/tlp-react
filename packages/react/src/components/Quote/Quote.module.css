@@ -15,7 +15,8 @@
 }
 
 .quote {
-  font: var(--fds-typography-heading-small);
+  color: var(--semantic-text-neutral-default);
+  font: var(--fds-typography-interactive-large);
   margin-bottom: var(--fds-spacing-2);
 }
 
