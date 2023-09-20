@@ -24,15 +24,15 @@ function prepareFileName(filePath: string) {
   return path.basename(filePath).replace('.module.css', '.css');
 }
 
-/* if (typeof global !== 'string') {
+if (typeof global !== 'string') {
   throw new Error('Could not find global.css file');
-} */
+}
 
-/* fs.writeJsonSync(
-  path.join(__dirname, '../docs/.docgen/css-exports.json'),
+fs.writeJsonSync(
+  path.join(__dirname, '../css-exports.json'),
   { modules: modules.map(prepareFileName), global: prepareFileName(global) },
   { spaces: 2 },
-); */
+);
 
 const outputFolder = path.resolve(__dirname, '../src/styles');
 fs.ensureDirSync(outputFolder);
