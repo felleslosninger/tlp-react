@@ -1,8 +1,8 @@
 import React from 'react';
 import { MagnifyingGlassIcon } from '@navikt/aksel-icons';
+import { Link } from '@digdir/design-system-react';
 
 import myLogo from '../../../../../assets/img/digdir-logo.svg';
-import { Link } from '../Link/Link';
 
 import { Header } from './Header';
 import classes from './HeaderStories.module.css';

@@ -1,7 +1,6 @@
 import React from 'react';
 import { render as renderRtl, screen } from '@testing-library/react';
-
-import { Link } from '../Link/Link';
+import { Link } from '@digdir/design-system-react';
 
 import type { LinkListProps } from './LinkList';
 import { LinkList, ERRORMESSAGE } from './LinkList';
@@ -37,8 +36,9 @@ describe('LinkList', () => {
       inverted: true,
       title: 'title',
     });
-    const list = screen.getByRole('link');
-    expect(list.classList).toContain('inverted');
+    const link = screen.getByRole('link');
+    // check if the link has the inverted class, it may have been scrambled by the css modules
+    expect(JSON.stringify(link.classList)).toContain('inverted');
   });
 
   it('throw error message, if linkTitle is true and url is undefined', () => {
