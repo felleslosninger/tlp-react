@@ -10,7 +10,7 @@ describe('Quote', () => {
     const quoteText = 'This is a test quote';
 
     render({
-      author,
+      author: author,
       children: quoteText,
     });
     expect(screen.getByText(quoteText)).toBeInTheDocument();
