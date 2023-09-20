@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
-import { Hamburger } from '@navikt/ds-icons';
-import { XMarkIcon } from '@navikt/aksel-icons';
+import { XMarkIcon, MenuHamburgerIcon } from '@navikt/aksel-icons';
 
 import { Container } from '../Container/Container';
 import useDeviceBreakpoints from '../../hooks/useDeviceBreakpoints';
@@ -117,7 +116,7 @@ const Header = ({
                       aria-expanded={false}
                       aria-haspopup={true}
                     >
-                      <Hamburger fontSize='1.5rem' />
+                      <MenuHamburgerIcon fontSize='1.5rem' />
                     </button>
                   )}
                 </>
