@@ -13,6 +13,12 @@ jest.mock('react', () => {
   };
 });
 
+let mockIsMobile = {
+  isMobile: false,
+};
+
+jest.mock('../../hooks/useDeviceBreakpoints', () => () => mockIsMobile);
+
 describe('Header', () => {
   beforeEach(() => {
     (useState as jest.Mock).mockImplementation(() => [jest.fn()]);
@@ -35,7 +41,9 @@ describe('Header', () => {
   });
 
   it('should render HeaderMiddle component when isMobile is false', () => {
-    (useState as jest.Mock).mockImplementationOnce(() => [false, jest.fn()]);
+    mockIsMobile = {
+      isMobile: false,
+    };
     render({
       children: [<Header.Middle key={1}>test</Header.Middle>],
     });
@@ -44,7 +52,9 @@ describe('Header', () => {
   });
 
   it('should not render HeaderMiddle component when isMobile is true', () => {
-    (useState as jest.Mock).mockImplementationOnce(() => [true, jest.fn()]);
+    mockIsMobile = {
+      isMobile: true,
+    };
     render({
       children: [<Header.Middle key={1}>test</Header.Middle>],
     });
@@ -52,7 +62,9 @@ describe('Header', () => {
   });
 
   it('should render HeaderRight component when isMobile is false', () => {
-    (useState as jest.Mock).mockImplementationOnce(() => [false, jest.fn()]);
+    mockIsMobile = {
+      isMobile: false,
+    };
     render({
       children: [<Header.Right key={1}>test</Header.Right>],
     });
@@ -61,7 +73,9 @@ describe('Header', () => {
   });
 
   it('should render HeaderBottom component when isMobile is false', () => {
-    (useState as jest.Mock).mockImplementationOnce(() => [false, jest.fn()]);
+    mockIsMobile = {
+      isMobile: false,
+    };
     render({
       children: [<Header.Bottom key={1}>test</Header.Bottom>],
     });
@@ -70,7 +84,9 @@ describe('Header', () => {
   });
 
   it('should not render HeaderBottom component when isMobile is true', () => {
-    (useState as jest.Mock).mockImplementationOnce(() => [true, jest.fn()]);
+    mockIsMobile = {
+      isMobile: true,
+    };
     render({
       children: [<Header.Bottom key={1}>test</Header.Bottom>],
     });
@@ -78,9 +94,10 @@ describe('Header', () => {
   });
 
   it('should render HeaderMobile component when isMobile is true and showMenu is true', () => {
-    (useState as jest.Mock)
-      .mockImplementationOnce(() => [true, jest.fn()])
-      .mockImplementationOnce(() => [true, jest.fn()]);
+    (useState as jest.Mock).mockImplementationOnce(() => [true, jest.fn()]);
+    mockIsMobile = {
+      isMobile: true,
+    };
     render({
       children: [<Header.Mobile key={1}>test</Header.Mobile>],
     });
@@ -89,9 +106,10 @@ describe('Header', () => {
   });
 
   it('should not render HeaderMobile component when isMobile is true and showMenu is false', () => {
-    (useState as jest.Mock)
-      .mockImplementationOnce(() => [true, jest.fn()])
-      .mockImplementationOnce(() => [false, jest.fn()]);
+    (useState as jest.Mock).mockImplementationOnce(() => [false, jest.fn()]);
+    mockIsMobile = {
+      isMobile: true,
+    };
     render({
       children: [<Header.Mobile key={1}>test</Header.Mobile>],
     });
