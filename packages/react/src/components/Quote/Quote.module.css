@@ -17,6 +17,7 @@
 .quote {
   color: var(--semantic-text-neutral-default);
   font: var(--fds-typography-interactive-large);
+  margin-top: 0;
   margin-bottom: var(--fds-spacing-2);
 }
 

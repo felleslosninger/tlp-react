@@ -12,8 +12,8 @@ const Quote = ({ children, author }: QuoteProps) => {
   return (
     <div className={cn(classes.quoteWrapper)}>
       <div className={cn(classes.quoteInfo)}>
-        <div className={cn(classes.quote)}>{children}</div>
-        <div className={cn(classes.author)}>{author}</div>
+        <p className={cn(classes.quote)}>{children}</p>
+        <span className={cn(classes.author)}>{author}</span>
       </div>
     </div>
   );
