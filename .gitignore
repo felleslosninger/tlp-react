@@ -23,3 +23,6 @@ coverage/
 
 # Storybook build files
 docs/docs
+
+# Generated css files
+packages/react/src/styles/*.css

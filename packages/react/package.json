@@ -1,5 +1,5 @@
 {
-  "name": "@digdir/tlp-react",
+  "name": "@digdir/tlp-react-local",
   "version": "0.3.1",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,7 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "pnpm clean && tsc -p tsconfig.build.json && rollup -c",
+    "build": "pnpm clean && esno ./scripts/generate-css.ts && tsc -p tsconfig.build.json && rollup -c",
     "clean": "rimraf dist"
   },
   "peerDependencies": {
