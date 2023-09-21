@@ -8,8 +8,10 @@ import fs from 'fs-extra';
 
 import { generateScopedName } from '../rollup/hash-css-name.mjs';
 
+console.log('Generating css files');
+
 console.log({
-  path: path.resolve(__dirname, '../src/**/*.css').replace(/\\/g, '/'),
+  dirPath: path.resolve(__dirname, '../src/**/*.css').replace(/\\/g, '/'),
 });
 
 const files = glob.sync(
@@ -22,7 +24,11 @@ if (typeof global !== 'string') {
   throw new Error('Could not find global.css file');
 }
 
-console.log({ files, modules, global });
+console.log({
+  allCssFiles: files,
+  allCssModules: modules,
+  globalCssFile: global,
+});
 
 function prepareFileName(filePath: string) {
   return path.basename(filePath).replace('.module.css', '.css');
@@ -74,7 +80,7 @@ async function concatIntoGlobal() {
   const cssFiles = glob.sync(
     path.resolve(__dirname, '../src/styles**/*.css').replace(/\\/g, '/'),
   );
-  console.log({ cssFiles });
+  console.log({ generatedCssFiles: cssFiles });
   const cssFilesContent = cssFiles.map((file) =>
     fs.readFileSync(file, 'utf-8'),
   );
