@@ -11,7 +11,6 @@ import copy from 'rollup-plugin-copy';
 
 import terser from './rollup-terser.mjs';
 import packageJson from './package.json';
-
 import { generateScopedName } from './rollup/hash-css-name.mjs';
 
 // css files needs to be bundled
@@ -22,14 +21,14 @@ const plugins = [
   resolve(),
   commonjs(),
   json(),
+  typescript({ tsconfig: './tsconfig.build.json' }),
+  svgr({ exportType: 'named' }),
   postcss({
     extract: true,
     modules: {
       generateScopedName,
     },
   }),
-  typescript({ tsconfig: './tsconfig.build.json' }),
-  svgr({ exportType: 'named' }),
   terser(),
   image(),
   copy({

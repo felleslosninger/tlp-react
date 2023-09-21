@@ -6,7 +6,7 @@ import postcssModules from 'postcss-modules';
 import glob from 'fast-glob';
 import fs from 'fs-extra';
 
-import { generateScopedName } from '../rollup/hash-css-name.mjs';
+import { generateScopedName } from '../rollup/hash-css-name';
 
 console.log({
   path: path.resolve(__dirname, '../src/**/*.css').replace(/\\/g, '/'),

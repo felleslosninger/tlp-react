@@ -28,6 +28,7 @@ const LinkList = ({
   children,
 }: LinkListProps) => {
   const linkElements = React.Children.map(children, (child, index) => {
+    /* This fails as a server component, because we use Link here */
     if (React.isValidElement(child) && child.type === Link) {
       return (
         <li key={index}>

@@ -48,6 +48,7 @@ const FileCard = ({
     >
       <div className={cn(classes.fileIcon)}>{icon ? icon : <FileIcon />}</div>
       <div className={cn(classes.fileText)}>
+        {/* This component fails on server side because of Heading and Paragraph */}
         <Heading size='xxsmall'>{heading}</Heading>
         <Paragraph size='small'>{description}</Paragraph>
       </div>
