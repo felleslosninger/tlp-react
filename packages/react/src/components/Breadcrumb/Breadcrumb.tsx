@@ -23,7 +23,10 @@ const Breadcrumb = ({ children }: BreadcrumbProps) => {
             ...child.props,
           })}
           {index === children.length - 1 ? null : (
-            <ChevronRightIcon className={cn(classes.seperator)} />
+            <ChevronRightIcon
+              className={cn(classes.seperator)}
+              aria-hidden='true'
+            />
           )}
         </li>
       );
