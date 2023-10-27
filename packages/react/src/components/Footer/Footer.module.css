@@ -22,6 +22,11 @@
   flex-wrap: wrap;
 }
 
+.fewChilds {
+  justify-content: flex-start;
+  gap: 25%;
+}
+
 .column {
   max-width: 33.3333%;
   flex: 0 0 auto;

@@ -21,6 +21,17 @@ interface FooterBottomProps {
 }
 
 const Footer = ({ children, className, ...rest }: FooterProps) => {
+  const countChildren = (children: any) => {
+    let count = 0;
+    React.Children.forEach(children, (child) => {
+      if (child && child.type === Footer.Column) {
+        count++;
+      }
+    });
+
+    return count;
+  };
+
   return (
     <footer
       className={cn(classes.footer, className)}
@@ -28,7 +39,12 @@ const Footer = ({ children, className, ...rest }: FooterProps) => {
     >
       <Container>
         <Container className={classes.topContainer}>
-          <div className={classes.topContent}>
+          <div
+            className={cn(
+              classes.topContent,
+              countChildren(children) > 2 ? null : classes.fewChilds,
+            )}
+          >
             {React.Children.map(children, (child) => (
               <>{child && child.type === Footer.Column ? child : ''}</>
             ))}
