@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.4.0...@digdir/tlp-react@0.4.1) (2023-10-27)
+
+**Note:** Version bump only for package @digdir/tlp-react
+
 # [0.4.0](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.3.1...@digdir/tlp-react@0.4.0) (2023-09-21)
 
 ### Features
