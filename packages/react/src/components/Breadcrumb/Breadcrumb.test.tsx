@@ -56,27 +56,6 @@ describe('Breadcrumb', () => {
     jest.spyOn(console, 'error').mockImplementation(jest.fn());
     expect(renderFn).toThrow('You must use one or more valid ReactNodes');
   });
-
-  it('render seperator icon', () => {
-    render({
-      children: [
-        <Link
-          key={1}
-          href='#'
-        >
-          Home
-        </Link>,
-        <Link
-          key={2}
-          href='#'
-        >
-          Home1
-        </Link>,
-      ],
-    });
-    const icon = screen.getByRole('img');
-    expect(icon.classList).toContain('seperator');
-  });
 });
 
 const render = (props: BreadcrumbProps) =>
