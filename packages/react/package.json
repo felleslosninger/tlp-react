@@ -1,15 +1,28 @@
 {
   "name": "@digdir/tlp-react",
   "version": "0.4.2",
-  "main": "dist/cjs/index.js",
+  "main": "dist",
   "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "license": "MIT",
   "author": "Team Løysingar og Portalar",
   "files": [
-    "dist"
+    "dist",
+    "dist/*.css"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./dist/*.css": {
+      "import": "./dist/*.css",
+      "require": "./dist/*.css"
+    }
+  },
   "scripts": {
     "build": "pnpm clean && esno ./scripts/generate-css.ts && tsc -p tsconfig.build.json && rollup -c",
     "clean": "rimraf dist"
