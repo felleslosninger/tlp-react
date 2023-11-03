@@ -8,7 +8,7 @@
   "license": "MIT",
   "author": "Team Løysingar og Portalar",
   "files": [
-    "dist/**"
+    "dist"
   ],
   "scripts": {
     "build": "pnpm clean && esno ./scripts/generate-css.ts && tsc -p tsconfig.build.json && rollup -c",
