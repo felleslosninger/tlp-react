@@ -1,0 +1,158 @@
+.courceCardWrapper {
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+  border: 1px solid var(--fds-semantic-border-neutral-subtle);
+  text-decoration: none;
+  color: var(--fds-semantic-text-neutral-default);
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.courceCardWrapper:hover {
+  border: 1px solid var(--fds-semantic-border-neutral-strong);
+}
+
+.courceCardWrapper:active {
+  border: 2px solid var(--fds-semantic-border-neutral-strong);
+  outline: 2px solid var(--fds-semantic-surface-secondary-secondary-active);
+}
+
+.dateBox {
+  min-width: 150px;
+  height: 150px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileDateBox {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 24px;
+  flex-direction: row;
+  justify-content: left;
+  align-items: normal;
+  font: var(--fds-typography-body-medium);
+}
+
+.mobile span {
+  justify-content: left;
+}
+
+.mobileInformationBox span {
+  color: var(--colors-grey-700);
+  word-break: break-word;
+}
+
+.mobileDateBox span:first-child::after {
+  content: '.';
+}
+
+.mobileDateBox span:nth-child(2) {
+  margin-right: 8px;
+}
+
+.dateDay {
+  font: var(--fds-typography-heading-large);
+  margin: 5px 0 0;
+}
+
+.dateMonth {
+  margin: 5px 0;
+}
+
+.dateYear {
+  margin: 5px 0 0;
+}
+
+.icon {
+  margin-right: 8px;
+  margin-top: 1px;
+}
+
+.informationBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 38px;
+  background-color: var(--fds-semantic-background-default);
+}
+
+.mobileInformationBox {
+  padding: 32px;
+}
+
+.informationBox h2 {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-top: 0;
+  font-size: 18px;
+  line-height: 2rem;
+}
+
+.courceLabels {
+  display: flex;
+  gap: 18px;
+}
+
+.courceLabels div {
+  display: flex;
+}
+
+.mobile {
+  width: 100%;
+  max-width: 406px;
+  flex-direction: column;
+}
+
+.mobileDate {
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.primary {
+  background-color: var(--fds-semantic-surface-primary-primary);
+}
+
+.primary:hover {
+  background-color: var(--fds-semantic-surface-primary-primary-hover);
+}
+
+.primary:active {
+  background-color: var(--fds-semantic-surface-primary-primary-active);
+}
+
+.secondary {
+  background-color: var(--fds-semantic-surface-secondary-secondary);
+}
+
+.secondary:hover {
+  background-color: var(--fds-semantic-surface-secondary-secondary-hover);
+}
+
+.secondary:active {
+  background-color: var(--fds-semantic-surface-secondary-secondary-active);
+}
+
+.tertiary {
+  background-color: var(--fds-semantic-surface-tertiary-tertiary);
+}
+
+.tertiary:hover {
+  background-color: var(--fds-semantic-surface-tertiary-tertiary-hover);
+}
+
+.tertiary:active {
+  background-color: var(--fds-semantic-surface-tertiary-tertiary-active);
+}
