@@ -21,6 +21,8 @@ interface HeaderProps {
           | HeaderMiddleProps
           | HeaderRightProps
           | HeaderBottomProps
+          | HeaderTabletProps
+          | HeaderRightTabletProps
           | HeaderRightMobileProps
           | HeaderMobileProps
         >
@@ -45,6 +47,14 @@ type HeaderBottomProps = {
   children: React.ReactNode;
 };
 
+type HeaderRightTabletProps = {
+  children?: React.ReactNode;
+};
+
+type HeaderTabletProps = {
+  children: React.ReactNode;
+};
+
 type HeaderRightMobileProps = {
   children?: React.ReactNode;
 };
@@ -61,7 +71,7 @@ const Header = ({
 }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const { isMobile } = useDeviceBreakpoints();
+  const { isMobile, isTablet } = useDeviceBreakpoints();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -88,11 +98,40 @@ const Header = ({
           if (child.type === HeaderLeft) {
             return <div className={classes.left}>{child}</div>;
           }
-          if (child.type === HeaderMiddle && !isMobile) {
+          if (child.type === HeaderMiddle && !isMobile && !isTablet) {
             return <div className={classes.middle}>{child}</div>;
           }
-          if (child.type === HeaderRight && !isMobile) {
+          if (child.type === HeaderRight && !isMobile && !isTablet) {
             return <div className={classes.right}>{child}</div>;
+          }
+          if (child.type === HeaderRightMobile && isTablet) {
+            return (
+              <div className={classes.right}>
+                {child}
+                <>
+                  {isMenuOpen ? (
+                    <button
+                      onClick={toggleMenu}
+                      onFocus={toggleMenu}
+                      className={cn(classes.mobileMenuButton)}
+                      aria-expanded={true}
+                      aria-haspopup={true}
+                    >
+                      <XMarkIcon fontSize='1.8rem' />
+                    </button>
+                  ) : (
+                    <button
+                      onClick={toggleMenu}
+                      className={cn(classes.mobileMenuButton)}
+                      aria-expanded={false}
+                      aria-haspopup={true}
+                    >
+                      <MenuHamburgerIcon fontSize='1.5rem' />
+                    </button>
+                  )}
+                </>
+              </div>
+            );
           }
           if (child.type === HeaderRightMobile && isMobile) {
             return (
@@ -128,11 +167,26 @@ const Header = ({
       </Container>
 
       {React.Children.map(children, (child) => {
-        if (child.type === HeaderBottom && !isMobile) {
+        if (child.type === HeaderBottom && !isMobile && !isTablet) {
           return (
             <Container className={cn(classes.container)}>
               <div className={classes.bottom}>{child}</div>
             </Container>
+          );
+        }
+        if (child.type === HeaderMobile && isTablet && isMenuOpen) {
+          return (
+            <>
+              <Container className={cn(classes.mobileContainer)}>
+                <div className={classes.mobile}>{child}</div>
+              </Container>
+              <div
+                onFocus={toggleMenu}
+                role='button'
+                tabIndex={0}
+                className={classes.overlay}
+              ></div>
+            </>
           );
         }
         if (child.type === HeaderMobile && isMobile && isMenuOpen) {
@@ -172,6 +226,14 @@ const HeaderBottom = ({ children }: HeaderBottomProps) => {
   return <>{children}</>;
 };
 
+const HeaderRightTablet = ({ children }: HeaderRightTabletProps) => {
+  return <>{children}</>;
+};
+
+const HeaderTablet = ({ children }: HeaderTabletProps) => {
+  return <>{children}</>;
+};
+
 const HeaderRightMobile = ({ children }: HeaderRightMobileProps) => {
   return <>{children}</>;
 };
@@ -191,6 +253,12 @@ Header.Right = HeaderRight;
 
 HeaderBottom.displayName = 'Header.Bottom';
 Header.Bottom = HeaderBottom;
+
+HeaderRightTablet.displayName = 'Header.RightTablet';
+Header.RightTablet = HeaderRightTablet;
+
+HeaderMobile.displayName = 'Header.Tablet';
+Header.Mobile = HeaderTablet;
 
 HeaderRightMobile.displayName = 'Header.RightMobile';
 Header.RightMobile = HeaderRightMobile;

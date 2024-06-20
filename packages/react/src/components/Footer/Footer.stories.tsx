@@ -27,6 +27,27 @@ const Children = [
   </Footer.Bottom>,
 ];
 
+const ChildrenSec = [
+  <Footer.Column>
+    <h2>Åpningstider</h2>
+    <p>test</p>
+    <p>test</p>
+    <p>test test test test</p>
+  </Footer.Column>,
+  <Footer.Column>
+    <h2>E-post</h2>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+    <p>test</p>
+  </Footer.Column>,
+
+  <Footer.Bottom>
+    Tjenesten er levert av Digitaliseringsdirektoratet
+  </Footer.Bottom>,
+];
+
 export default {
   title: 'Components/Footer',
   component: Footer,
@@ -39,5 +60,11 @@ export default {
 export const Primary = {
   args: {
     children: Children,
+  },
+};
+
+export const Secondary = {
+  args: {
+    children: ChildrenSec,
   },
 };

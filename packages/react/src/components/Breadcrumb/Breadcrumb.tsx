@@ -9,9 +9,10 @@ import classes from './Breadcrumb.module.css';
 interface BreadcrumbProps {
   /**Array of children, that vil be rendered in the component */
   children: Array<React.ReactNode>;
+  className?: string;
 }
 
-const Breadcrumb = ({ children }: BreadcrumbProps) => {
+const Breadcrumb = ({ children, className }: BreadcrumbProps) => {
   const breadcrumbElements = React.Children.map(children, (child, index) => {
     if (children.length > 0 && React.isValidElement(child)) {
       return (
@@ -23,7 +24,10 @@ const Breadcrumb = ({ children }: BreadcrumbProps) => {
             ...child.props,
           })}
           {index === children.length - 1 ? null : (
-            <ChevronRightIcon className={cn(classes.seperator)} />
+            <ChevronRightIcon
+              className={cn(classes.seperator)}
+              aria-hidden='true'
+            />
           )}
         </li>
       );
@@ -34,7 +38,7 @@ const Breadcrumb = ({ children }: BreadcrumbProps) => {
   });
 
   return (
-    <nav className={cn(classes.wrapper)}>
+    <nav className={cn(classes.wrapper, className)}>
       <ol className={cn(classes.breadcrumbList)}>{breadcrumbElements}</ol>
     </nav>
   );
