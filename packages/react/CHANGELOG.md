@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.5](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.4.4...@digdir/tlp-react@0.4.5) (2024-01-23)
+
+**Note:** Version bump only for package @digdir/tlp-react
+
+## [0.4.4](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.4.3...@digdir/tlp-react@0.4.4) (2023-11-14)
+
+**Note:** Version bump only for package @digdir/tlp-react
+
+## [0.4.3](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.4.2...@digdir/tlp-react@0.4.3) (2023-11-03)
+
+**Note:** Version bump only for package @digdir/tlp-react
+
+## [0.4.2](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.4.1...@digdir/tlp-react@0.4.2) (2023-11-03)
+
+**Note:** Version bump only for package @digdir/tlp-react
+
+## [0.4.1](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.4.0...@digdir/tlp-react@0.4.1) (2023-10-27)
+
+**Note:** Version bump only for package @digdir/tlp-react
+
+# [0.4.0](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.3.1...@digdir/tlp-react@0.4.0) (2023-09-21)
+
+### Features
+
+- **FileCard:** Adding new component FileCard ([#31](https://github.com/felleslosninger/tlp-react/issues/31)) ([8683b87](https://github.com/felleslosninger/tlp-react/commit/8683b87d36136e530c2356e59b32bb4fe6269a63))
+- **generate-css:** Generates css files for all module.css files ([#37](https://github.com/felleslosninger/tlp-react/issues/37)) ([92c2a8b](https://github.com/felleslosninger/tlp-react/commit/92c2a8b362d477b6767f287000b7d013d55bac15))
+
 ## [0.3.1](https://github.com/felleslosninger/tlp-react/compare/@digdir/tlp-react@0.3.0...@digdir/tlp-react@0.3.1) (2023-08-18)
 
 **Note:** Version bump only for package @digdir/tlp-react

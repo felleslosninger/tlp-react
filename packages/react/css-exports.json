@@ -1,0 +1,14 @@
+{
+  "modules": [
+    "Breadcrumb.css",
+    "Container.css",
+    "FileCard.css",
+    "Footer.css",
+    "Header.css",
+    "HeaderStories.css",
+    "LinkList.css",
+    "LinkPanel.css",
+    "StorybookLayout.css"
+  ],
+  "global": "global.css"
+}

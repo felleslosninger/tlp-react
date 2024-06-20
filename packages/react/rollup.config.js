@@ -11,9 +11,33 @@ import copy from 'rollup-plugin-copy';
 
 import terser from './rollup-terser.mjs';
 import packageJson from './package.json';
+import { generateScopedName } from './rollup/hash-css-name.mjs';
 
 // css files needs to be bundled
 const altinnFigmaTokensExceptCss = /@altinn\/figma-design-tokens.*(?<!css)$/;
+
+const plugins = [
+  peerDepsExternal(),
+  resolve(),
+  commonjs(),
+  json(),
+  typescript({ tsconfig: './tsconfig.build.json' }),
+  svgr({ exportType: 'named' }),
+  postcss({
+    extract: true,
+    modules: {
+      generateScopedName,
+    },
+  }),
+  terser(),
+  image(),
+  copy({
+    targets: [
+      { src: 'src/tokens/tokens.css', dest: 'dist' },
+      { src: 'src/styles/**/*.css', dest: 'dist/styles' },
+    ],
+  }),
+];
 
 export default [
   {
@@ -37,20 +61,7 @@ export default [
       /leaflet/,
       /@navikt\/ds-icons/,
     ],
-    plugins: [
-      peerDepsExternal(),
-      resolve(),
-      commonjs(),
-      json(),
-      typescript({ tsconfig: './tsconfig.build.json' }),
-      svgr({ exportType: 'named' }),
-      postcss(),
-      terser(),
-      image(),
-      copy({
-        targets: [{ src: 'src/tokens/tokens.css', dest: 'dist' }],
-      }),
-    ],
+    plugins,
   },
   {
     input: 'dist/types/index.d.ts',
