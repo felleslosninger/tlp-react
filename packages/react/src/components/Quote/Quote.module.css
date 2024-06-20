@@ -1,0 +1,27 @@
+.quoteWrapper {
+  border-radius: var(--fds-border_radius-interactive);
+  background: var(--fds-brand-tertiary-600);
+  padding-left: var(--fds-spacing-2);
+  box-shadow: 0 1px 4px 0 rgba(0 0 0 / 0.1);
+  overflow: hidden;
+  width: 100%;
+}
+
+.quoteInfo {
+  display: flex;
+  background: var(--fds-semantic-background-default);
+  flex-direction: column;
+  padding: var(--fds-spacing-8);
+}
+
+.quote {
+  color: var(--semantic-text-neutral-default);
+  font: var(--fds-typography-interactive-large);
+  margin-top: 0;
+  margin-bottom: var(--fds-spacing-2);
+}
+
+.author {
+  font: var(--fds-typography-paragraph-small);
+  color: var(--semantic-text-neutral-subtle);
+}
